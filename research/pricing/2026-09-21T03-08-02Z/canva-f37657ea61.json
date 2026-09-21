@@ -1,0 +1,15 @@
+{
+  "toolId": "canva",
+  "requestedUrl": "https://www.canva.com/pricing/?product=crm",
+  "fetchedAt": "2026-09-21T03:08:02.689944+00:00",
+  "method": "http-html-text",
+  "reviewStatus": "unreviewed",
+  "finalUrl": "https://www.canva.com/pricing/?product=crm",
+  "httpStatus": 200,
+  "contentType": "text/html;charset=utf-8",
+  "contentSha256": "4e77ce266083e625d5344f2dd7908f355cad522fe29c1756374af8ba10f43119",
+  "title": "Unsupported client – Canva",
+  "text": "Unsupported client – Canva\nPlease update your browser\nIt seems you are using an old or unsupported browser. To continue enjoying Canva, please update to a recent version of one of the following browsers:\nChrome\nFirefox\nSafari\n(macOS only)\nEdge Alternatively click here to get Canva for Android or iOS.\nOr click here to learn more about Canva.",
+  "pricingLinks": [],
+  "collectionStatus": "collected"
+}

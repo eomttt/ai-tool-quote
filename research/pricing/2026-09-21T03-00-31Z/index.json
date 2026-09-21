@@ -1,0 +1,275 @@
+[
+  {
+    "toolId": "canva",
+    "url": "https://www.canva.com/ai-image-generator/",
+    "file": "research/pricing/2026-09-21T03-00-31Z/canva-7669c84662.json",
+    "status": "collected",
+    "characters": 342
+  },
+  {
+    "toolId": "colossyan",
+    "url": "https://www.colossyan.com",
+    "file": "research/pricing/2026-09-21T03-00-31Z/colossyan-9cb91c2723.json",
+    "status": "collected",
+    "characters": 14976
+  },
+  {
+    "toolId": "did",
+    "url": "https://www.d-id.com/pricing/api/",
+    "file": "research/pricing/2026-09-21T03-00-31Z/did-7eea19e6a2.json",
+    "status": "collected",
+    "characters": 1416
+  },
+  {
+    "toolId": "dreamina",
+    "url": "https://dreamina.capcut.com",
+    "file": "research/pricing/2026-09-21T03-00-31Z/dreamina-1de96b0bb5.json",
+    "status": "collected",
+    "characters": 32191
+  },
+  {
+    "toolId": "firefly",
+    "url": "https://www.adobe.com/products/firefly/plans.html",
+    "file": "research/pricing/2026-09-21T03-00-31Z/firefly-a24adca09f.json",
+    "status": "collected",
+    "characters": 1042
+  },
+  {
+    "toolId": "fliki",
+    "url": "https://fliki.ai",
+    "file": "research/pricing/2026-09-21T03-00-31Z/fliki-57227f320d.json",
+    "status": "collected",
+    "characters": 10875
+  },
+  {
+    "toolId": "flow",
+    "url": "https://one.google.com/about/plans",
+    "file": "research/pricing/2026-09-21T03-00-31Z/flow-f2ae6fb57d.json",
+    "status": "collected",
+    "characters": 2757
+  },
+  {
+    "toolId": "flow",
+    "url": "https://support.google.com/flow/answer/16526234?hl=en",
+    "file": "research/pricing/2026-09-21T03-00-31Z/flow-f40c983ca2.json",
+    "status": "collected",
+    "characters": 6928
+  },
+  {
+    "toolId": "fotor",
+    "url": "https://www.fotor.com/ai-image-generator/",
+    "file": "research/pricing/2026-09-21T03-00-31Z/fotor-d14c0bce59.json",
+    "status": "collected",
+    "characters": 20036
+  },
+  {
+    "toolId": "gemini",
+    "url": "https://gemini.google/subscriptions/",
+    "file": "research/pricing/2026-09-21T03-00-31Z/gemini-0472a026e3.json",
+    "status": "collected",
+    "characters": 11308
+  },
+  {
+    "toolId": "getimg",
+    "url": "https://getimg.ai/pricing",
+    "file": "research/pricing/2026-09-21T03-00-31Z/getimg-acbb679a0f.json",
+    "status": "collected",
+    "characters": 5219
+  },
+  {
+    "toolId": "hailuo",
+    "url": "https://hailuoai.video",
+    "file": "research/pricing/2026-09-21T03-00-31Z/hailuo-e3937266a2.json",
+    "status": "collected",
+    "characters": 1155
+  },
+  {
+    "toolId": "heygen",
+    "url": "https://www.heygen.com/pricing",
+    "file": "research/pricing/2026-09-21T03-00-31Z/heygen-2a8122e765.json",
+    "status": "collected",
+    "characters": 13593
+  },
+  {
+    "toolId": "higgsfield",
+    "url": "https://higgsfield.ai/ko/pricing",
+    "file": "research/pricing/2026-09-21T03-00-31Z/higgsfield-a5e5e97d4c.json",
+    "status": "collected",
+    "characters": 305
+  },
+  {
+    "toolId": "ideogram",
+    "url": "https://ideogram.ai",
+    "file": "research/pricing/2026-09-21T03-00-31Z/ideogram-0aea8e66bb.json",
+    "status": "collected",
+    "characters": 5654
+  },
+  {
+    "toolId": "imagineart",
+    "url": "https://www.imagine.art",
+    "file": "research/pricing/2026-09-21T03-00-31Z/imagineart-9e7e680f6a.json",
+    "status": "collected",
+    "characters": 3982
+  },
+  {
+    "toolId": "invideo",
+    "url": "https://invideo.io",
+    "file": "research/pricing/2026-09-21T03-00-31Z/invideo-7b40e8aa13.json",
+    "status": "collected",
+    "characters": 6658
+  },
+  {
+    "toolId": "kittl",
+    "url": "https://www.kittl.com",
+    "file": "research/pricing/2026-09-21T03-00-31Z/kittl-91e060cafd.json",
+    "status": "collected",
+    "characters": 7177
+  },
+  {
+    "toolId": "kling",
+    "url": "https://klingai.com",
+    "file": "research/pricing/2026-09-21T03-00-31Z/kling-cfa0e5b082.json",
+    "status": "collected",
+    "characters": 1870
+  },
+  {
+    "toolId": "krea",
+    "url": "https://www.krea.ai/features/ai-video-generator",
+    "file": "research/pricing/2026-09-21T03-00-31Z/krea-0c3d2df1b6.json",
+    "status": "collected",
+    "characters": 13791
+  },
+  {
+    "toolId": "leonardo",
+    "url": "https://leonardo.ai/pricing",
+    "file": "research/pricing/2026-09-21T03-00-31Z/leonardo-119e2b0b2c.json",
+    "status": "http-error",
+    "characters": 16
+  },
+  {
+    "toolId": "ltx",
+    "url": "https://ltx.io/studio",
+    "file": "research/pricing/2026-09-21T03-00-31Z/ltx-2f12f71774.json",
+    "status": "collected",
+    "characters": 10443
+  },
+  {
+    "toolId": "luma",
+    "url": "https://lumalabs.ai/pricing",
+    "file": "research/pricing/2026-09-21T03-00-31Z/luma-725f317ba8.json",
+    "status": "collected",
+    "characters": 5943
+  },
+  {
+    "toolId": "magnific",
+    "url": "https://www.magnific.com/ai",
+    "file": "research/pricing/2026-09-21T03-00-31Z/magnific-55f7a66450.json",
+    "status": "collected",
+    "characters": 19286
+  },
+  {
+    "toolId": "midjourney",
+    "url": "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans",
+    "file": "research/pricing/2026-09-21T03-00-31Z/midjourney-bc5568b906.json",
+    "status": "collected",
+    "characters": 4190
+  },
+  {
+    "toolId": "nightcafe",
+    "url": "https://creator.nightcafe.studio",
+    "file": "research/pricing/2026-09-21T03-00-31Z/nightcafe-41306f61ca.json",
+    "status": "http-error",
+    "characters": 16
+  },
+  {
+    "toolId": "openart",
+    "url": "https://openart.ai",
+    "file": "research/pricing/2026-09-21T03-00-31Z/openart-b325c7d94c.json",
+    "status": "collected",
+    "characters": 17307
+  },
+  {
+    "toolId": "photoroom",
+    "url": "https://www.photoroom.com",
+    "file": "research/pricing/2026-09-21T03-00-31Z/photoroom-780df6420c.json",
+    "status": "collected",
+    "characters": 11953
+  },
+  {
+    "toolId": "pictory",
+    "url": "https://pictory.ai",
+    "file": "research/pricing/2026-09-21T03-00-31Z/pictory-98c7631947.json",
+    "status": "collected",
+    "characters": 27858
+  },
+  {
+    "toolId": "pika",
+    "url": "https://pika.art/pricing",
+    "file": "research/pricing/2026-09-21T03-00-31Z/pika-4d74a5c6ee.json",
+    "status": "collected",
+    "characters": 6209
+  },
+  {
+    "toolId": "pixverse",
+    "url": "https://pixverse.ai/en",
+    "file": "research/pricing/2026-09-21T03-00-31Z/pixverse-1e1a60f49c.json",
+    "status": "collected",
+    "characters": 6717
+  },
+  {
+    "toolId": "recraft",
+    "url": "https://www.recraft.ai",
+    "file": "research/pricing/2026-09-21T03-00-31Z/recraft-8fac460dcd.json",
+    "status": "collected",
+    "characters": 10604
+  },
+  {
+    "toolId": "reve",
+    "url": "https://app.reve.com",
+    "file": "research/pricing/2026-09-21T03-00-31Z/reve-9c6dfb91c2.json",
+    "status": "collected",
+    "characters": 313
+  },
+  {
+    "toolId": "runway",
+    "url": "https://runway.com/pricing",
+    "file": "research/pricing/2026-09-21T03-00-31Z/runway-9398767c58.json",
+    "status": "collected",
+    "characters": 6015
+  },
+  {
+    "toolId": "seaart",
+    "url": "https://www.seaart.ai",
+    "file": "research/pricing/2026-09-21T03-00-31Z/seaart-d6ea284cb4.json",
+    "status": "collected",
+    "characters": 3153
+  },
+  {
+    "toolId": "synthesia",
+    "url": "https://www.synthesia.io/pricing",
+    "file": "research/pricing/2026-09-21T03-00-31Z/synthesia-5cf4917917.json",
+    "status": "collected",
+    "characters": 26853
+  },
+  {
+    "toolId": "tensor",
+    "url": "https://tensor.art",
+    "file": "research/pricing/2026-09-21T03-00-31Z/tensor-70bbf5a2c8.json",
+    "status": "collected",
+    "characters": 2676
+  },
+  {
+    "toolId": "veed",
+    "url": "https://www.veed.io",
+    "file": "research/pricing/2026-09-21T03-00-31Z/veed-08d9fbb6d5.json",
+    "status": "collected",
+    "characters": 11540
+  },
+  {
+    "toolId": "vidu",
+    "url": "https://www.vidu.com",
+    "file": "research/pricing/2026-09-21T03-00-31Z/vidu-894d11df6d.json",
+    "status": "collected",
+    "characters": 11297
+  }
+]

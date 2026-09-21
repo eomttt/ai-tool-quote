@@ -1,0 +1,21 @@
+{
+  "toolId": "firefly",
+  "requestedUrl": "https://www.adobe.com/products/firefly/plans.html",
+  "fetchedAt": "2026-09-21T03:00:32.085138+00:00",
+  "method": "http-html-text",
+  "reviewStatus": "unreviewed",
+  "finalUrl": "https://www.adobe.com/products/firefly/plans.html",
+  "httpStatus": 200,
+  "contentType": "text/html; charset=utf-8",
+  "contentSha256": "899ff31616433ecb77130c0ec02a78276e5e1dfd17075f78a491431adbe54aa7",
+  "title": "Compare plans that include generative AI | Adobe Firefly",
+  "text": "Compare plans that include generative AI | Adobe Firefly\nCompare Firefly plans.\nCreate and edit images, video, and audio with the power of AI. Choose a Firefly plan.\nstyle\nstatic links, no spacing\n{{individuals}}\n{{students-and-teachers}}\nBusiness\nactive tab\n1\nid\nmini-compare-plans\nhttps://main--da-cc--adobecom.aem.page/cc-shared/fragments/products/firefly/plans/mini-compare/individual/default\ntab\nmini-compare-plans, 1\nhttps://main--da-cc--adobecom.aem.page/cc-shared/fragments/products/firefly/plans/mini-compare/edu/default\ntab\nmini-compare-plans, 2\nhttps://main--da-cc--adobecom.aem.page/cc-shared/fragments/products/firefly/plans/mini-compare/business/default\ntab\nmini-compare-plans, 3\nhttps://main--da-cc--adobecom.aem.page/cc-shared/fragments/products/firefly/plans/ready-to-buy\nhttps://main--da-cc--adobecom.aem.page/cc-shared/fragments/products/firefly/out-of-credits-not-ideas\nhttps://main--da-cc--adobecom.aem.page/cc-shared/fragments/products/firefly/plans/faq\nstyle\nxl spacing, static links\n{{home}}\n{{adobe-cc}}\nAdobe Firefly",
+  "pricingLinks": [
+    "https://www.adobe.com/cc-shared/fragments/products/firefly/plans/faq",
+    "https://www.adobe.com/cc-shared/fragments/products/firefly/plans/mini-compare/business/default",
+    "https://www.adobe.com/cc-shared/fragments/products/firefly/plans/mini-compare/edu/default",
+    "https://www.adobe.com/cc-shared/fragments/products/firefly/plans/mini-compare/individual/default",
+    "https://www.adobe.com/cc-shared/fragments/products/firefly/plans/ready-to-buy"
+  ],
+  "collectionStatus": "collected"
+}

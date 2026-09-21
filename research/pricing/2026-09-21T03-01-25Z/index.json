@@ -1,0 +1,121 @@
+[
+  {
+    "toolId": "colossyan",
+    "url": "https://www.colossyan.com/pricing/",
+    "file": "research/pricing/2026-09-21T03-01-25Z/colossyan-a552633510.json",
+    "status": "collected",
+    "characters": 13786
+  },
+  {
+    "toolId": "did",
+    "url": "https://www.d-id.com/pricing/studio/",
+    "file": "research/pricing/2026-09-21T03-01-25Z/did-eab1e6fac3.json",
+    "status": "collected",
+    "characters": 5032
+  },
+  {
+    "toolId": "fliki",
+    "url": "https://fliki.ai/pricing",
+    "file": "research/pricing/2026-09-21T03-01-25Z/fliki-7cae85561a.json",
+    "status": "collected",
+    "characters": 9369
+  },
+  {
+    "toolId": "fotor",
+    "url": "https://www.fotor.com/pricing/",
+    "file": "research/pricing/2026-09-21T03-01-25Z/fotor-09f7fb4ee7.json",
+    "status": "collected",
+    "characters": 10800
+  },
+  {
+    "toolId": "ideogram",
+    "url": "https://ideogram.ai/pricing/",
+    "file": "research/pricing/2026-09-21T03-01-25Z/ideogram-1ed93a0191.json",
+    "status": "collected",
+    "characters": 8718
+  },
+  {
+    "toolId": "imagineart",
+    "url": "https://www.imagine.art/subscription",
+    "file": "research/pricing/2026-09-21T03-01-25Z/imagineart-877f0dafb3.json",
+    "status": "collected",
+    "characters": 873
+  },
+  {
+    "toolId": "invideo",
+    "url": "https://invideo.io/pricing/",
+    "file": "research/pricing/2026-09-21T03-01-25Z/invideo-4331c0a9d7.json",
+    "status": "collected",
+    "characters": 7224
+  },
+  {
+    "toolId": "kittl",
+    "url": "https://www.kittl.com/pricing",
+    "file": "research/pricing/2026-09-21T03-01-25Z/kittl-2854a6fb03.json",
+    "status": "collected",
+    "characters": 7652
+  },
+  {
+    "toolId": "krea",
+    "url": "https://www.krea.ai/pricing",
+    "file": "research/pricing/2026-09-21T03-01-25Z/krea-f086ed15b6.json",
+    "status": "collected",
+    "characters": 37004
+  },
+  {
+    "toolId": "ltx",
+    "url": "https://ltx.io/studio/pricing",
+    "file": "research/pricing/2026-09-21T03-01-25Z/ltx-548a472219.json",
+    "status": "collected",
+    "characters": 13282
+  },
+  {
+    "toolId": "magnific",
+    "url": "https://www.magnific.com/pricing?origin=magnific_web",
+    "file": "research/pricing/2026-09-21T03-01-25Z/magnific-e5502f66f6.json",
+    "status": "collected",
+    "characters": 9325
+  },
+  {
+    "toolId": "openart",
+    "url": "https://openart.ai/suite/pricing",
+    "file": "research/pricing/2026-09-21T03-01-25Z/openart-59f70bdad2.json",
+    "status": "collected",
+    "characters": 4809
+  },
+  {
+    "toolId": "photoroom",
+    "url": "https://www.photoroom.com/pricing",
+    "file": "research/pricing/2026-09-21T03-01-25Z/photoroom-509d361eaf.json",
+    "status": "collected",
+    "characters": 14151
+  },
+  {
+    "toolId": "pictory",
+    "url": "https://pictory.ai/pricing",
+    "file": "research/pricing/2026-09-21T03-01-25Z/pictory-f7440e591a.json",
+    "status": "http-error",
+    "characters": 33
+  },
+  {
+    "toolId": "recraft",
+    "url": "https://www.recraft.ai/pricing",
+    "file": "research/pricing/2026-09-21T03-01-25Z/recraft-e1e66fba04.json",
+    "status": "collected",
+    "characters": 4014
+  },
+  {
+    "toolId": "veed",
+    "url": "https://www.veed.io/pricing",
+    "file": "research/pricing/2026-09-21T03-01-25Z/veed-4d35f94837.json",
+    "status": "collected",
+    "characters": 3289
+  },
+  {
+    "toolId": "vidu",
+    "url": "https://www.vidu.com/pricing",
+    "file": "research/pricing/2026-09-21T03-01-25Z/vidu-e9e52b816d.json",
+    "status": "collected",
+    "characters": 2663
+  }
+]

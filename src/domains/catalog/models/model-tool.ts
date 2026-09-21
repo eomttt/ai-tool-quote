@@ -1,7 +1,8 @@
 export type Medium = 'video' | 'image';
 export type UseCase = 'all' | 'generate' | 'avatar' | 'edit' | 'design' | 'product';
 export type Billing = 'monthly' | 'annual';
-export type AllowanceUnit = 'credits' | 'tokens' | 'gpu-minutes';
+export type AllowanceUnit = 'credits' | 'tokens' | 'fast-tokens' | 'gpu-minutes' | 'compute-units';
+export type Currency = 'USD' | 'KRW';
 export interface Tool {
   id: string;
   name: string;
@@ -28,25 +29,40 @@ export interface Allowance {
 }
 export interface Plan {
   name: string;
-  monthlyUsd: number;
-  annualUsd?: number;
-  included: Allowance;
+  monthlyAmount?: number;
+  annualAmount?: number;
+  included?: Allowance;
+  annualIncluded?: Allowance;
+  allowanceNote?: string;
   note?: string;
 }
 export interface CreditPack extends Allowance {
-  priceUsd: number;
+  priceAmount: number;
 }
 export interface PricingSnapshot {
   toolId: string;
   checkedAt: string;
   reviewAfterDays: number;
   region: string;
+  currency: Currency;
   sources: string[];
-  billingModel: 'subscription-credits' | 'subscription-time' | 'subscription-tokens';
+  billingModel:
+    'subscription-credits' | 'subscription-time' | 'subscription-tokens' | 'subscription';
   summary: string;
   plans: Plan[];
   topUps: CreditPack[];
   topUpNote?: string;
   freeTier?: string;
   note: string;
+}
+export interface PricingAudit {
+  toolId: string;
+  checkedAt: string;
+  status: 'verified' | 'partial' | 'unavailable' | 'conflicting';
+  note: string;
+  sources: {
+    url: string;
+    method: 'http-html-text' | 'browser' | 'official-web';
+    evidenceFiles: string[];
+  }[];
 }

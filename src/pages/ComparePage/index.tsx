@@ -16,7 +16,7 @@ import { Tabs, TabsList, TabsTrigger } from '../../common/components/Tabs';
 import { tools, useCases } from '../../domains/catalog/data/tools';
 import { getPricing, pricingSnapshots } from '../../domains/catalog/data/pricing';
 import type { Billing, Medium, Tool, UseCase } from '../../domains/catalog/models/model-tool';
-import { getEntryPlan, monthlyPrice } from '../../domains/catalog/utils/price-information';
+import { compareSubscriptionPrices } from '../../domains/catalog/utils/price-information';
 import { ToolCard } from '../../domains/catalog/components/ToolCard';
 import { ToolPeek } from '../../domains/catalog/components/ToolPeek';
 import { ComparisonTable } from '../../domains/catalog/components/ComparisonTable';
@@ -76,12 +76,7 @@ export function ComparePage() {
     .toSorted((a, b) => {
       if (sort === 'name') return a.name.localeCompare(b.name);
       if (sort === 'price') {
-        const planA = getEntryPlan(getPricing(a.id), billing);
-        const planB = getEntryPlan(getPricing(b.id), billing);
-        return (
-          (planA ? (monthlyPrice(planA, billing) ?? Infinity) : Infinity) -
-          (planB ? (monthlyPrice(planB, billing) ?? Infinity) : Infinity)
-        );
+        return compareSubscriptionPrices(getPricing(a.id), getPricing(b.id), billing);
       }
       return Number(Boolean(b.featured)) - Number(Boolean(a.featured));
     });
@@ -257,7 +252,7 @@ export function ComparePage() {
                       onChange={(event) => setSort(event.currentTarget.value)}
                     >
                       <option value="featured">주요 도구순</option>
-                      <option value="price">구독료 낮은 순</option>
+                      <option value="price">통화별 구독료순</option>
                       <option value="name">이름순</option>
                     </select>
                   </div>

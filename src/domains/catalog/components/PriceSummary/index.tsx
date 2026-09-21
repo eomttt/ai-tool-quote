@@ -1,7 +1,7 @@
 import type { Billing, PricingSnapshot } from '../../models/model-tool';
 import {
-  formatAllowance,
-  formatUsd,
+  planAllowance,
+  formatMoney,
   getEntryPlan,
   monthlyPrice,
 } from '../../utils/price-information';
@@ -18,22 +18,26 @@ export function PriceSummary({
     return (
       <div className="price-summary">
         <strong className="price-pending">
-          {pricing ? '연간 요금 확인 중' : '요금표 확인 중'}
+          {pricing ? `${billing === 'annual' ? '연간' : '월간'} 요금 미확인` : '가격 정보 미등록'}
         </strong>
-        <p>{pricing ? '상세에서 월간 요금을 볼 수 있어요' : '공식 사이트에서 요금을 확인하세요'}</p>
+        <p>
+          {pricing
+            ? '상세에서 확인된 요금을 볼 수 있어요'
+            : '상세에서 출처와 확인 결과를 볼 수 있어요'}
+        </p>
       </div>
     );
   return (
     <div className="price-summary">
       <div>
-        <strong className="price">{formatUsd(price)}</strong>
+        <strong className="price">{formatMoney(price, pricing?.currency)}</strong>
         <span> / 월{billing === 'annual' ? ' 환산' : ''}부터</span>
       </div>
       <p>
-        {plan.name} · 월 {formatAllowance(plan.included)}
+        {plan.name} · {planAllowance(plan, billing)}
       </p>
-      {billing === 'annual' && plan.annualUsd !== undefined ? (
-        <p>연 {formatUsd(plan.annualUsd)} 선결제</p>
+      {billing === 'annual' && plan.annualAmount !== undefined ? (
+        <p>연 {formatMoney(plan.annualAmount, pricing?.currency)} 선결제</p>
       ) : null}
     </div>
   );

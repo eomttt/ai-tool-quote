@@ -1,0 +1,37 @@
+[
+  {
+    "toolId": "canva",
+    "url": "https://www.canva.com/pricing/?product=crm",
+    "file": "research/pricing/2026-09-21T03-08-02Z/canva-f37657ea61.json",
+    "status": "collected",
+    "characters": 342
+  },
+  {
+    "toolId": "dreamina",
+    "url": "https://dreamina.capcut.com/pricing/dreamina-price",
+    "file": "research/pricing/2026-09-21T03-08-02Z/dreamina-a70ff4d0a1.json",
+    "status": "collected",
+    "characters": 6297
+  },
+  {
+    "toolId": "hailuo",
+    "url": "https://hailuoai.video/doc/payment-policy.html",
+    "file": "research/pricing/2026-09-21T03-08-02Z/hailuo-b06de3aaa5.json",
+    "status": "collected",
+    "characters": 9631
+  },
+  {
+    "toolId": "pixverse",
+    "url": "https://app.pixverse.ai/subscribe",
+    "file": "research/pricing/2026-09-21T03-08-02Z/pixverse-d63f96d228.json",
+    "status": "collected",
+    "characters": 12202
+  },
+  {
+    "toolId": "reve",
+    "url": "https://help.reve.com/hc/en-us/articles/46732445465108-Subscription-plans-overview",
+    "file": "research/pricing/2026-09-21T03-08-02Z/reve-ac7890ac7a.json",
+    "status": "collected",
+    "characters": 1408
+  }
+]

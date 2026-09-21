@@ -1,0 +1,15 @@
+{
+  "toolId": "leonardo",
+  "requestedUrl": "https://leonardo.ai/pricing",
+  "fetchedAt": "2026-09-21T03:00:37.059629+00:00",
+  "method": "http-html-text",
+  "reviewStatus": "unreviewed",
+  "finalUrl": "https://leonardo.ai/pricing",
+  "httpStatus": 403,
+  "contentType": "text/html; charset=UTF-8",
+  "contentSha256": "1e19b676ac1dc92da973470a513473289a4093af1fef2b9bda3846ee80af2a2b",
+  "title": "Just a moment...",
+  "text": "Just a moment...",
+  "pricingLinks": [],
+  "collectionStatus": "http-error"
+}

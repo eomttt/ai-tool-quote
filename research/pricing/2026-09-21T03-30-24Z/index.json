@@ -1,0 +1,275 @@
+[
+  {
+    "toolId": "canva",
+    "url": "https://www.canva.com/pricing/?product=crm",
+    "file": "research/pricing/2026-09-21T03-30-24Z/canva-f37657ea61.json",
+    "status": "collected",
+    "characters": 342
+  },
+  {
+    "toolId": "colossyan",
+    "url": "https://www.colossyan.com/pricing/",
+    "file": "research/pricing/2026-09-21T03-30-24Z/colossyan-a552633510.json",
+    "status": "collected",
+    "characters": 13786
+  },
+  {
+    "toolId": "did",
+    "url": "https://www.d-id.com/pricing/studio/",
+    "file": "research/pricing/2026-09-21T03-30-24Z/did-eab1e6fac3.json",
+    "status": "collected",
+    "characters": 5032
+  },
+  {
+    "toolId": "dreamina",
+    "url": "https://dreamina.capcut.com/pricing/dreamina-price",
+    "file": "research/pricing/2026-09-21T03-30-24Z/dreamina-a70ff4d0a1.json",
+    "status": "collected",
+    "characters": 6297
+  },
+  {
+    "toolId": "firefly",
+    "url": "https://www.adobe.com/products/firefly/plans.html",
+    "file": "research/pricing/2026-09-21T03-30-24Z/firefly-a24adca09f.json",
+    "status": "collected",
+    "characters": 1042
+  },
+  {
+    "toolId": "fliki",
+    "url": "https://fliki.ai/pricing",
+    "file": "research/pricing/2026-09-21T03-30-24Z/fliki-7cae85561a.json",
+    "status": "collected",
+    "characters": 9369
+  },
+  {
+    "toolId": "flow",
+    "url": "https://one.google.com/about/plans",
+    "file": "research/pricing/2026-09-21T03-30-24Z/flow-f2ae6fb57d.json",
+    "status": "collected",
+    "characters": 2757
+  },
+  {
+    "toolId": "flow",
+    "url": "https://support.google.com/flow/answer/16526234?hl=en",
+    "file": "research/pricing/2026-09-21T03-30-24Z/flow-f40c983ca2.json",
+    "status": "collected",
+    "characters": 6928
+  },
+  {
+    "toolId": "fotor",
+    "url": "https://www.fotor.com/pricing/",
+    "file": "research/pricing/2026-09-21T03-30-24Z/fotor-09f7fb4ee7.json",
+    "status": "collected",
+    "characters": 10800
+  },
+  {
+    "toolId": "gemini",
+    "url": "https://gemini.google/subscriptions/",
+    "file": "research/pricing/2026-09-21T03-30-24Z/gemini-0472a026e3.json",
+    "status": "collected",
+    "characters": 11308
+  },
+  {
+    "toolId": "getimg",
+    "url": "https://getimg.ai/pricing",
+    "file": "research/pricing/2026-09-21T03-30-24Z/getimg-acbb679a0f.json",
+    "status": "collected",
+    "characters": 5219
+  },
+  {
+    "toolId": "hailuo",
+    "url": "https://hailuoai.video/doc/payment-policy.html",
+    "file": "research/pricing/2026-09-21T03-30-24Z/hailuo-b06de3aaa5.json",
+    "status": "collected",
+    "characters": 9631
+  },
+  {
+    "toolId": "heygen",
+    "url": "https://www.heygen.com/pricing",
+    "file": "research/pricing/2026-09-21T03-30-24Z/heygen-2a8122e765.json",
+    "status": "collected",
+    "characters": 13593
+  },
+  {
+    "toolId": "higgsfield",
+    "url": "https://higgsfield.ai/ko/pricing",
+    "file": "research/pricing/2026-09-21T03-30-24Z/higgsfield-a5e5e97d4c.json",
+    "status": "collected",
+    "characters": 305
+  },
+  {
+    "toolId": "ideogram",
+    "url": "https://ideogram.ai/pricing/",
+    "file": "research/pricing/2026-09-21T03-30-24Z/ideogram-1ed93a0191.json",
+    "status": "collected",
+    "characters": 8718
+  },
+  {
+    "toolId": "imagineart",
+    "url": "https://www.imagine.art/subscription",
+    "file": "research/pricing/2026-09-21T03-30-24Z/imagineart-877f0dafb3.json",
+    "status": "collected",
+    "characters": 873
+  },
+  {
+    "toolId": "invideo",
+    "url": "https://invideo.io/pricing/",
+    "file": "research/pricing/2026-09-21T03-30-24Z/invideo-4331c0a9d7.json",
+    "status": "collected",
+    "characters": 7224
+  },
+  {
+    "toolId": "kittl",
+    "url": "https://www.kittl.com/pricing",
+    "file": "research/pricing/2026-09-21T03-30-24Z/kittl-2854a6fb03.json",
+    "status": "collected",
+    "characters": 7652
+  },
+  {
+    "toolId": "kling",
+    "url": "https://kling.ai/app/membership/membership-plan?r=26",
+    "file": "research/pricing/2026-09-21T03-30-24Z/kling-97477b9e7f.json",
+    "status": "render-required",
+    "characters": 79
+  },
+  {
+    "toolId": "krea",
+    "url": "https://www.krea.ai/pricing",
+    "file": "research/pricing/2026-09-21T03-30-24Z/krea-f086ed15b6.json",
+    "status": "collected",
+    "characters": 37004
+  },
+  {
+    "toolId": "leonardo",
+    "url": "https://www.leonardo.ai/pricing",
+    "file": "research/pricing/2026-09-21T03-30-24Z/leonardo-b9a8db68ea.json",
+    "status": "collected",
+    "characters": 17510
+  },
+  {
+    "toolId": "ltx",
+    "url": "https://ltx.io/studio/pricing",
+    "file": "research/pricing/2026-09-21T03-30-24Z/ltx-548a472219.json",
+    "status": "collected",
+    "characters": 13282
+  },
+  {
+    "toolId": "luma",
+    "url": "https://lumalabs.ai/pricing",
+    "file": "research/pricing/2026-09-21T03-30-24Z/luma-725f317ba8.json",
+    "status": "collected",
+    "characters": 5943
+  },
+  {
+    "toolId": "magnific",
+    "url": "https://www.magnific.com/pricing?origin=magnific_web",
+    "file": "research/pricing/2026-09-21T03-30-24Z/magnific-e5502f66f6.json",
+    "status": "collected",
+    "characters": 9325
+  },
+  {
+    "toolId": "midjourney",
+    "url": "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans",
+    "file": "research/pricing/2026-09-21T03-30-24Z/midjourney-bc5568b906.json",
+    "status": "collected",
+    "characters": 4190
+  },
+  {
+    "toolId": "nightcafe",
+    "url": "https://help.nightcafe.studio/portal/en/kb/articles/nightcafe-pro-plans",
+    "file": "research/pricing/2026-09-21T03-30-24Z/nightcafe-2e40ab384a.json",
+    "status": "render-required",
+    "characters": 0
+  },
+  {
+    "toolId": "openart",
+    "url": "https://openart.ai/suite/pricing",
+    "file": "research/pricing/2026-09-21T03-30-24Z/openart-59f70bdad2.json",
+    "status": "collected",
+    "characters": 4809
+  },
+  {
+    "toolId": "photoroom",
+    "url": "https://www.photoroom.com/pricing",
+    "file": "research/pricing/2026-09-21T03-30-24Z/photoroom-509d361eaf.json",
+    "status": "collected",
+    "characters": 14151
+  },
+  {
+    "toolId": "pictory",
+    "url": "https://pictory.ai/pricing",
+    "file": "research/pricing/2026-09-21T03-30-24Z/pictory-f7440e591a.json",
+    "status": "http-error",
+    "characters": 33
+  },
+  {
+    "toolId": "pika",
+    "url": "https://pika.art/pricing",
+    "file": "research/pricing/2026-09-21T03-30-24Z/pika-4d74a5c6ee.json",
+    "status": "collected",
+    "characters": 6209
+  },
+  {
+    "toolId": "pixverse",
+    "url": "https://app.pixverse.ai/subscribe",
+    "file": "research/pricing/2026-09-21T03-30-24Z/pixverse-d63f96d228.json",
+    "status": "collected",
+    "characters": 12202
+  },
+  {
+    "toolId": "recraft",
+    "url": "https://www.recraft.ai/pricing",
+    "file": "research/pricing/2026-09-21T03-30-24Z/recraft-e1e66fba04.json",
+    "status": "collected",
+    "characters": 4014
+  },
+  {
+    "toolId": "reve",
+    "url": "https://help.reve.com/hc/en-us/articles/46732445465108-Subscription-plans-overview",
+    "file": "research/pricing/2026-09-21T03-30-24Z/reve-ac7890ac7a.json",
+    "status": "collected",
+    "characters": 1408
+  },
+  {
+    "toolId": "runway",
+    "url": "https://runway.com/pricing",
+    "file": "research/pricing/2026-09-21T03-30-24Z/runway-9398767c58.json",
+    "status": "collected",
+    "characters": 6015
+  },
+  {
+    "toolId": "seaart",
+    "url": "https://www.seaart.ai/mall?dotFrom=svip_banner",
+    "file": "research/pricing/2026-09-21T03-30-24Z/seaart-a7ea6ca1d0.json",
+    "status": "collected",
+    "characters": 10387
+  },
+  {
+    "toolId": "synthesia",
+    "url": "https://www.synthesia.io/pricing",
+    "file": "research/pricing/2026-09-21T03-30-24Z/synthesia-5cf4917917.json",
+    "status": "collected",
+    "characters": 26853
+  },
+  {
+    "toolId": "tensor",
+    "url": "https://tensor.art/event/proupdate",
+    "file": "research/pricing/2026-09-21T03-30-24Z/tensor-e40055f8e1.json",
+    "status": "collected",
+    "characters": 4341
+  },
+  {
+    "toolId": "veed",
+    "url": "https://www.veed.io/pricing",
+    "file": "research/pricing/2026-09-21T03-30-24Z/veed-4d35f94837.json",
+    "status": "collected",
+    "characters": 3289
+  },
+  {
+    "toolId": "vidu",
+    "url": "https://www.vidu.com/pricing",
+    "file": "research/pricing/2026-09-21T03-30-24Z/vidu-e9e52b816d.json",
+    "status": "collected",
+    "characters": 2663
+  }
+]

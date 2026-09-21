@@ -1,0 +1,15 @@
+{
+  "toolId": "kling",
+  "requestedUrl": "https://kling.ai/app/membership/membership-plan?r=26",
+  "fetchedAt": "2026-09-21T03:30:26.781818+00:00",
+  "method": "http-html-text",
+  "reviewStatus": "unreviewed",
+  "finalUrl": "https://kling.ai/app/membership/membership-plan?r=26",
+  "httpStatus": 200,
+  "contentType": "text/html; charset=UTF-8",
+  "contentSha256": "04387941555efd6c66374f1ab838aedda82d531cbd5c215379fd1c0c6c0449ba",
+  "title": "Kling AI: Next-Generation AI Creative Studio",
+  "text": "Kling AI: Next-Generation AI Creative Studio\nKling AI Video and Image Generator",
+  "pricingLinks": [],
+  "collectionStatus": "render-required"
+}

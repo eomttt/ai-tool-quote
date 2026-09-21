@@ -1,0 +1,15 @@
+{
+  "toolId": "nightcafe",
+  "requestedUrl": "https://creator.nightcafe.studio",
+  "fetchedAt": "2026-09-21T03:00:38.633688+00:00",
+  "method": "http-html-text",
+  "reviewStatus": "unreviewed",
+  "finalUrl": "https://creator.nightcafe.studio",
+  "httpStatus": 403,
+  "contentType": "text/html; charset=UTF-8",
+  "contentSha256": "cd0a1052e6611a6b04f95a85c385cc3759d446d341124e961f061c6f1b7ecd8a",
+  "title": "Just a moment...",
+  "text": "Just a moment...",
+  "pricingLinks": [],
+  "collectionStatus": "http-error"
+}

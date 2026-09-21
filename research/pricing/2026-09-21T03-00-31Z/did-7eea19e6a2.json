@@ -1,0 +1,15 @@
+{
+  "toolId": "did",
+  "requestedUrl": "https://www.d-id.com/pricing/api/",
+  "fetchedAt": "2026-09-21T03:00:31.789815+00:00",
+  "method": "http-html-text",
+  "reviewStatus": "unreviewed",
+  "finalUrl": "https://www.d-id.com/pricing/api/",
+  "httpStatus": 200,
+  "contentType": "text/html; charset=UTF-8",
+  "contentSha256": "3624bb902606eddd8a43152c79acc26cddf4aff4324bf9a4df4433ca1d9cdfde",
+  "title": "API Pricing | D-ID AI Video Generator",
+  "text": "API Pricing | D-ID AI Video Generator\nSkip to main content\nProduct\nAI Video Generator\nVisual AI Agents\nAI Avatars\nAgentic Videos\nFeatures\nSolutions\nMarketing Suite\nSales Solutions\nCustomer Experience\nLearning & Development\nTechnology\nAPI\nIntegrations\nV4 Expressive Avatars\nV4 Tech Specs\nSelf-Hosting\nPricing\nStudio\nAPI\nEnterprise\nEnterprise\nCase Studies\nTrust Center\nCompany\nAbout Us\nBlog\nCareers\nLeadership\nPartners\nNews\nResources\nEnd User License\nD-ID Products Terms of Use\nPrivacy Policy\nHelp Center\nEthics\nContact Sales\nStart Free Trial\nLog in\nGo to Studio Pricing\nGo to developer hub\nProduct\nFeatures\nAI Video Generator\nAI Agents\nAI Avatars\nAgentic Videos\nCreative Reality™ Studio\nVideo Translate\nSolutions\nMarketing Suite\nSales Solutions\nCustomer Experience\nLearning & Development\nTechnology\nV4 Expressive Avatars\nV4 Tech Specs\nSelf-Hosting\nAPI documentation\nAPI for Developers\nIntegrations\nLive Portrait\nSpeaking Portrait\nNatural User Interface\nCompany\nAbout\nEthics\nCareers\nLeadership\nNews\nPartners\nResources\nBlog\nAI-Info\nTrust Center\nHelp Center\nPrivacy Policy\nContact Sales\nPricing\nAPI\nStudio\nEnterprise\nFAQs\nFAQ\nAI Video Glossary\nSubscribe to our monthly newsletter and other industry updates\nFacebook\nInstagram\nLinkedIn\nTiktok\nTwitter\nYoutube\n© All Rights Reserved 2026 D-ID AI Video\nD-ID Privacy Policy\nTerms of Use\nCorporation Trust Center, 1209 Orange St., Wilmington, New Castle County, Delaware 19801",
+  "pricingLinks": ["https://www.d-id.com/pricing/api/", "https://www.d-id.com/pricing/studio/"],
+  "collectionStatus": "collected"
+}

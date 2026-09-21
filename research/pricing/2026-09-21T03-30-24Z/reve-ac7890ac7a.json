@@ -1,0 +1,19 @@
+{
+  "toolId": "reve",
+  "requestedUrl": "https://help.reve.com/hc/en-us/articles/46732445465108-Subscription-plans-overview",
+  "fetchedAt": "2026-09-21T03:30:31.103824+00:00",
+  "method": "http-html-text",
+  "reviewStatus": "unreviewed",
+  "finalUrl": "https://help.reve.com/hc/en-us/articles/46732445465108-Subscription-plans-overview",
+  "httpStatus": 200,
+  "contentType": "text/html; charset=utf-8",
+  "contentSha256": "8efd6334d8db8cdccf55a11a7239bdf54fecb59ba01524cc4e237495522cefb9",
+  "title": "Subscription plans overview – Reve AI",
+  "text": "Subscription plans overview – Reve AI\nSkip to main content\nReve is sunsetting. You have until Sept 27th to create, and October 31st to download your work.\nLearn more here .\nGo to Reve\nReve AI\nPlans & billing\nSubscription plans overview\nLoading...\nSubscription plans overview\nReve plans are designed to be clear and simple. We currently offer 3 plans - Free, Lite and Pro. Each plan provides a set amount of creative energy and storage.\nAfter initial sign up, Free accounts receive an introductory allocation of creative energy and a daily refresh thereafter.\nThe Lite subscription offers 5x more energy than Free , and Pro subscription offers 100x more energy than Free. Lite and Pro are billed monthly and can be cancelled at any time via your Account tab.\nFree\nLite\nPro\nMonthly Cost\n—\n$7.99 + tax, if applicable\n$19.99 + tax, if applicable\nStandard Energy\nBasic creative energy, refreshed daily\n5x more than Free\n100x more than Free\nVideo Energy\nOne-time energy allowance upon sign up\nSame as Free\n250 video energy per month, plus the ability to use standard energy for video (up to 100/day)\nStorage\nBasic storage\n5x more than Free\n100x more than Free\nReve Model Training\nDefault opt-in only\nOpt-out available\nOpt-out available\nAPI Pricing\nFor more information on API pricing please visit Reve's API console.\nReturn to top\nGot questions?\nIf you need additional support, we're here to help.\nSubmit a request",
+  "pricingLinks": [
+    "https://help.reve.com/hc/en-us/articles/46732445465108-Subscription-plans-overview",
+    "https://help.reve.com/hc/en-us/categories/46699748865428-Plans-billing",
+    "https://help.reve.com/hc/en-us/sections/46714848890772-Subscription-plans-overview"
+  ],
+  "collectionStatus": "collected"
+}

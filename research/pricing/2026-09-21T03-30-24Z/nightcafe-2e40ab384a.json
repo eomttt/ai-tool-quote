@@ -1,0 +1,15 @@
+{
+  "toolId": "nightcafe",
+  "requestedUrl": "https://help.nightcafe.studio/portal/en/kb/articles/nightcafe-pro-plans",
+  "fetchedAt": "2026-09-21T03:30:29.800012+00:00",
+  "method": "http-html-text",
+  "reviewStatus": "unreviewed",
+  "finalUrl": "https://help.nightcafe.studio/portal/en/kb/articles/nightcafe-pro-plans",
+  "httpStatus": 200,
+  "contentType": "text/html;charset=UTF-8",
+  "contentSha256": "6013ee846f7940e050b1f92b344067726702e6cd2a48fe6ca58a70d7375f7c92",
+  "title": "",
+  "text": "",
+  "pricingLinks": [],
+  "collectionStatus": "render-required"
+}

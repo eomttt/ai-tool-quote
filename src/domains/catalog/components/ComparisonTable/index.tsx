@@ -65,7 +65,9 @@ export function ComparisonTable({
             <tr>
               <th>과금 방식</th>
               {tools.map((tool) => (
-                <td key={tool.id}>{getPricing(tool.id)?.summary ?? '요금표 확인 중'}</td>
+                <td key={tool.id}>
+                  {getPricing(tool.id)?.summary ?? '가격 정보 미등록 · 상세 출처 참고'}
+                </td>
               ))}
             </tr>
             <tr>

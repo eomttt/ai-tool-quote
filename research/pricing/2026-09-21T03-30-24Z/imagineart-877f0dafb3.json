@@ -1,0 +1,15 @@
+{
+  "toolId": "imagineart",
+  "requestedUrl": "https://www.imagine.art/subscription",
+  "fetchedAt": "2026-09-21T03:30:26.346244+00:00",
+  "method": "http-html-text",
+  "reviewStatus": "unreviewed",
+  "finalUrl": "https://www.imagine.art/subscription",
+  "httpStatus": 200,
+  "contentType": "text/html; charset=utf-8",
+  "contentSha256": "ef7acccd5f3f51a57ade240de2837f38fcedc72131c2b24f3d4e2f841fb4f8cd",
+  "title": "ImagineArt Pricing | AI Creative Suite for Everyone",
+  "text": "ImagineArt Pricing | AI Creative Suite for Everyone\nSearch Everything\nSearch across all features\nCreative\nHome\nAssets\nBrand Kits\nBrand Kits\nSearch\nTools\nImage\nVideo\nAudio\nAudio\nEdit\nUpscale\nWorkflow\nImagine Computer\nImagineArt MCP\nPlugins NEW NEW\nStudios\nFashion studio\nAd studio NEW NEW\nFilm studio\nOther\nTools\nAll Tools\nApps\nApps\nCommunity\nMore\nNEW\nEXCLUSIVE ACCESS\nLIMITED OFFER\nBiggest Sale Ever! 50% OFF & Unlimited Free Generations on top models\nContact Sales Pricing Login Login Sign Up\nTrusted by Professionals and Creators from top Brands and Companies\nPay safely and securely with\nFAQs\nWhat are credits?\nHow are credits rolled over?\nCan I use imagineArt for free?\nDo I have to buy a plan to unlock video generation?\nWhat is the difference between buying credits and subscriptions?\nRefund policy?\nHow to Downgrade\nWhat if my generations fail?\nCommercial Use Policy",
+  "pricingLinks": ["https://www.imagine.art/subscription"],
+  "collectionStatus": "collected"
+}

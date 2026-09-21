@@ -95,22 +95,23 @@
   },
   {
     "id": "luma",
-    "name": "Luma Dream Machine",
+    "name": "Luma",
     "monogram": "L",
     "color": "ink",
-    "description": "이미지에 움직임을 더하는 영상 제작 도구.",
+    "description": "Luma와 여러 이미지·영상 모델로 장면을 만들고 수정하는 제작 플랫폼이에요.",
     "media": ["video", "image"],
     "useCases": ["generate", "edit"],
-    "tags": ["Dream Machine", "이미지 → 영상", "장면 생성"],
-    "aliases": ["루마"],
-    "website": "https://lumalabs.ai",
+    "tags": ["Luma 앱", "이미지 → 영상", "장면 생성"],
+    "aliases": ["루마", "Dream Machine", "Luma Dream Machine"],
+    "website": "https://lumalabs.ai/app",
     "source": "https://lumalabs.ai/pricing",
     "bestFor": "참고 이미지에서 시작하는 영상 장면",
     "features": [
-      "Dream Machine에서 이미지와 영상 아이디어를 발전시켜요.",
+      "Luma 앱에서 이미지와 영상 아이디어를 발전시켜요.",
       "이미지에 움직임을 더하는 작업을 할 수 있어요."
     ],
-    "consideration": "원하는 생성 모델과 출력 조건을 지원하는 플랜인지 살펴보세요."
+    "consideration": "원하는 생성 모델과 출력 조건을 지원하는 플랜인지 살펴보세요.",
+    "note": "요금표는 현재 Luma 앱 기준이며 이전 Dream Machine 구독과 다를 수 있어요."
   },
   {
     "id": "kling",
@@ -431,7 +432,7 @@
     "tags": ["말하는 사진", "아바타", "발표 영상"],
     "aliases": ["디아이디"],
     "website": "https://www.d-id.com",
-    "source": "https://www.d-id.com/pricing/api/",
+    "source": "https://www.d-id.com/pricing/studio/",
     "note": "Studio 구독과 개발자 API의 가격은 별도로 확인해야 합니다.",
     "bestFor": "사진 속 인물이 설명하는 영상",
     "features": [

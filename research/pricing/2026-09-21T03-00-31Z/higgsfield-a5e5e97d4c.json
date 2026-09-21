@@ -1,0 +1,15 @@
+{
+  "toolId": "higgsfield",
+  "requestedUrl": "https://higgsfield.ai/ko/pricing",
+  "fetchedAt": "2026-09-21T03:00:34.906305+00:00",
+  "method": "http-html-text",
+  "reviewStatus": "unreviewed",
+  "finalUrl": "https://higgsfield.ai/ko/pricing",
+  "httpStatus": 200,
+  "contentType": "text/html; charset=utf-8",
+  "contentSha256": "2b248c0559c42ce2bd8282e88b7dbfa178545023e07d6b2567782570b40e3c40",
+  "title": "요금제 · Higgsfield AI 비디오 & 이미지 생성기",
+  "text": "요금제 · Higgsfield AI 비디오 & 이미지 생성기\nHiggsfield\n둘러보기\n이미지\n비디오\n오디오\nMCP\nAPI 신규\nChatGPT 플러그인 신규\nGenjutsu\n이펙트 신규\nCinema Studio\n콘테스트 콘테스트\nMarketing Studio\nSupercomputer\n3D Jutsu 신규\n편집\nAcademy\n커뮤니티\n플러그인\nCanvas\nOriginals\n요금제 Enterprise\n로그인 가입하기\n© 2026 Higgsfield, Inc. All rights reserved.\n헬프 센터\n쿠키 고지\n이용약관\n개인정보 처리방침",
+  "pricingLinks": ["https://higgsfield.ai/ko/pricing"],
+  "collectionStatus": "collected"
+}

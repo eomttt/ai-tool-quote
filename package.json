@@ -10,7 +10,9 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "crawl:pricing": "python3 scripts/crawl-pricing.py",
+    "test:pricing-sources": "python3 -m unittest discover -s scripts -p \"test_*.py\""
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",

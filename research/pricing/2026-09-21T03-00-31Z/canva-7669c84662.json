@@ -1,0 +1,15 @@
+{
+  "toolId": "canva",
+  "requestedUrl": "https://www.canva.com/ai-image-generator/",
+  "fetchedAt": "2026-09-21T03:00:31.789119+00:00",
+  "method": "http-html-text",
+  "reviewStatus": "unreviewed",
+  "finalUrl": "https://www.canva.com/ai-image-generator/",
+  "httpStatus": 200,
+  "contentType": "text/html;charset=utf-8",
+  "contentSha256": "18facd137af40c029f63b7fc49d1cf8fdea8cbe381c0890917e155b2320fe0eb",
+  "title": "Unsupported client – Canva",
+  "text": "Unsupported client – Canva\nPlease update your browser\nIt seems you are using an old or unsupported browser. To continue enjoying Canva, please update to a recent version of one of the following browsers:\nChrome\nFirefox\nSafari\n(macOS only)\nEdge Alternatively click here to get Canva for Android or iOS.\nOr click here to learn more about Canva.",
+  "pricingLinks": [],
+  "collectionStatus": "collected"
+}

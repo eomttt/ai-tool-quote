@@ -1,0 +1,15 @@
+{
+  "toolId": "pictory",
+  "requestedUrl": "https://pictory.ai/pricing",
+  "fetchedAt": "2026-09-21T03:30:30.501900+00:00",
+  "method": "http-html-text",
+  "reviewStatus": "unreviewed",
+  "finalUrl": "https://pictory.ai/pricing",
+  "httpStatus": 403,
+  "contentType": "text/html",
+  "contentSha256": "32f2fa940d4b4fe19aca1e53a24e5aac29c57b7c5ee78588325b87f1b649c864",
+  "title": "403 Forbidden",
+  "text": "403 Forbidden\n403 Forbidden\nnginx",
+  "pricingLinks": [],
+  "collectionStatus": "http-error"
+}
