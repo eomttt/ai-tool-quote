@@ -42,6 +42,69 @@
     "freeTier": "무료 플랜은 최초 125크레딧을 제공해요."
   },
   {
+    "toolId": "higgsfield",
+    "checkedAt": "2026-09-21",
+    "reviewAfterDays": 30,
+    "region": "공식 한국어 페이지 USD 요금 · VAT 및 현지 세금 별도",
+    "sources": ["https://higgsfield.ai/ko/pricing"],
+    "billingModel": "subscription-credits",
+    "summary": "구독에 영상·이미지 제작용 크레딧이 포함돼요. Starter는 일부 모델, Plus·Ultra는 더 넓은 모델과 기능을 제공해요.",
+    "plans": [
+      {
+        "name": "Starter",
+        "monthlyUsd": 19,
+        "annualUsd": 228,
+        "included": {
+          "amount": 270,
+          "unit": "credits"
+        },
+        "note": "일부 모델·기능 이용. 월 결제와 연 결제의 월 환산 요금이 같아요."
+      },
+      {
+        "name": "Plus",
+        "monthlyUsd": 59,
+        "annualUsd": 564,
+        "included": {
+          "amount": 1200,
+          "unit": "credits"
+        }
+      },
+      {
+        "name": "Ultra · 3,000",
+        "monthlyUsd": 129,
+        "annualUsd": 1188,
+        "included": {
+          "amount": 3000,
+          "unit": "credits"
+        }
+      },
+      {
+        "name": "Ultra · 6,000",
+        "monthlyUsd": 250,
+        "annualUsd": 2328,
+        "included": {
+          "amount": 6000,
+          "unit": "credits"
+        },
+        "note": "월 구독료는 갱신가 기준이에요. 확인 당시 할인 결제가는 $220로 표시됐어요."
+      },
+      {
+        "name": "Ultra · 9,000",
+        "monthlyUsd": 375,
+        "annualUsd": 3240,
+        "included": {
+          "amount": 9000,
+          "unit": "credits"
+        },
+        "note": "월 구독료는 갱신가 기준이에요. 확인 당시 할인 결제가는 $310로 표시됐어요."
+      }
+    ],
+    "topUps": [],
+    "topUpNote": "구독을 바꾸지 않고 크레딧을 추가 구매할 수 있어요. 팩 수량과 가격은 계정의 구매 화면에서 확인해 주세요.",
+    "freeTier": "무료 플랜은 제공 크레딧 없이 일부 기능을 제한적으로 이용할 수 있어요.",
+    "note": "구독 크레딧은 이월되지 않아요. 월 결제는 매월 결제일, 연 결제는 30일마다 크레딧을 지급해요. 연 선결제액은 공식 월 환산 표시액의 12개월분이에요. 무제한 혜택의 모델·기간·이용 경로는 플랜별로 확인하세요."
+  },
+  {
     "toolId": "pika",
     "checkedAt": "2026-09-21",
     "reviewAfterDays": 30,
