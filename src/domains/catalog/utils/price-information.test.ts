@@ -58,12 +58,20 @@ describe('공개 요금 비교', () => {
     expect(getEntryPlan(pricing, 'monthly')?.monthlyUsd).toBe(15);
     expect(isPricingStale(pricing, new Date('2026-09-22'))).toBe(false);
   });
-  it('영상과 이미지의 요금표 필터 모두 제작 조건 없이 6개 도구를 제공한다', () => {
+  it('요금표 필터는 제작 조건 없이 해당 분야의 가격 등록 도구를 모두 제공한다', () => {
     for (const medium of ['video', 'image']) {
       const result = tools.filter(
         (tool) => tool.media.some((value) => value === medium) && getPricing(tool.id),
       );
-      expect(result).toHaveLength(6);
+      const expectedIds = pricingSnapshots
+        .filter((pricing) =>
+          tools.some(
+            (tool) => tool.id === pricing.toolId && tool.media.some((value) => value === medium),
+          ),
+        )
+        .map((pricing) => pricing.toolId);
+      expect(result.map((tool) => tool.id).sort()).toEqual(expectedIds.sort());
+      expect(result.length).toBeGreaterThan(0);
     }
   });
   it('모든 도구에 특징을 제공하고 가격은 실제 카탈로그 도구에 연결한다', () => {
