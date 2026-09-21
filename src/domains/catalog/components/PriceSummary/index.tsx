@@ -18,11 +18,11 @@ export function PriceSummary({
     return (
       <div className="price-summary">
         <strong className="price-pending">
-          {pricing ? `${billing === 'annual' ? '연간' : '월간'} 요금 미확인` : '가격 정보 미등록'}
+          {pricing ? `${billing === 'annual' ? '연간' : '월간'} 요금 정보 없음` : '가격 정보 없음'}
         </strong>
         <p>
           {pricing
-            ? '상세에서 확인된 요금을 볼 수 있어요'
+            ? `${billing === 'annual' ? '월간' : '연간'} 요금은 상세에서 볼 수 있어요`
             : '상세에서 출처와 확인 결과를 볼 수 있어요'}
         </p>
       </div>

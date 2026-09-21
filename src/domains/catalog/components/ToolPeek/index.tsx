@@ -140,22 +140,28 @@ export function ToolPeek({ tool, medium, billing, onClose, onSelectTool }: ToolP
                           <h3>{plan.name}</h3>
                           <strong>
                             {price === undefined
-                              ? '해당 주기 미확인'
+                              ? `${billing === 'annual' ? '연간' : '월간'} 요금 정보 없음`
                               : formatMoney(price, pricing.currency)}
                             {price !== undefined ? (
                               <small> / 월{billing === 'annual' ? ' 환산' : ''}</small>
                             ) : null}
                           </strong>
                         </div>
-                        <p>{planAllowance(plan, billing)}</p>
-                        {plan.included && plan.allowanceNote ? <p>{plan.allowanceNote}</p> : null}
+                        {price !== undefined ? (
+                          <>
+                            <p>{planAllowance(plan, billing)}</p>
+                            {plan.included && plan.allowanceNote ? (
+                              <p>{plan.allowanceNote}</p>
+                            ) : null}
+                          </>
+                        ) : null}
                         {billing === 'annual' ? (
                           <p>
                             {plan.annualAmount !== undefined
                               ? `연 ${formatMoney(plan.annualAmount, pricing.currency)} 선결제`
                               : plan.monthlyAmount !== undefined
                                 ? `월간 결제는 ${formatMoney(plan.monthlyAmount, pricing.currency)} / 월`
-                                : '월간 요금 미확인'}
+                                : '월간 요금 정보 없음'}
                           </p>
                         ) : null}
                         {unit ? (
