@@ -1,0 +1,17 @@
+{
+  "toolId": "ideogram",
+  "requestedUrl": "https://ideogram.ai",
+  "fetchedAt": "2026-09-21T05:44:24.161720+00:00",
+  "method": "http-html-text",
+  "purpose": "product",
+  "reviewStatus": "unreviewed",
+  "finalUrl": "https://ideogram.ai",
+  "httpStatus": 403,
+  "contentType": "text/html; charset=UTF-8",
+  "contentSha256": "c852383d995ff7fa6658aab99eba37ab146b4dd444fc270acc599ded39a11a0e",
+  "title": "Just a moment...",
+  "text": "Just a moment...",
+  "pricingLinks": [],
+  "collectionStatus": "http-error",
+  "textSha256": "301dc171e5fa8c5fdeb69592a92a5c378f5f758f68d2338200235d60eb04b9ad"
+}

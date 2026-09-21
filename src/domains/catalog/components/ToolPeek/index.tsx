@@ -7,6 +7,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '../../../../common/com
 import { Separator } from '../../../../common/components/Separator';
 import type { Billing, Medium, Tool } from '../../models/model-tool';
 import { tools } from '../../data/tools';
+import { getProductProfile } from '../../data/product-profiles';
+import { searchTools } from '../../utils/search-tools';
 import { getPricing, getPricingAudit } from '../../data/pricing';
 import { ToolLogo } from '../ToolLogo';
 import {
@@ -22,23 +24,26 @@ interface ToolPeekProps {
   tool: Tool;
   medium: Medium;
   billing: Billing;
+  query?: string;
   onClose: () => void;
   onSelectTool: (tool: Tool) => void;
 }
-export function ToolPeek({ tool, medium, billing, onClose, onSelectTool }: ToolPeekProps) {
+export function ToolPeek({ tool, medium, billing, query, onClose, onSelectTool }: ToolPeekProps) {
   const { t, i18n } = useTranslation();
   const { t: catalogT } = useTranslation('catalog');
   const language = i18n.resolvedLanguage;
+  const profile = getProductProfile(tool.id);
+  const profileLanguage = language?.startsWith('ko') ? 'ko' : 'en';
+  const capabilities = profile?.capabilities.filter((item) => item.medium === medium) ?? [];
   const snapshot = getPricing(tool.id);
   const pricing = snapshot ? localizePricing(snapshot, catalogT) : undefined;
   const sourceAudit = getPricingAudit(tool.id);
   const audit = sourceAudit ? localizeAudit(sourceAudit, catalogT) : undefined;
-  const similarTools = tools
-    .filter(
-      (candidate) =>
-        candidate.id !== tool.id &&
-        candidate.media.includes(medium) &&
-        candidate.useCases.some((useCase) => tool.useCases.includes(useCase)),
+  const related = searchTools(query || capabilities.flatMap((item) => item.outputs.ko).join(' '));
+  const similarTools = related
+    .map((match) => tools.find((candidate) => candidate.id === match.id))
+    .filter((candidate): candidate is Tool =>
+      Boolean(candidate && candidate.id !== tool.id && candidate.media.includes(medium)),
     )
     .slice(0, 3)
     .map((candidate) => localizeTool(candidate, catalogT));
@@ -103,6 +108,47 @@ export function ToolPeek({ tool, medium, billing, onClose, onSelectTool }: ToolP
                 ))}
               </ul>
             </section>
+            {capabilities.length ? (
+              <section className="product-facts">
+                <h3>{t('product.inputs')}</h3>
+                <p>
+                  {[...new Set(capabilities.flatMap((item) => item.inputs[profileLanguage]))].join(
+                    ' · ',
+                  )}
+                </p>
+                <h3>{t('product.outputs')}</h3>
+                <p>
+                  {[...new Set(capabilities.flatMap((item) => item.outputs[profileLanguage]))].join(
+                    ' · ',
+                  )}
+                </p>
+              </section>
+            ) : null}
+            {profile ? (
+              <section className="product-sources">
+                <h3>{t('product.sources')}</h3>
+                <p className="muted-note">{t('product.basis')}</p>
+                <p className="source-date">
+                  {t('price.checked', {
+                    date: formatReviewDate(profile.reviewedAt.slice(0, 10), language),
+                  })}
+                </p>
+                {profile.sources
+                  .filter((source) => capabilities.some((item) => item.sourceId === source.id))
+                  .map((source) => (
+                    <a
+                      className="source-link"
+                      key={source.id}
+                      href={source.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {new URL(source.url).hostname}
+                      <ArrowUpRight size={14} />
+                    </a>
+                  ))}
+              </section>
+            ) : null}
             <div className="tags">
               {(tool.mediaTags?.[medium] ?? tool.tags).map((tag) => (
                 <Badge variant="outline" key={tag}>

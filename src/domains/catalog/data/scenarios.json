@@ -12,9 +12,58 @@
       "youtube shorts",
       "instagram reels",
       "tiktok short form social video",
-      "Make Shorts and Reels"
+      "Make Shorts and Reels",
+      "I want to make Shorts and upload them to YouTube"
     ],
-    "toolIds": ["higgsfield", "pika", "pixverse", "dreamina", "invideo", "pictory", "fliki", "veed"]
+    "toolIds": [
+      "higgsfield",
+      "pika",
+      "pixverse",
+      "dreamina",
+      "invideo",
+      "pictory",
+      "fliki",
+      "veed"
+    ],
+    "prompt": "나 이런 걸로 쇼츠 만들어서 유튜브에 올려보고 싶어",
+    "inputs": ["아이디어", "대본", "긴 영상"],
+    "outputs": ["짧은 영상", "쇼츠", "릴스"],
+    "platforms": ["유튜브", "인스타그램", "틱톡"],
+    "basis": "editorial",
+    "evidence": [
+      {
+        "toolId": "higgsfield",
+        "capabilityIds": ["video"]
+      },
+      {
+        "toolId": "pika",
+        "capabilityIds": ["video"]
+      },
+      {
+        "toolId": "pixverse",
+        "capabilityIds": ["video"]
+      },
+      {
+        "toolId": "dreamina",
+        "capabilityIds": ["video"]
+      },
+      {
+        "toolId": "invideo",
+        "capabilityIds": ["video"]
+      },
+      {
+        "toolId": "pictory",
+        "capabilityIds": ["video"]
+      },
+      {
+        "toolId": "fliki",
+        "capabilityIds": ["video"]
+      },
+      {
+        "toolId": "veed",
+        "capabilityIds": ["video"]
+      }
+    ]
   },
   {
     "id": "animate-photo",
@@ -30,9 +79,37 @@
       "image to video",
       "bring photos to life",
       "moving picture",
-      "Animate a photo"
+      "Animate a photo",
+      "I have a few travel photos and want to make a short video"
     ],
-    "toolIds": ["runway", "luma", "kling", "hailuo", "pixverse", "vidu", "leonardo", "midjourney"]
+    "toolIds": ["kling", "pixverse", "vidu", "leonardo", "midjourney"],
+    "prompt": "여행 사진 몇 장으로 짧은 영상을 만들고 싶어",
+    "inputs": ["사진", "참고 이미지", "여행 사진"],
+    "outputs": ["사진에 움직임을 더한 영상"],
+    "platforms": ["유튜브", "인스타그램"],
+    "basis": "editorial",
+    "evidence": [
+      {
+        "toolId": "kling",
+        "capabilityIds": ["video"]
+      },
+      {
+        "toolId": "pixverse",
+        "capabilityIds": ["video"]
+      },
+      {
+        "toolId": "vidu",
+        "capabilityIds": ["video"]
+      },
+      {
+        "toolId": "leonardo",
+        "capabilityIds": ["video"]
+      },
+      {
+        "toolId": "midjourney",
+        "capabilityIds": ["video"]
+      }
+    ]
   },
   {
     "id": "behind-the-scenes",
@@ -46,9 +123,45 @@
       "behind cut",
       "behind the scenes bts",
       "making of film set backstage",
-      "Create behind-the-scenes videos"
+      "Create behind-the-scenes videos",
+      "I want to create behind-the-scenes footage that looks like a film set"
     ],
-    "toolIds": ["runway", "higgsfield", "flow", "luma", "kling", "vidu", "ltx"]
+    "toolIds": ["runway", "higgsfield", "flow", "luma", "kling", "vidu", "ltx"],
+    "prompt": "영화 촬영장 같은 비하인드 영상을 만들고 싶어",
+    "inputs": ["참고 이미지", "장면 설명"],
+    "outputs": ["가상 촬영 비하인드", "메이킹 영상"],
+    "platforms": ["유튜브", "인스타그램"],
+    "basis": "editorial",
+    "evidence": [
+      {
+        "toolId": "runway",
+        "capabilityIds": ["video"]
+      },
+      {
+        "toolId": "higgsfield",
+        "capabilityIds": ["video"]
+      },
+      {
+        "toolId": "flow",
+        "capabilityIds": ["video"]
+      },
+      {
+        "toolId": "luma",
+        "capabilityIds": ["video"]
+      },
+      {
+        "toolId": "kling",
+        "capabilityIds": ["video"]
+      },
+      {
+        "toolId": "vidu",
+        "capabilityIds": ["video"]
+      },
+      {
+        "toolId": "ltx",
+        "capabilityIds": ["video"]
+      }
+    ]
   },
   {
     "id": "product-video",
@@ -60,9 +173,41 @@
       "쇼핑몰 상세페이지 영상",
       "product promo promotion ad advertising commercial marketing video",
       "ecommerce shop",
-      "Make a product promo video"
+      "Make a product promo video",
+      "I want to make a promo video for a product I sell"
     ],
-    "toolIds": ["higgsfield", "runway", "kling", "invideo", "veed", "ltx"]
+    "toolIds": ["higgsfield", "runway", "kling", "invideo", "veed", "ltx"],
+    "prompt": "내가 파는 제품으로 홍보 영상을 만들어보고 싶어",
+    "inputs": ["제품 사진", "상품 설명", "대본"],
+    "outputs": ["제품 홍보 영상", "광고 소재"],
+    "platforms": ["유튜브", "인스타그램", "쇼핑몰"],
+    "basis": "editorial",
+    "evidence": [
+      {
+        "toolId": "higgsfield",
+        "capabilityIds": ["video"]
+      },
+      {
+        "toolId": "runway",
+        "capabilityIds": ["video"]
+      },
+      {
+        "toolId": "kling",
+        "capabilityIds": ["video"]
+      },
+      {
+        "toolId": "invideo",
+        "capabilityIds": ["video"]
+      },
+      {
+        "toolId": "veed",
+        "capabilityIds": ["video"]
+      },
+      {
+        "toolId": "ltx",
+        "capabilityIds": ["video"]
+      }
+    ]
   },
   {
     "id": "present-without-camera",
@@ -75,9 +220,37 @@
       "아바타 대본 말하는 사진",
       "faceless without camera filming",
       "avatar presenter presentation training tutorial explainer narration talking photo",
-      "Explain without filming yourself"
+      "Explain without filming yourself",
+      "I want to turn a script into an explainer without showing my face"
     ],
-    "toolIds": ["heygen", "synthesia", "did", "colossyan", "fliki", "invideo"]
+    "toolIds": ["heygen", "synthesia", "did", "colossyan", "fliki"],
+    "prompt": "얼굴을 공개하지 않고 대본으로 설명 영상을 만들고 싶어",
+    "inputs": ["대본", "문서", "슬라이드", "인물 사진"],
+    "outputs": ["아바타 발표", "내레이션 설명 영상", "교육 영상"],
+    "platforms": ["유튜브", "교육"],
+    "basis": "editorial",
+    "evidence": [
+      {
+        "toolId": "heygen",
+        "capabilityIds": ["video"]
+      },
+      {
+        "toolId": "synthesia",
+        "capabilityIds": ["video"]
+      },
+      {
+        "toolId": "did",
+        "capabilityIds": ["video"]
+      },
+      {
+        "toolId": "colossyan",
+        "capabilityIds": ["video"]
+      },
+      {
+        "toolId": "fliki",
+        "capabilityIds": ["video"]
+      }
+    ]
   },
   {
     "id": "caption-video",
@@ -89,9 +262,29 @@
       "영상 편집 다듬기 긴 영상 요약 자르기",
       "add subtitles captions",
       "edit trim summarize repurpose existing long video",
-      "Add captions and edit a video"
+      "Add captions and edit a video",
+      "I want to add captions to a long video and cut it into short clips"
     ],
-    "toolIds": ["veed", "pictory", "invideo"]
+    "toolIds": ["veed", "pictory", "fliki"],
+    "prompt": "찍어둔 긴 영상에 자막을 넣고 짧게 자르고 싶어",
+    "inputs": ["기존 영상", "긴 영상", "촬영한 영상"],
+    "outputs": ["자막 영상", "짧은 요약 영상"],
+    "platforms": ["유튜브", "인스타그램"],
+    "basis": "editorial",
+    "evidence": [
+      {
+        "toolId": "veed",
+        "capabilityIds": ["video"]
+      },
+      {
+        "toolId": "pictory",
+        "capabilityIds": ["video"]
+      },
+      {
+        "toolId": "fliki",
+        "capabilityIds": ["video"]
+      }
+    ]
   },
   {
     "id": "thumbnail",
@@ -103,9 +296,41 @@
       "블로그 대표 이미지 커버",
       "youtube thumbnail",
       "blog cover image",
-      "Make a YouTube thumbnail"
+      "Make a YouTube thumbnail",
+      "I want to make a thumbnail for my YouTube video"
     ],
-    "toolIds": ["canva", "ideogram", "gemini", "fotor", "kittl", "firefly"]
+    "toolIds": ["canva", "ideogram", "gemini", "fotor", "kittl", "firefly"],
+    "prompt": "유튜브에 올릴 영상의 썸네일을 만들고 싶어",
+    "inputs": ["영상 주제", "제목", "사진"],
+    "outputs": ["썸네일", "대표 이미지"],
+    "platforms": ["유튜브", "블로그"],
+    "basis": "editorial",
+    "evidence": [
+      {
+        "toolId": "canva",
+        "capabilityIds": ["image"]
+      },
+      {
+        "toolId": "ideogram",
+        "capabilityIds": ["image"]
+      },
+      {
+        "toolId": "gemini",
+        "capabilityIds": ["image"]
+      },
+      {
+        "toolId": "fotor",
+        "capabilityIds": ["image"]
+      },
+      {
+        "toolId": "kittl",
+        "capabilityIds": ["image"]
+      },
+      {
+        "toolId": "firefly",
+        "capabilityIds": ["image"]
+      }
+    ]
   },
   {
     "id": "product-photo",
@@ -117,9 +342,37 @@
       "상품 배경 교체 꾸미기",
       "product photo photography ecommerce shop listing",
       "product background marketing advertising",
-      "Style photos for your shop"
+      "Style photos for your shop",
+      "I want to style product photos I took at home for my shop"
     ],
-    "toolIds": ["photoroom", "firefly", "gemini", "canva", "fotor"]
+    "toolIds": ["photoroom", "firefly", "gemini", "canva", "fotor"],
+    "prompt": "집에서 찍은 상품 사진을 쇼핑몰에 쓸 만큼 꾸미고 싶어",
+    "inputs": ["제품 사진", "상품 사진"],
+    "outputs": ["제품 배경", "상품 상세페이지 이미지"],
+    "platforms": ["쇼핑몰", "인스타그램"],
+    "basis": "editorial",
+    "evidence": [
+      {
+        "toolId": "photoroom",
+        "capabilityIds": ["image"]
+      },
+      {
+        "toolId": "firefly",
+        "capabilityIds": ["image"]
+      },
+      {
+        "toolId": "gemini",
+        "capabilityIds": ["image"]
+      },
+      {
+        "toolId": "canva",
+        "capabilityIds": ["image"]
+      },
+      {
+        "toolId": "fotor",
+        "capabilityIds": ["image"]
+      }
+    ]
   },
   {
     "id": "profile-photo",
@@ -129,9 +382,33 @@
     "keywords": [
       "프로필 사진 인물 셀카 보정",
       "profile photo picture portrait headshot selfie",
-      "Create a profile photo"
+      "Create a profile photo",
+      "I want to turn my photo into a new profile picture"
     ],
-    "toolIds": ["fotor", "gemini", "firefly", "krea"]
+    "toolIds": ["fotor", "gemini", "firefly", "krea"],
+    "prompt": "내 사진으로 새로운 프로필 이미지를 만들고 싶어",
+    "inputs": ["인물 사진", "셀카"],
+    "outputs": ["프로필 사진", "보정한 인물 사진"],
+    "platforms": ["인스타그램", "SNS"],
+    "basis": "editorial",
+    "evidence": [
+      {
+        "toolId": "fotor",
+        "capabilityIds": ["image"]
+      },
+      {
+        "toolId": "gemini",
+        "capabilityIds": ["image"]
+      },
+      {
+        "toolId": "firefly",
+        "capabilityIds": ["image"]
+      },
+      {
+        "toolId": "krea",
+        "capabilityIds": ["image"]
+      }
+    ]
   },
   {
     "id": "character-art",
@@ -141,7 +418,8 @@
     "keywords": [
       "캐릭터 일러스트 그림 게임 웹툰 만화 애니",
       "character illustration art drawing game comic anime",
-      "Create characters and illustrations"
+      "Create characters and illustrations",
+      "I want to create characters and illustrations for my story"
     ],
     "toolIds": [
       "midjourney",
@@ -152,6 +430,45 @@
       "nightcafe",
       "recraft",
       "reve"
+    ],
+    "prompt": "내 이야기의 주인공 캐릭터와 일러스트를 그리고 싶어",
+    "inputs": ["캐릭터 설명", "스타일 참고 이미지"],
+    "outputs": ["캐릭터", "일러스트", "게임 소재"],
+    "platforms": ["게임", "웹툰", "SNS"],
+    "basis": "editorial",
+    "evidence": [
+      {
+        "toolId": "midjourney",
+        "capabilityIds": ["image"]
+      },
+      {
+        "toolId": "leonardo",
+        "capabilityIds": ["image"]
+      },
+      {
+        "toolId": "openart",
+        "capabilityIds": ["image"]
+      },
+      {
+        "toolId": "seaart",
+        "capabilityIds": ["image"]
+      },
+      {
+        "toolId": "tensor",
+        "capabilityIds": ["image"]
+      },
+      {
+        "toolId": "nightcafe",
+        "capabilityIds": ["image"]
+      },
+      {
+        "toolId": "recraft",
+        "capabilityIds": ["image"]
+      },
+      {
+        "toolId": "reve",
+        "capabilityIds": ["image"]
+      }
     ]
   },
   {
@@ -164,9 +481,45 @@
       "사진 화질 선명하게 고화질 업스케일 보정 복원",
       "remove change background",
       "enhance upscale sharpen retouch restore photo resolution quality",
-      "Clean up and enhance photos"
+      "Clean up and enhance photos",
+      "I want to remove a photo background and make a blurry photo clearer"
     ],
-    "toolIds": ["photoroom", "magnific", "krea", "fotor", "firefly", "getimg", "gemini"]
+    "toolIds": ["photoroom", "magnific", "krea", "fotor", "firefly", "getimg", "gemini"],
+    "prompt": "사진 배경을 지우고 흐릿한 화질을 선명하게 만들고 싶어",
+    "inputs": ["기존 사진", "생성 이미지"],
+    "outputs": ["배경 제거 이미지", "보정 사진", "업스케일 이미지"],
+    "platforms": ["쇼핑몰", "SNS"],
+    "basis": "editorial",
+    "evidence": [
+      {
+        "toolId": "photoroom",
+        "capabilityIds": ["image"]
+      },
+      {
+        "toolId": "magnific",
+        "capabilityIds": ["image"]
+      },
+      {
+        "toolId": "krea",
+        "capabilityIds": ["image"]
+      },
+      {
+        "toolId": "fotor",
+        "capabilityIds": ["image"]
+      },
+      {
+        "toolId": "firefly",
+        "capabilityIds": ["image"]
+      },
+      {
+        "toolId": "getimg",
+        "capabilityIds": ["image"]
+      },
+      {
+        "toolId": "gemini",
+        "capabilityIds": ["image"]
+      }
+    ]
   },
   {
     "id": "social-design",
@@ -178,8 +531,40 @@
       "포스터 배너 광고 전단지 디자인",
       "instagram social media post carousel",
       "poster banner flyer graphic design typography",
-      "Design social posts and posters"
+      "Design social posts and posters",
+      "I want to design a poster and Instagram posts for an event"
     ],
-    "toolIds": ["canva", "ideogram", "recraft", "kittl", "dreamina", "imagineart"]
+    "toolIds": ["canva", "ideogram", "recraft", "kittl", "dreamina", "imagineart"],
+    "prompt": "행사 홍보용 포스터랑 인스타 게시물을 만들고 싶어",
+    "inputs": ["홍보 문구", "이미지", "브랜드 스타일"],
+    "outputs": ["포스터", "SNS 게시물", "카드뉴스"],
+    "platforms": ["인스타그램", "SNS"],
+    "basis": "editorial",
+    "evidence": [
+      {
+        "toolId": "canva",
+        "capabilityIds": ["image"]
+      },
+      {
+        "toolId": "ideogram",
+        "capabilityIds": ["image"]
+      },
+      {
+        "toolId": "recraft",
+        "capabilityIds": ["image"]
+      },
+      {
+        "toolId": "kittl",
+        "capabilityIds": ["image"]
+      },
+      {
+        "toolId": "dreamina",
+        "capabilityIds": ["image"]
+      },
+      {
+        "toolId": "imagineart",
+        "capabilityIds": ["image"]
+      }
+    ]
   }
 ]

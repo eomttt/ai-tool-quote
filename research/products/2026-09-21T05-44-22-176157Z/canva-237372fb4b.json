@@ -1,0 +1,17 @@
+{
+  "toolId": "canva",
+  "requestedUrl": "https://www.canva.com",
+  "fetchedAt": "2026-09-21T05:44:22.178492+00:00",
+  "method": "http-html-text",
+  "purpose": "product",
+  "reviewStatus": "unreviewed",
+  "finalUrl": "https://www.canva.com",
+  "httpStatus": 200,
+  "contentType": "text/html;charset=utf-8",
+  "contentSha256": "40256fe9e3d75a196ec401e09b56fa4ef6d6cd40b348c6a7fa2cb5d5ad2ddef2",
+  "title": "Unsupported client – Canva",
+  "text": "Unsupported client – Canva\nPlease update your browser\nIt seems you are using an old or unsupported browser. To continue enjoying Canva, please update to a recent version of one of the following browsers:\nChrome\nFirefox\nSafari\n(macOS only)\nEdge Alternatively click here to get Canva for Android or iOS.\nOr click here to learn more about Canva.",
+  "pricingLinks": [],
+  "collectionStatus": "blocked",
+  "textSha256": "1c3b326efb4b96f7769f83c9ca82c5eb32d139abbfcb06d2439b7f966024329a"
+}

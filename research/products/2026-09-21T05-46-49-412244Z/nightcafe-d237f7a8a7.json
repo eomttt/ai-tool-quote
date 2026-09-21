@@ -1,0 +1,17 @@
+{
+  "toolId": "nightcafe",
+  "requestedUrl": "https://help.nightcafe.studio/portal/en/kb/articles/how-to-use-the-nano-banana-model-on-nightcafe",
+  "fetchedAt": "2026-09-21T05:46:49.415696+00:00",
+  "method": "http-html-text",
+  "purpose": "product",
+  "reviewStatus": "unreviewed",
+  "finalUrl": "https://help.nightcafe.studio/portal/en/kb/articles/how-to-use-the-nano-banana-model-on-nightcafe",
+  "httpStatus": 200,
+  "contentType": "text/html;charset=UTF-8",
+  "contentSha256": "472822dadba9efe71aa3eb824ccbe6ba6561cea3d14cbfa120f0b0ba93bb09d1",
+  "title": "",
+  "text": "",
+  "pricingLinks": [],
+  "collectionStatus": "render-required",
+  "textSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

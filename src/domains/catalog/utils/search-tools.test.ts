@@ -4,7 +4,7 @@ import { scenarios } from '../data/scenarios';
 import { tools } from '../data/tools';
 import type { Medium } from '../models/model-tool';
 import { localizeTool } from './localize-catalog';
-import { matchesToolSearch } from './search-tools';
+import { matchesToolSearch, searchTools } from './search-tools';
 
 function findTools(query: string, medium: Medium, language = 'ko') {
   const instance = createAppI18n();
@@ -26,7 +26,7 @@ describe('searching by situation', () => {
 
   it('matches English situations and punctuation in either interface language', () => {
     for (const language of ['ko', 'en']) {
-      expect(findTools('I want to animate a photo', 'video', language)).toContain('luma');
+      expect(findTools('I want to animate a photo', 'video', language)).toContain('midjourney');
       expect(findTools('behind-the-scenes', 'video', language)).toContain('higgsfield');
       expect(findTools('YouTube thumbnail', 'image', language)).toContain('canva');
       expect(findTools('product photos', 'image', language)).toContain('photoroom');
@@ -41,11 +41,11 @@ describe('searching by situation', () => {
     expect(findTools('upscale', 'image', 'en')).toContain('magnific');
   });
 
-  it('requires the requested words together and keeps unmatched queries empty', () => {
-    expect(findTools('higgsfield 촬영 비하인드', 'video')).toEqual(['higgsfield']);
-    expect(findTools('higgsfield 촬영 비하인드 없는검색어', 'video')).toEqual([]);
+  it('ranks the strongest matches first while tolerating unknown words in a situation', () => {
+    expect(searchTools('higgsfield 촬영 비하인드')[0]?.id).toBe('higgsfield');
+    expect(searchTools('higgsfield 촬영 비하인드 없는검색어')[0]?.id).toBe('higgsfield');
     expect(findTools('전혀없는도구', 'video')).toEqual([]);
-    expect(findTools('촬영 비하인드', 'image')).toEqual([]);
+    expect(searchTools('촬영 비하인드')[0]?.scenario?.medium).toBe('video');
     expect(findTools('   ', 'video')).toHaveLength(28);
   });
 

@@ -5,12 +5,13 @@ import ko from '../locales/ui.ko.json';
 import en from '../locales/ui.en.json';
 import catalogEn from '../locales/catalog.en.json';
 
-export function createAppI18n() {
+export function createAppI18n(language?: string) {
   const instance = createInstance();
   void instance
     .use(LanguageDetector)
     .use(initReactI18next)
     .init({
+      lng: language,
       resources: {
         ko: {
           ui: ko,

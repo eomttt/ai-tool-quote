@@ -4,21 +4,27 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --host 127.0.0.1",
-    "build": "tsc -b && vite build",
-    "preview": "vite preview --host 127.0.0.1",
+    "dev": "node --env-file-if-exists=.env server.mjs",
+    "build": "tsc -b && npm run build:client && npm run build:server",
+    "preview": "npm run start",
     "test": "vitest run",
     "test:watch": "vitest",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "crawl:pricing": "python3 scripts/crawl-pricing.py",
     "fetch:icons": "python3 scripts/fetch-tool-icons.py",
-    "test:pricing-sources": "python3 -m unittest discover -s scripts -p \"test_*.py\""
+    "test:pricing-sources": "python3 -m unittest discover -s scripts -p \"test_*.py\"",
+    "build:client": "vite build --outDir dist/client",
+    "build:server": "vite build --outDir dist/server --ssr src/router/entry-server.tsx",
+    "start": "NODE_ENV=production node --env-file-if-exists=.env server.mjs",
+    "crawl:products": "python3 scripts/crawl-products.py"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "compression": "^1.8.2",
+    "express": "^5.2.1",
     "i18next": "^26.4.2",
     "i18next-browser-languagedetector": "^8.2.1",
     "lucide-react": "1.47.0",
@@ -32,6 +38,9 @@
     "zod": "4.6.5"
   },
   "devDependencies": {
+    "@types/compression": "^1.8.1",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.2",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
     "@vitejs/plugin-react": "6.1.1",

@@ -267,6 +267,80 @@
   display: flex;
   gap: 12px;
 }
+.search-intro {
+  display: block;
+  padding-block: calc(var(--spacing) * 12);
+}
+.situation-search {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--background);
+  padding: calc(var(--spacing) * 4);
+}
+.situation-search:focus-within {
+  border-color: var(--foreground);
+}
+.situation-search textarea {
+  width: 100%;
+  resize: vertical;
+  min-height: 88px;
+  line-height: 1.8;
+  outline: none;
+  font-size: 15px;
+}
+.situation-search-actions,
+.results-toolbar {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 3);
+}
+.situation-search-actions > span {
+  flex: 1;
+  font-size: 12px;
+  color: var(--muted-foreground);
+}
+.results-toolbar {
+  justify-content: flex-end;
+  margin-block: calc(var(--spacing) * 4);
+}
+.scenario-examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--spacing) * 2);
+  margin-block: calc(var(--spacing) * 3) calc(var(--spacing) * 6);
+}
+.scenario-examples button {
+  height: auto;
+  padding-block: calc(var(--spacing) * 2);
+  white-space: normal;
+  text-align: left;
+  font-weight: 400;
+  font-size: 12px;
+}
+.recommendation-heading h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+.recommendation-heading p {
+  margin-top: var(--spacing);
+  font-size: 12px;
+  color: var(--muted-foreground);
+}
+.recommendation-reason {
+  background: var(--muted);
+  border-radius: var(--radius);
+  padding: calc(var(--spacing) * 3);
+  margin-block: calc(var(--spacing) * 4);
+  font-size: 12px;
+  line-height: 1.7;
+}
+.recommendation-reason > span {
+  font-size: 11px;
+  color: var(--muted-foreground);
+}
+.recommendation-reason > p {
+  margin-top: var(--spacing);
+}
 .search-field {
   position: relative;
   display: flex;
@@ -761,6 +835,36 @@
   font-size: 11px;
   font-weight: 400;
   text-decoration: none;
+}
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--spacing) * 4);
+  color: var(--muted-foreground);
+  font-size: 12px;
+}
+.information-page {
+  max-width: 760px;
+  padding-block: calc(var(--spacing) * 16);
+  line-height: 1.9;
+}
+.information-page h1 {
+  font-size: 32px;
+  font-weight: 650;
+  margin-bottom: calc(var(--spacing) * 6);
+}
+.information-page h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-block: calc(var(--spacing) * 8) calc(var(--spacing) * 2);
+}
+.information-page p {
+  margin-bottom: calc(var(--spacing) * 4);
+  color: var(--muted-foreground);
+}
+.information-page a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 .compare-tray {
   position: fixed;

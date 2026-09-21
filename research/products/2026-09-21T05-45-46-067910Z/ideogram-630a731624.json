@@ -1,0 +1,22 @@
+{
+  "toolId": "ideogram",
+  "requestedUrl": "https://docs.ideogram.ai/",
+  "fetchedAt": "2026-09-21T05:45:46.392366+00:00",
+  "method": "http-html-text",
+  "purpose": "product",
+  "reviewStatus": "unreviewed",
+  "finalUrl": "https://docs.ideogram.ai/",
+  "httpStatus": 200,
+  "contentType": "text/html; charset=utf-8",
+  "contentSha256": "e0a2d82d67f8b3a367499a335398a5b27d750d331768a49b1ea2991a97fdd63a",
+  "title": "Welcome to Ideogram | Ideogram",
+  "text": "Welcome to Ideogram | Ideogram\nIdeogram\n⌘ Ctrl k\nIdeogram\nWelcome to Ideogram\nQuick Start Guide\nFrequently Asked Questions\nDiscord\nTable of Contents\nUsing Ideogram\nGetting Started\nAccount Settings\nGeneration Settings\nFeatures and Tools\nCanvas and Editing\nCommunity and Social\nPlans and Pricing\nAvailable Plans\nBilling & Subscriptions\nTeam Plan\nIdeogram API\nLegal & Support\nSupport\nPrivacy Policy\nTerms of Service\nAbout Ideogram\nCompany\nBlog Posts\nWebsite\niOS app\nExternal Links Powered by GitBook\nOn this page\nFor the complete documentation index, see llms.txt . This page is also available as Markdown .\nCopy On this page\nWelcome to Ideogram\nIdeogram ( pronounced \"eye-dee-oh-gram\" ) is a free-to-use AI tool that turns your ideas into stunning images, in a matter of seconds. Ideogram excels at creating captivating designs, realistic images, innovative logos and posters. With unique capabilities like text rendering in images, we aim to inspire creativity and help every user bring their imagination to life.\nIdeogram 4.0 is the newest generation model for prompt fidelity, clearer in-image text, reliable editing, style control, and production-ready visual assets.\nHave a question? Check if it's been covered in our Frequently Asked Questions .\nWhy Ideogram?\nIdeogram 4.0\nPrompt fidelity, crystal-clear type, reliable editing, and production-ready image workflows across the app, API, MCP, and open weights.\nBackground Control\nRemove a background for a transparent cutout, or replace it with a generated scene from a prompt.\nTypography\nIdeogram excels at integrating text into images for logos, branding, POD, or design layouts.\nCustom Models\nTrain on-brand image models from your approved assets so generations follow your style, art direction, typography, and visual identity.\nA few other features\nPrompt Builder : Compose a scene element by element — or import an image — and turn it into a precise, structured prompt.\nAI Apps: Task-focused workflows for specific jobs, such as the Background Remover , Object Remover, and Ad Resizer.\nMagic Prompt : Transforms a brief idea into a rich, detailed prompt, ensuring striking visuals.\nCustom Models : Train models on approved brand, subject, or style assets where your plan and account support them.\nBackground Control : Remove or replace backgrounds to isolate subjects or craft new scenes.\nAspect Ratios : Choose from many presets (vertical, square, horizontal) between 1:3 and 3:1.\nAnd much more to discover!\nWays to use Ideogram\nApp : Hands-on image creation and editing.\nAPI : Product and workflow integration.\nMCP : MCP lets assistants and internal agents use Ideogram inside their workflows, including generating, editing, reframing, upscaling, removing backgrounds, and organizing visual assets.\nDive deeper into Ideogram\nQuick Start Guide\nPrompting Guide\nExplore Settings\nDiscover All Features\nReady to create?\nTry Ideogram\nOr download the official Ideogram iOS app on your iPhone or iPad.\n​ ​ ​ ​\nWe're hiring!\nWe're on a mission to develop generative media models to help people become more creative. If our mission resonates with you, then we’d love to hear from you. We're hiring for roles in AI research, engineering, and data operations. Join us to build the future of AI for creativity. Please apply at Ideogram Jobs .\nNext Quick Start Guide\nLast updated 29 days ago\nWhy Ideogram?\nA few other features\nWays to use Ideogram\nDive deeper into Ideogram\nReady to create?\nWe're hiring!",
+  "pricingLinks": [
+    "https://docs.ideogram.ai/plans-and-pricing/available-plans",
+    "https://docs.ideogram.ai/plans-and-pricing/billing-and-subscriptions",
+    "https://docs.ideogram.ai/plans-and-pricing/ideogram-api",
+    "https://docs.ideogram.ai/plans-and-pricing/team-plan"
+  ],
+  "collectionStatus": "collected",
+  "textSha256": "b9bafc802e3384f4b3042119b4d5bb6eb63a5720795893965e3a43ffaa5bf883"
+}

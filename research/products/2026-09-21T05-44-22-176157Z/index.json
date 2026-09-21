@@ -1,0 +1,268 @@
+[
+  {
+    "toolId": "canva",
+    "url": "https://www.canva.com",
+    "file": "research/products/2026-09-21T05-44-22-176157Z/canva-237372fb4b.json",
+    "status": "blocked",
+    "characters": 342
+  },
+  {
+    "toolId": "colossyan",
+    "url": "https://www.colossyan.com",
+    "file": "research/products/2026-09-21T05-44-22-176157Z/colossyan-9cb91c2723.json",
+    "status": "collected",
+    "characters": 14976
+  },
+  {
+    "toolId": "did",
+    "url": "https://www.d-id.com",
+    "file": "research/products/2026-09-21T05-44-22-176157Z/did-da20e96891.json",
+    "status": "collected",
+    "characters": 14207
+  },
+  {
+    "toolId": "dreamina",
+    "url": "https://dreamina.capcut.com",
+    "file": "research/products/2026-09-21T05-44-22-176157Z/dreamina-1de96b0bb5.json",
+    "status": "collected",
+    "characters": 32191
+  },
+  {
+    "toolId": "firefly",
+    "url": "https://firefly.adobe.com",
+    "file": "research/products/2026-09-21T05-44-22-176157Z/firefly-ce220e19d0.json",
+    "status": "collected",
+    "characters": 276
+  },
+  {
+    "toolId": "fliki",
+    "url": "https://fliki.ai",
+    "file": "research/products/2026-09-21T05-44-22-176157Z/fliki-57227f320d.json",
+    "status": "collected",
+    "characters": 10875
+  },
+  {
+    "toolId": "flow",
+    "url": "https://labs.google/fx/tools/flow",
+    "file": "research/products/2026-09-21T05-44-22-176157Z/flow-04829a55a3.json",
+    "status": "render-required",
+    "characters": 73
+  },
+  {
+    "toolId": "fotor",
+    "url": "https://www.fotor.com",
+    "file": "research/products/2026-09-21T05-44-22-176157Z/fotor-30fd3c4ac8.json",
+    "status": "collected",
+    "characters": 18312
+  },
+  {
+    "toolId": "gemini",
+    "url": "https://gemini.google.com",
+    "file": "research/products/2026-09-21T05-44-22-176157Z/gemini-cb2468cef9.json",
+    "status": "fetch-error",
+    "characters": 0
+  },
+  {
+    "toolId": "getimg",
+    "url": "https://getimg.ai",
+    "file": "research/products/2026-09-21T05-44-22-176157Z/getimg-f78252a7fc.json",
+    "status": "collected",
+    "characters": 2747
+  },
+  {
+    "toolId": "hailuo",
+    "url": "https://hailuoai.video",
+    "file": "research/products/2026-09-21T05-44-22-176157Z/hailuo-e3937266a2.json",
+    "status": "collected",
+    "characters": 1155
+  },
+  {
+    "toolId": "heygen",
+    "url": "https://www.heygen.com",
+    "file": "research/products/2026-09-21T05-44-22-176157Z/heygen-8d56c886c1.json",
+    "status": "collected",
+    "characters": 13553
+  },
+  {
+    "toolId": "higgsfield",
+    "url": "https://higgsfield.ai",
+    "file": "research/products/2026-09-21T05-44-22-176157Z/higgsfield-74dd9c1e54.json",
+    "status": "collected",
+    "characters": 3776
+  },
+  {
+    "toolId": "ideogram",
+    "url": "https://ideogram.ai",
+    "file": "research/products/2026-09-21T05-44-22-176157Z/ideogram-0aea8e66bb.json",
+    "status": "http-error",
+    "characters": 16
+  },
+  {
+    "toolId": "imagineart",
+    "url": "https://www.imagine.art",
+    "file": "research/products/2026-09-21T05-44-22-176157Z/imagineart-9e7e680f6a.json",
+    "status": "collected",
+    "characters": 3982
+  },
+  {
+    "toolId": "invideo",
+    "url": "https://invideo.io",
+    "file": "research/products/2026-09-21T05-44-22-176157Z/invideo-7b40e8aa13.json",
+    "status": "collected",
+    "characters": 6658
+  },
+  {
+    "toolId": "kittl",
+    "url": "https://www.kittl.com",
+    "file": "research/products/2026-09-21T05-44-22-176157Z/kittl-91e060cafd.json",
+    "status": "collected",
+    "characters": 7177
+  },
+  {
+    "toolId": "kling",
+    "url": "https://klingai.com",
+    "file": "research/products/2026-09-21T05-44-22-176157Z/kling-cfa0e5b082.json",
+    "status": "collected",
+    "characters": 1870
+  },
+  {
+    "toolId": "krea",
+    "url": "https://www.krea.ai",
+    "file": "research/products/2026-09-21T05-44-22-176157Z/krea-059e772d8d.json",
+    "status": "collected",
+    "characters": 16085
+  },
+  {
+    "toolId": "leonardo",
+    "url": "https://leonardo.ai",
+    "file": "research/products/2026-09-21T05-44-22-176157Z/leonardo-c6274668a5.json",
+    "status": "collected",
+    "characters": 24191
+  },
+  {
+    "toolId": "ltx",
+    "url": "https://ltx.io/studio",
+    "file": "research/products/2026-09-21T05-44-22-176157Z/ltx-2f12f71774.json",
+    "status": "collected",
+    "characters": 10443
+  },
+  {
+    "toolId": "luma",
+    "url": "https://lumalabs.ai/app",
+    "file": "research/products/2026-09-21T05-44-22-176157Z/luma-498bbde98d.json",
+    "status": "collected",
+    "characters": 7257
+  },
+  {
+    "toolId": "magnific",
+    "url": "https://www.magnific.com/ai",
+    "file": "research/products/2026-09-21T05-44-22-176157Z/magnific-55f7a66450.json",
+    "status": "collected",
+    "characters": 19286
+  },
+  {
+    "toolId": "midjourney",
+    "url": "https://www.midjourney.com",
+    "file": "research/products/2026-09-21T05-44-22-176157Z/midjourney-f4fe9a3f77.json",
+    "status": "collected",
+    "characters": 1334
+  },
+  {
+    "toolId": "nightcafe",
+    "url": "https://creator.nightcafe.studio",
+    "file": "research/products/2026-09-21T05-44-22-176157Z/nightcafe-41306f61ca.json",
+    "status": "http-error",
+    "characters": 16
+  },
+  {
+    "toolId": "openart",
+    "url": "https://openart.ai",
+    "file": "research/products/2026-09-21T05-44-22-176157Z/openart-b325c7d94c.json",
+    "status": "collected",
+    "characters": 17307
+  },
+  {
+    "toolId": "photoroom",
+    "url": "https://www.photoroom.com",
+    "file": "research/products/2026-09-21T05-44-22-176157Z/photoroom-780df6420c.json",
+    "status": "collected",
+    "characters": 11953
+  },
+  {
+    "toolId": "pictory",
+    "url": "https://pictory.ai",
+    "file": "research/products/2026-09-21T05-44-22-176157Z/pictory-98c7631947.json",
+    "status": "collected",
+    "characters": 27858
+  },
+  {
+    "toolId": "pika",
+    "url": "https://pika.art",
+    "file": "research/products/2026-09-21T05-44-22-176157Z/pika-1ab5308ce3.json",
+    "status": "collected",
+    "characters": 5747
+  },
+  {
+    "toolId": "pixverse",
+    "url": "https://pixverse.ai",
+    "file": "research/products/2026-09-21T05-44-22-176157Z/pixverse-408ed4d251.json",
+    "status": "collected",
+    "characters": 6717
+  },
+  {
+    "toolId": "recraft",
+    "url": "https://www.recraft.ai",
+    "file": "research/products/2026-09-21T05-44-22-176157Z/recraft-8fac460dcd.json",
+    "status": "collected",
+    "characters": 10604
+  },
+  {
+    "toolId": "reve",
+    "url": "https://app.reve.com",
+    "file": "research/products/2026-09-21T05-44-22-176157Z/reve-9c6dfb91c2.json",
+    "status": "collected",
+    "characters": 313
+  },
+  {
+    "toolId": "runway",
+    "url": "https://runway.com",
+    "file": "research/products/2026-09-21T05-44-22-176157Z/runway-7ae81b0571.json",
+    "status": "collected",
+    "characters": 4251
+  },
+  {
+    "toolId": "seaart",
+    "url": "https://www.seaart.ai",
+    "file": "research/products/2026-09-21T05-44-22-176157Z/seaart-d6ea284cb4.json",
+    "status": "collected",
+    "characters": 3160
+  },
+  {
+    "toolId": "synthesia",
+    "url": "https://www.synthesia.io",
+    "file": "research/products/2026-09-21T05-44-22-176157Z/synthesia-2a6b6f09f5.json",
+    "status": "collected",
+    "characters": 12096
+  },
+  {
+    "toolId": "tensor",
+    "url": "https://tensor.art",
+    "file": "research/products/2026-09-21T05-44-22-176157Z/tensor-70bbf5a2c8.json",
+    "status": "collected",
+    "characters": 2691
+  },
+  {
+    "toolId": "veed",
+    "url": "https://www.veed.io",
+    "file": "research/products/2026-09-21T05-44-22-176157Z/veed-08d9fbb6d5.json",
+    "status": "collected",
+    "characters": 11540
+  },
+  {
+    "toolId": "vidu",
+    "url": "https://www.vidu.com",
+    "file": "research/products/2026-09-21T05-44-22-176157Z/vidu-894d11df6d.json",
+    "status": "collected",
+    "characters": 11297
+  }
+]

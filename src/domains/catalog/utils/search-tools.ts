@@ -1,100 +1,111 @@
 import { scenarios } from '../data/scenarios';
+import { tools } from '../data/tools';
+import { getProductProfile } from '../data/product-profiles';
+import { createBm25Index } from './bm25';
+import { tokenizeSearch } from './tokenize-search';
 import type { Medium, Tool } from '../models/model-tool';
 
-const intentWords = new Set([
-  '내',
-  '제',
-  '나',
-  '저',
-  '나는',
-  '저는',
-  '제가',
-  '좀',
-  '을',
-  '를',
-  '하고',
-  '하고싶어',
-  '하고싶어요',
-  '싶어',
-  '싶어요',
-  '싶다',
-  '싶은데',
-  '만들기',
-  '만들고',
-  '만드는',
-  '만들고싶어',
-  '만들고싶어요',
-  '만들어',
-  '만들어줘',
-  '만들어주세요',
-  '만들',
-  '수',
-  '있는',
-  '추천',
-  '해줘',
-  '해주세요',
-  'i',
-  'my',
-  'a',
-  'an',
-  'the',
-  'to',
-  'want',
-  'would',
-  'like',
-  'make',
-  'create',
-  'please',
-  'can',
-  'you',
-  'help',
-  'me',
-  'with',
-  'for',
-]);
-
-function normalizeSearch(text: string) {
-  return text
-    .normalize('NFKC')
-    .toLowerCase()
-    .replace(/[^\p{L}\p{N}]+/gu, ' ')
-    .trim();
-}
-
-function toolSearchText(tool: Tool, medium: Medium) {
+function scenarioText(item: (typeof scenarios)[number]) {
   return [
-    tool.name,
-    tool.description,
-    tool.bestFor,
-    ...tool.features,
-    ...tool.tags,
-    ...(tool.mediaFeatures?.[medium] ?? []),
-    ...(tool.mediaTags?.[medium] ?? []),
-    ...(tool.aliases ?? []),
+    item.label,
+    item.prompt,
+    ...item.inputs,
+    ...item.outputs,
+    ...item.platforms,
+    ...item.keywords,
   ].join(' ');
 }
 
-export function matchesToolSearch(tool: Tool, medium: Medium, query: string) {
-  const normalizedQuery = normalizeSearch(query);
-  if (!normalizedQuery) return true;
-  const searchText = toolSearchText(tool, medium);
-  const toolScenarios = scenarios.filter(
-    (item) => item.medium === medium && item.toolIds.includes(tool.id),
-  );
-  const documents = [
-    searchText,
-    ...toolScenarios.map((item) => `${searchText} ${item.label} ${item.keywords.join(' ')}`),
-  ].map((text) => normalizeSearch(text).replaceAll(' ', ''));
-  const compactQuery = normalizedQuery.replaceAll(' ', '');
-  if (documents.some((document) => document.includes(compactQuery))) return true;
+const scenarioIndex = createBm25Index(
+  scenarios.map((item) => ({
+    id: item.id,
+    fields: [{ text: scenarioText(item), weight: 1 }],
+  })),
+);
+const toolIndex = createBm25Index(
+  tools.map((tool) => {
+    const profile = getProductProfile(tool.id);
+    return {
+      id: tool.id,
+      fields: [
+        { text: [tool.name, ...(tool.aliases ?? [])].join(' '), weight: 5 },
+        {
+          text: scenarios
+            .filter((item) => item.toolIds.includes(tool.id))
+            .map(scenarioText)
+            .join(' '),
+          weight: 3,
+        },
+        {
+          text:
+            profile?.capabilities
+              .flatMap((capability) => [
+                capability.summary.ko,
+                capability.summary.en,
+                ...capability.inputs.ko,
+                ...capability.inputs.en,
+                ...capability.outputs.ko,
+                ...capability.outputs.en,
+              ])
+              .join(' ') ?? '',
+          weight: 1,
+        },
+      ],
+    };
+  }),
+);
 
-  const terms = normalizedQuery.split(' ').filter((term) => !intentWords.has(term));
-  if (!terms.length) return false;
-  return documents.some((document) =>
-    terms.every((term) => {
-      if (document.includes(term)) return true;
-      const withoutParticle = term.replace(/(?<=[가-힣]{2})(으로|에서|을|를|은|는|이|가|로)$/u, '');
-      return withoutParticle !== term && document.includes(withoutParticle);
-    }),
+function compactName(text: string) {
+  return text
+    .normalize('NFKC')
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}]/gu, '');
+}
+
+export function searchTools(query: string) {
+  if (!query.trim()) return [];
+  const exact = tools.filter((tool) =>
+    [tool.name, ...(tool.aliases ?? [])].some((name) => compactName(name) === compactName(query)),
+  );
+  const ranked = toolIndex.search(query);
+  const scenarioMatches = scenarioIndex.search(query);
+  const threshold = (ranked[0]?.score ?? 0) * 0.2;
+  const candidates = exact.length
+    ? exact
+        .map(
+          (tool) =>
+            ranked.find((match) => match.id === tool.id) ?? {
+              id: tool.id,
+              score: 1,
+              matchedTerms: [tool.name],
+            },
+        )
+        .toSorted((a, b) => b.score - a.score || a.id.localeCompare(b.id))
+    : ranked.filter((item) => item.score >= threshold);
+  return candidates.map((match) => ({
+    ...match,
+    scenario: scenarioMatches
+      .map((result) => scenarios.find((item) => item.id === result.id))
+      .find((item) => item?.toolIds.includes(match.id)),
+  }));
+}
+
+export function recommendationFeature(tool: Tool, medium: Medium, query: string) {
+  const terms = new Set(tokenizeSearch(query));
+  const features = tool.mediaFeatures?.[medium] ?? tool.features;
+  return (
+    features
+      .map((text) => ({
+        text,
+        count: tokenizeSearch(text).filter((token) => terms.has(token)).length,
+      }))
+      .toSorted((a, b) => b.count - a.count)[0]?.text ?? tool.bestFor
+  );
+}
+
+export function matchesToolSearch(tool: Tool, medium: Medium, query: string) {
+  return (
+    !query.trim() ||
+    (tool.media.includes(medium) && searchTools(query).some((match) => match.id === tool.id))
   );
 }

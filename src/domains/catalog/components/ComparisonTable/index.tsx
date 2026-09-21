@@ -9,11 +9,13 @@ export function ComparisonTable({
   medium,
   billing,
   onClose,
+  toolMedia,
 }: {
   tools: Tool[];
   medium: Medium;
   billing: Billing;
   onClose: () => void;
+  toolMedia?: Record<string, Medium>;
 }) {
   const { t } = useTranslation();
   const { t: catalogT } = useTranslation('catalog');
@@ -50,9 +52,11 @@ export function ComparisonTable({
               {tools.map((tool) => (
                 <td key={tool.id}>
                   <ul>
-                    {(tool.mediaFeatures?.[medium] ?? tool.features).map((feature) => (
-                      <li key={feature}>{feature}</li>
-                    ))}
+                    {(tool.mediaFeatures?.[toolMedia?.[tool.id] ?? medium] ?? tool.features).map(
+                      (feature) => (
+                        <li key={feature}>{feature}</li>
+                      ),
+                    )}
                   </ul>
                 </td>
               ))}

@@ -1,0 +1,12 @@
+{
+  "toolId": "nightcafe",
+  "requestedUrl": "https://help.nightcafe.studio/portal/en/kb/articles/how-to-use-the-nano-banana-model-on-nightcafe",
+  "checkedAt": "2026-09-21T05:50:18.177494+00:00",
+  "method": "official-web",
+  "reviewStatus": "reviewed",
+  "collectionStatus": "collected",
+  "title": "Nano Banana on NightCafe",
+  "text": "You can use Nano Banana for both text-to-image generation and image editing.",
+  "textSha256": "c518f2a4cb0985a8e1e997d0f1edc28f033f7837b8c08192c34698f0a4974195",
+  "note": "Official help text read through web retrieval after HTTP produced no visible content. Only the cited excerpt is retained."
+}

@@ -12,9 +12,9 @@ it('renders navigation, filters, price guide, and accessibility text in each lan
       <ComparePage />
     </I18nextProvider>,
   );
-  expect(english).not.toMatch(/[가-힣]/);
+  expect(english.replaceAll('한국어', '')).not.toMatch(/[가-힣]/);
   expect(english).toContain('28 tools');
-  expect(english).toContain('Search AI tools');
+  expect(english).toContain('Describe what you want to do');
   expect(english).toContain('How do we compare prices?');
   await instance.changeLanguage('ko');
   const korean = renderToStaticMarkup(
@@ -22,10 +22,10 @@ it('renders navigation, filters, price guide, and accessibility text in each lan
       <ComparePage />
     </I18nextProvider>,
   );
-  expect(korean).toContain('어떤 걸 만들고 싶으세요?');
-  expect(korean).toContain('촬영 비하인드 만들기');
+  expect(korean).toContain('어떤 걸 해보고 싶으세요?');
+  expect(korean).toContain('나 이런 걸로 쇼츠 만들어서 유튜브에 올려보고 싶어');
   expect(korean).not.toContain('장면·이미지 생성');
-  expect(english).toContain('Make Shorts and Reels');
-  expect(english).toContain('Create behind-the-scenes videos');
+  expect(english).toContain('I want to make Shorts and upload them to YouTube');
+  expect(english).toContain('Find tools');
   expect(korean).toContain('28개 도구');
 });

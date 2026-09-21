@@ -72,18 +72,19 @@ def collection_status(status, title, text):
     return "collected"
 
 
-def collect(job, output):
+def collect(job, output, purpose="pricing"):
     tool_id, url = job
     record = {
         "toolId": tool_id,
         "requestedUrl": url,
         "fetchedAt": datetime.now(timezone.utc).isoformat(),
         "method": "http-html-text",
+        "purpose": purpose,
         "reviewStatus": "unreviewed",
     }
     try:
         request = urllib.request.Request(url, headers={
-            "User-Agent": "AIToolQuoteSourceCollector/0.1 (manual pricing research)",
+            "User-Agent": f"AIToolQuoteSourceCollector/0.1 (manual {purpose} research)",
             "Accept": "text/html, text/plain;q=0.9, */*;q=0.1",
             "Accept-Language": "en-US,en;q=0.9",
         })
@@ -112,7 +113,7 @@ def collect(job, output):
         })
         record["collectionStatus"] = collection_status(record["httpStatus"], record["title"], record["text"])
         record["textSha256"] = hashlib.sha256(record["text"].encode()).hexdigest()
-        raw_dir = ROOT / ".cache" / "pricing-sources"
+        raw_dir = ROOT / ".cache" / f"{purpose}-sources"
         raw_dir.mkdir(parents=True, exist_ok=True)
         (raw_dir / f"{record['contentSha256']}.html").write_bytes(body)
     except (OSError, ValueError) as error:

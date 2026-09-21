@@ -1,0 +1,17 @@
+{
+  "toolId": "firefly",
+  "requestedUrl": "https://firefly.adobe.com",
+  "fetchedAt": "2026-09-21T05:44:22.504737+00:00",
+  "method": "http-html-text",
+  "purpose": "product",
+  "reviewStatus": "unreviewed",
+  "finalUrl": "https://firefly.adobe.com",
+  "httpStatus": 200,
+  "contentType": "text/html",
+  "contentSha256": "3f7bde984b2b71aed2c0451642ffb3c2ff4f542d14811d0cad10b0704a44bec9",
+  "title": "Adobe Firefly: Your all-in-one AI creative studio",
+  "text": "Adobe Firefly: Your all-in-one AI creative studio\nAdobe Firefly: Your all-in-one AI creative studio\nFirefly gives you the speed, control, and creative freedom to go from idea to high-quality content. Generate images, video, audio and more with 30+ AI models, all in one place.",
+  "pricingLinks": [],
+  "collectionStatus": "collected",
+  "textSha256": "da9c6930d089de1830d870b8d41494b537d22ad930f518c9cffd20a4d8a55405"
+}

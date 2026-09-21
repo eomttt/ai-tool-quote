@@ -1,0 +1,72 @@
+[
+  {
+    "toolId": "canva",
+    "url": "https://www.canva.com/help/using-magic-media/?query=magic+media",
+    "file": "research/products/2026-09-21T05-45-46-067910Z/canva-bf74776691.json",
+    "status": "blocked",
+    "characters": 342
+  },
+  {
+    "toolId": "canva",
+    "url": "https://www.canva.com/magic-design/",
+    "file": "research/products/2026-09-21T05-45-46-067910Z/canva-37365a6f13.json",
+    "status": "blocked",
+    "characters": 342
+  },
+  {
+    "toolId": "firefly",
+    "url": "https://www.adobe.com/products/firefly.html",
+    "file": "research/products/2026-09-21T05-45-46-067910Z/firefly-1ec8d2f88c.json",
+    "status": "collected",
+    "characters": 13658
+  },
+  {
+    "toolId": "flow",
+    "url": "https://support.google.com/flow/answer/16352836?hl=en",
+    "file": "research/products/2026-09-21T05-45-46-067910Z/flow-0771484525.json",
+    "status": "collected",
+    "characters": 5612
+  },
+  {
+    "toolId": "gemini",
+    "url": "https://gemini.google/sg/overview/image-generation/?hl=en-SG",
+    "file": "research/products/2026-09-21T05-45-46-067910Z/gemini-1c33fd91fa.json",
+    "status": "collected",
+    "characters": 9136
+  },
+  {
+    "toolId": "ideogram",
+    "url": "https://docs.ideogram.ai/",
+    "file": "research/products/2026-09-21T05-45-46-067910Z/ideogram-630a731624.json",
+    "status": "collected",
+    "characters": 3449
+  },
+  {
+    "toolId": "midjourney",
+    "url": "https://docs.midjourney.com/docs/prompts",
+    "file": "research/products/2026-09-21T05-45-46-067910Z/midjourney-6dff327989.json",
+    "status": "collected",
+    "characters": 5657
+  },
+  {
+    "toolId": "midjourney",
+    "url": "https://docs.midjourney.com/hc/en-us/sections/32013397184397-Using-Your-Own-Images",
+    "file": "research/products/2026-09-21T05-45-46-067910Z/midjourney-95091b6411.json",
+    "status": "collected",
+    "characters": 2706
+  },
+  {
+    "toolId": "nightcafe",
+    "url": "https://nightcafe.studio/",
+    "file": "research/products/2026-09-21T05-45-46-067910Z/nightcafe-04169e090c.json",
+    "status": "http-error",
+    "characters": 16
+  },
+  {
+    "toolId": "reve",
+    "url": "https://help.reve.com/hc/en-us/articles/46809604700052-Getting-started-with-Reve",
+    "file": "research/products/2026-09-21T05-45-46-067910Z/reve-34cb9adaaa.json",
+    "status": "collected",
+    "characters": 1424
+  }
+]

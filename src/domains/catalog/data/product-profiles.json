@@ -1,0 +1,1572 @@
+[
+  {
+    "toolId": "runway",
+    "reviewedAt": "2026-09-21T05:50:18.177494+00:00",
+    "sources": [
+      {
+        "id": "s1",
+        "url": "https://runway.com",
+        "title": "Runway | Building Real-World Intelligence",
+        "method": "http-html-text",
+        "checkedAt": "2026-09-21T05:50:18.177494+00:00",
+        "evidenceFile": "research/products/2026-09-21T05-44-22-176157Z/runway-7ae81b0571.json"
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "video",
+        "medium": "video",
+        "summary": {
+          "ko": "영상과 이미지를 한 작업 공간에서 생성하고 편집해요.",
+          "en": "Generate and edit video and images in one workspace."
+        },
+        "inputs": {
+          "ko": ["기존 영상"],
+          "en": ["Existing video"]
+        },
+        "outputs": {
+          "ko": ["영상 클립"],
+          "en": ["Video clips"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "generate and edit video, images"
+      },
+      {
+        "id": "image",
+        "medium": "image",
+        "summary": {
+          "ko": "이미지를 생성하고 편집하는 기능을 영상 작업과 함께 제공해요.",
+          "en": "Create and edit images alongside video work."
+        },
+        "inputs": {
+          "ko": ["기존 이미지"],
+          "en": ["Existing images"]
+        },
+        "outputs": {
+          "ko": ["생성·편집한 이미지"],
+          "en": ["Generated and edited images"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "generate and edit video, images"
+      }
+    ]
+  },
+  {
+    "toolId": "higgsfield",
+    "reviewedAt": "2026-09-21T05:50:18.177494+00:00",
+    "sources": [
+      {
+        "id": "s1",
+        "url": "https://higgsfield.ai",
+        "title": "Higgsfield AI — AI-native creative suite",
+        "method": "http-html-text",
+        "checkedAt": "2026-09-21T05:50:18.177494+00:00",
+        "evidenceFile": "research/products/2026-09-21T05-44-22-176157Z/higgsfield-74dd9c1e54.json"
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "video",
+        "medium": "video",
+        "summary": {
+          "ko": "기존 영상의 움직임을 옮기거나 인물·장소·상품을 바꿔 새 장면을 만들어요.",
+          "en": "Transfer motion from a video or replace characters, locations, and products to make new scenes."
+        },
+        "inputs": {
+          "ko": ["참고 영상"],
+          "en": ["Reference video"]
+        },
+        "outputs": {
+          "ko": ["움직임을 옮긴 장면"],
+          "en": ["Scenes with transferred motion"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "Take the motion and recast it with your characters, locations, and products"
+      },
+      {
+        "id": "image",
+        "medium": "image",
+        "summary": {
+          "ko": "Nano Banana Pro를 포함한 이미지 모델로 비주얼을 생성해요.",
+          "en": "Generate visuals with image models including Nano Banana Pro."
+        },
+        "inputs": {
+          "ko": ["제작 아이디어"],
+          "en": ["Creative idea"]
+        },
+        "outputs": {
+          "ko": ["생성 이미지"],
+          "en": ["Generated images"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "Generate high-quality visuals Image"
+      }
+    ]
+  },
+  {
+    "toolId": "flow",
+    "reviewedAt": "2026-09-21T05:50:18.177494+00:00",
+    "sources": [
+      {
+        "id": "s1",
+        "url": "https://support.google.com/flow/answer/16352836?hl=en",
+        "title": "Learn about Google Flow models & supported features - Google Flow Help",
+        "method": "http-html-text",
+        "checkedAt": "2026-09-21T05:50:18.177494+00:00",
+        "evidenceFile": "research/products/2026-09-21T05-45-46-067910Z/flow-0771484525.json"
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "video",
+        "medium": "video",
+        "summary": {
+          "ko": "문장이나 시작·끝 이미지로 영상 클립을 만들어요. 사용할 수 있는 기능은 모델마다 달라요.",
+          "en": "Generate clips from text or start and end frames; supported features vary by model."
+        },
+        "inputs": {
+          "ko": ["문장", "시작·끝 이미지"],
+          "en": ["Text prompt", "Start and end images"]
+        },
+        "outputs": {
+          "ko": ["영상 클립"],
+          "en": ["Video clips"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "Frames to Video: First and last"
+      }
+    ]
+  },
+  {
+    "toolId": "pika",
+    "reviewedAt": "2026-09-21T05:50:18.177494+00:00",
+    "sources": [
+      {
+        "id": "s1",
+        "url": "https://pika.art",
+        "title": "Pika",
+        "method": "http-html-text",
+        "checkedAt": "2026-09-21T05:50:18.177494+00:00",
+        "evidenceFile": "research/products/2026-09-21T05-44-22-176157Z/pika-1ab5308ce3.json"
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "video",
+        "medium": "video",
+        "summary": {
+          "ko": "참고 자료로 짧은 클립부터 여러 장면이 이어지는 영상을 만들어요.",
+          "en": "Create short clips or multi-shot videos from references."
+        },
+        "inputs": {
+          "ko": ["참고 자료"],
+          "en": ["References"]
+        },
+        "outputs": {
+          "ko": ["짧은 클립", "여러 장면의 영상"],
+          "en": ["Short clips", "Multi-shot videos"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "Create short clips or full videos from your references"
+      },
+      {
+        "id": "image",
+        "medium": "image",
+        "summary": {
+          "ko": "Image Studio에서 이미지를 생성하고 표현을 조절해요.",
+          "en": "Generate imagery with creative controls in Image Studio."
+        },
+        "inputs": {
+          "ko": ["제작 아이디어"],
+          "en": ["Creative idea"]
+        },
+        "outputs": {
+          "ko": ["생성 이미지"],
+          "en": ["Generated images"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "Generate professional level imagery with maximum creative control."
+      }
+    ]
+  },
+  {
+    "toolId": "luma",
+    "reviewedAt": "2026-09-21T05:50:18.177494+00:00",
+    "sources": [
+      {
+        "id": "s1",
+        "url": "https://lumalabs.ai/app",
+        "title": "Creative agents for creative professionals | Luma",
+        "method": "http-html-text",
+        "checkedAt": "2026-09-21T05:50:18.177494+00:00",
+        "evidenceFile": "research/products/2026-09-21T05-44-22-176157Z/luma-498bbde98d.json"
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "video",
+        "medium": "video",
+        "summary": {
+          "ko": "도입부·자막·플랫폼별 형식을 갖춘 짧은 광고 영상을 만들어요.",
+          "en": "Create short video ads with hooks, captions, and platform-specific formats."
+        },
+        "inputs": {
+          "ko": ["광고 아이디어"],
+          "en": ["Ad idea"]
+        },
+        "outputs": {
+          "ko": ["짧은 광고 영상"],
+          "en": ["Short video ads"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "Quickly create short-form video ads with hooks, captions, and formats tailored for every platform."
+      },
+      {
+        "id": "image",
+        "medium": "image",
+        "summary": {
+          "ko": "전자상거래와 소셜 게시물에 쓸 상품의 대표 사진과 생활 장면을 만들어요.",
+          "en": "Create hero and lifestyle product shots for e-commerce and social content."
+        },
+        "inputs": {
+          "ko": ["상품 비주얼 아이디어"],
+          "en": ["Product visual idea"]
+        },
+        "outputs": {
+          "ko": ["상품 사진", "생활 장면"],
+          "en": ["Product photos", "Lifestyle scenes"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "Create polished lifestyle and hero shots for e-commerce, social, and marketplaces"
+      }
+    ]
+  },
+  {
+    "toolId": "kling",
+    "reviewedAt": "2026-09-21T05:50:18.177494+00:00",
+    "sources": [
+      {
+        "id": "s1",
+        "url": "https://klingai.com",
+        "title": "Kling AI: Next-Gen AI Video & Image Generator",
+        "method": "http-html-text",
+        "checkedAt": "2026-09-21T05:50:18.177494+00:00",
+        "evidenceFile": "research/products/2026-09-21T05-44-22-176157Z/kling-cfa0e5b082.json"
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "video",
+        "medium": "video",
+        "summary": {
+          "ko": "문장이나 이미지로 영상을 만들고 움직임을 조절해요.",
+          "en": "Generate video from text or images and control motion."
+        },
+        "inputs": {
+          "ko": ["문장", "이미지"],
+          "en": ["Text prompt", "Image"]
+        },
+        "outputs": {
+          "ko": ["영상 클립"],
+          "en": ["Video clips"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "AI Video Generator Text to Video Image to Video AI Video Editor"
+      },
+      {
+        "id": "image",
+        "medium": "image",
+        "summary": {
+          "ko": "문장이나 참고 이미지를 바탕으로 이미지를 생성하고 편집해요.",
+          "en": "Generate and edit images from text or an image reference."
+        },
+        "inputs": {
+          "ko": ["문장", "참고 이미지"],
+          "en": ["Text prompt", "Reference image"]
+        },
+        "outputs": {
+          "ko": ["생성·편집한 이미지"],
+          "en": ["Generated and edited images"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "AI Image Generator Text to Image Image to Image AI Photo Editor"
+      }
+    ]
+  },
+  {
+    "toolId": "hailuo",
+    "reviewedAt": "2026-09-21T05:50:18.177494+00:00",
+    "sources": [
+      {
+        "id": "s1",
+        "url": "https://hailuoai.video",
+        "title": "Hailuo AI: MiniMax H3 LIVE NOW. Top-Tier Quality, Versatile References",
+        "method": "http-html-text",
+        "checkedAt": "2026-09-21T05:50:18.177494+00:00",
+        "evidenceFile": "research/products/2026-09-21T05-44-22-176157Z/hailuo-e3937266a2.json"
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "video",
+        "medium": "video",
+        "summary": {
+          "ko": "참고 자료를 활용하는 영상 생성과 편집 기능을 제공해요.",
+          "en": "Create and edit video with reference-based generation tools."
+        },
+        "inputs": {
+          "ko": ["참고 자료"],
+          "en": ["References"]
+        },
+        "outputs": {
+          "ko": ["영상 클립"],
+          "en": ["Video clips"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "Native multimodal generation,precise multimodal editing"
+      }
+    ]
+  },
+  {
+    "toolId": "pixverse",
+    "reviewedAt": "2026-09-21T05:50:18.177494+00:00",
+    "sources": [
+      {
+        "id": "s1",
+        "url": "https://pixverse.ai",
+        "title": "The Generative Core Behind Digital Worlds and Experiences | PixVerse",
+        "method": "http-html-text",
+        "checkedAt": "2026-09-21T05:50:18.177494+00:00",
+        "evidenceFile": "research/products/2026-09-21T05-44-22-176157Z/pixverse-408ed4d251.json"
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "video",
+        "medium": "video",
+        "summary": {
+          "ko": "문장이나 이미지를 영상 클립으로 바꾸고 템플릿으로 시작할 수 있어요.",
+          "en": "Turn text or images into video clips, with templates as starting points."
+        },
+        "inputs": {
+          "ko": ["문장", "이미지"],
+          "en": ["Text prompt", "Image"]
+        },
+        "outputs": {
+          "ko": ["영상 클립"],
+          "en": ["Video clips"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "Text & Image to Video Prompt or image in. Video out."
+      }
+    ]
+  },
+  {
+    "toolId": "vidu",
+    "reviewedAt": "2026-09-21T05:50:18.177494+00:00",
+    "sources": [
+      {
+        "id": "s1",
+        "url": "https://www.vidu.com",
+        "title": "AI Video Generator for Text, Image & Reference Videos | Vidu AI",
+        "method": "http-html-text",
+        "checkedAt": "2026-09-21T05:50:18.177494+00:00",
+        "evidenceFile": "research/products/2026-09-21T05-44-22-176157Z/vidu-894d11df6d.json"
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "video",
+        "medium": "video",
+        "summary": {
+          "ko": "텍스트·이미지·참고 자료로 애니메이션, 광고, 짧은 영화 장면을 만들어요.",
+          "en": "Create animation, ad, and short-film scenes from text, images, or references."
+        },
+        "inputs": {
+          "ko": ["문장", "이미지", "참고 자료"],
+          "en": ["Text prompt", "Image", "References"]
+        },
+        "outputs": {
+          "ko": ["광고 장면", "애니메이션", "짧은 영화 장면"],
+          "en": ["Ad scenes", "Animation", "Short-film scenes"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "From animation to live action, from ads to short films"
+      }
+    ]
+  },
+  {
+    "toolId": "ltx",
+    "reviewedAt": "2026-09-21T05:50:18.177494+00:00",
+    "sources": [
+      {
+        "id": "s1",
+        "url": "https://ltx.io/studio",
+        "title": "The Creative Studio for AI Video Production | LTX Studio",
+        "method": "http-html-text",
+        "checkedAt": "2026-09-21T05:50:18.177494+00:00",
+        "evidenceFile": "research/products/2026-09-21T05-44-22-176157Z/ltx-2f12f71774.json"
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "video",
+        "medium": "video",
+        "summary": {
+          "ko": "문장과 참고 이미지로 장면을 만들고 카메라 움직임·키프레임·장면 간 요소를 조절해요.",
+          "en": "Generate scenes from text and image references, then direct camera motion, keyframes, and recurring elements."
+        },
+        "inputs": {
+          "ko": ["문장", "참고 이미지"],
+          "en": ["Text prompt", "Reference images"]
+        },
+        "outputs": {
+          "ko": ["스토리보드", "영상 장면"],
+          "en": ["Storyboards", "Video scenes"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "Generate production-ready visuals and videos using text prompts, image references"
+      }
+    ]
+  },
+  {
+    "toolId": "dreamina",
+    "reviewedAt": "2026-09-21T05:50:18.177494+00:00",
+    "sources": [
+      {
+        "id": "s1",
+        "url": "https://dreamina.capcut.com",
+        "title": "Dreamina: Free AI Video & Image Generator Powered by Multiple Models",
+        "method": "http-html-text",
+        "checkedAt": "2026-09-21T05:50:18.177494+00:00",
+        "evidenceFile": "research/products/2026-09-21T05-44-22-176157Z/dreamina-1de96b0bb5.json"
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "video",
+        "medium": "video",
+        "summary": {
+          "ko": "문장·이미지·스케치를 영상으로 바꾸는 생성 도구를 제공해요.",
+          "en": "Generate videos from text, images, or sketches."
+        },
+        "inputs": {
+          "ko": ["문장", "이미지", "스케치"],
+          "en": ["Text prompt", "Image", "Sketch"]
+        },
+        "outputs": {
+          "ko": ["영상 클립"],
+          "en": ["Video clips"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "Text to video\nSketch to video\nImage to video"
+      },
+      {
+        "id": "image",
+        "medium": "image",
+        "summary": {
+          "ko": "이미지를 생성·편집하고 로고, 아이콘, 상품 출시 포스터를 만들어요.",
+          "en": "Generate and edit images, logos, icons, and product-launch posters."
+        },
+        "inputs": {
+          "ko": ["문장", "이미지"],
+          "en": ["Text prompt", "Image"]
+        },
+        "outputs": {
+          "ko": ["로고", "포스터", "생성 이미지"],
+          "en": ["Logos", "Posters", "Generated images"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "Turn your brand ideas into logos, app icons, 3D brand visuals, and sticker packs"
+      }
+    ]
+  },
+  {
+    "toolId": "firefly",
+    "reviewedAt": "2026-09-21T05:50:18.177494+00:00",
+    "sources": [
+      {
+        "id": "s1",
+        "url": "https://www.adobe.com/products/firefly.html",
+        "title": "Adobe Firefly - Free Generative AI for Creatives",
+        "method": "http-html-text",
+        "checkedAt": "2026-09-21T05:50:18.177494+00:00",
+        "evidenceFile": "research/products/2026-09-21T05-45-46-067910Z/firefly-1ec8d2f88c.json"
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "video",
+        "medium": "video",
+        "summary": {
+          "ko": "문장으로 영상 소재를 만들고 기존 클립을 편집하거나 타임라인에서 연결해요.",
+          "en": "Generate video assets from text, edit existing clips, and assemble them on a timeline."
+        },
+        "inputs": {
+          "ko": ["문장", "기존 영상"],
+          "en": ["Text prompt", "Existing video"]
+        },
+        "outputs": {
+          "ko": ["보조 영상", "편집 영상"],
+          "en": ["B-roll", "Edited video"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "editing your existing photos or video clips"
+      },
+      {
+        "id": "image",
+        "medium": "image",
+        "summary": {
+          "ko": "문장으로 이미지와 벡터를 만들고 기존 사진을 수정해요.",
+          "en": "Generate images and vectors from text and edit existing photos."
+        },
+        "inputs": {
+          "ko": ["문장", "기존 사진"],
+          "en": ["Text prompt", "Existing photos"]
+        },
+        "outputs": {
+          "ko": ["이미지", "벡터 그래픽"],
+          "en": ["Images", "Vector graphics"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "create and edit images, videos, audio, and vector graphics from simple text prompts"
+      }
+    ]
+  },
+  {
+    "toolId": "krea",
+    "reviewedAt": "2026-09-21T05:50:18.177494+00:00",
+    "sources": [
+      {
+        "id": "s1",
+        "url": "https://www.krea.ai",
+        "title": "Krea",
+        "method": "http-html-text",
+        "checkedAt": "2026-09-21T05:50:18.177494+00:00",
+        "evidenceFile": "research/products/2026-09-21T05-44-22-176157Z/krea-059e772d8d.json"
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "video",
+        "medium": "video",
+        "summary": {
+          "ko": "여러 영상 모델에서 문장·시작 이미지·참고 자료로 클립을 생성해요.",
+          "en": "Generate clips across video models using text, starting frames, and references."
+        },
+        "inputs": {
+          "ko": ["문장", "시작 이미지", "참고 자료"],
+          "en": ["Text prompt", "Starting image", "References"]
+        },
+        "outputs": {
+          "ko": ["영상 클립"],
+          "en": ["Video clips"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "Generate from text, a starting image, or tagged image references"
+      },
+      {
+        "id": "image",
+        "medium": "image",
+        "summary": {
+          "ko": "텍스트와 참고 이미지로 이미지를 생성하고 모델별 편집 기능을 사용해요.",
+          "en": "Generate from text or image references and use model-specific image editing."
+        },
+        "inputs": {
+          "ko": ["문장", "참고 이미지"],
+          "en": ["Text prompt", "Reference image"]
+        },
+        "outputs": {
+          "ko": ["생성·편집한 이미지"],
+          "en": ["Generated and edited images"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "Grok Imagine 2.0 generates images from text and edits up to 3 reference images."
+      }
+    ]
+  },
+  {
+    "toolId": "leonardo",
+    "reviewedAt": "2026-09-21T05:50:18.177494+00:00",
+    "sources": [
+      {
+        "id": "s1",
+        "url": "https://leonardo.ai",
+        "title": "Leonardo.Ai - Generative AI Platform for Images, Art & Video",
+        "method": "http-html-text",
+        "checkedAt": "2026-09-21T05:50:18.177494+00:00",
+        "evidenceFile": "research/products/2026-09-21T05-44-22-176157Z/leonardo-c6274668a5.json"
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "video",
+        "medium": "video",
+        "summary": {
+          "ko": "정적인 비주얼에 움직임을 더해 이야기·소셜·상품용 영상 소재를 만들어요.",
+          "en": "Animate static visuals into video assets for stories, social content, and products."
+        },
+        "inputs": {
+          "ko": ["정적인 비주얼"],
+          "en": ["Static visuals"]
+        },
+        "outputs": {
+          "ko": ["움직이는 영상 소재"],
+          "en": ["Animated video assets"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "Turn static ideas into dynamic video content"
+      },
+      {
+        "id": "image",
+        "medium": "image",
+        "summary": {
+          "ko": "문장으로 캐릭터와 콘셉트 아트를 만들고 이미지를 편집하거나 해상도를 높여요.",
+          "en": "Generate characters and concept art from prompts, then edit or upscale images."
+        },
+        "inputs": {
+          "ko": ["문장", "기존 이미지"],
+          "en": ["Text prompt", "Existing image"]
+        },
+        "outputs": {
+          "ko": ["캐릭터", "콘셉트 아트", "보정 이미지"],
+          "en": ["Characters", "Concept art", "Enhanced images"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "Generate high-quality visuals from simple prompts"
+      }
+    ]
+  },
+  {
+    "toolId": "openart",
+    "reviewedAt": "2026-09-21T05:50:18.177494+00:00",
+    "sources": [
+      {
+        "id": "s1",
+        "url": "https://openart.ai",
+        "title": "AI Art Generator: Free AI Image, Video & Audio Generator",
+        "method": "http-html-text",
+        "checkedAt": "2026-09-21T05:50:18.177494+00:00",
+        "evidenceFile": "research/products/2026-09-21T05-44-22-176157Z/openart-b325c7d94c.json"
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "video",
+        "medium": "video",
+        "summary": {
+          "ko": "문장·참고 이미지로 영상을 생성하고 스토리보드와 장면을 대화로 다듬어요.",
+          "en": "Generate from text or references and refine storyboards and shots through conversation."
+        },
+        "inputs": {
+          "ko": ["문장", "참고 이미지"],
+          "en": ["Text prompt", "Reference image"]
+        },
+        "outputs": {
+          "ko": ["영상 클립", "스토리보드"],
+          "en": ["Video clips", "Storyboards"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "Type a prompt or drop a reference image"
+      },
+      {
+        "id": "image",
+        "medium": "image",
+        "summary": {
+          "ko": "이미지를 만들고 같은 캔버스에서 지우기·확장·배경 교체·업스케일을 이어서 해요.",
+          "en": "Generate images, then erase, expand, replace backgrounds, or upscale in the same canvas."
+        },
+        "inputs": {
+          "ko": ["문장", "참고 이미지"],
+          "en": ["Text prompt", "Reference image"]
+        },
+        "outputs": {
+          "ko": ["생성·편집한 이미지", "캐릭터"],
+          "en": ["Generated and edited images", "Characters"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "erase, expand, swap backgrounds, restyle, or upscale"
+      }
+    ]
+  },
+  {
+    "toolId": "magnific",
+    "reviewedAt": "2026-09-21T05:50:18.177494+00:00",
+    "sources": [
+      {
+        "id": "s1",
+        "url": "https://www.magnific.com/ai",
+        "title": "Magnific Tools. Everything you need to create.",
+        "method": "http-html-text",
+        "checkedAt": "2026-09-21T05:50:18.177494+00:00",
+        "evidenceFile": "research/products/2026-09-21T05-44-22-176157Z/magnific-55f7a66450.json"
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "video",
+        "medium": "video",
+        "summary": {
+          "ko": "문장으로 영상 클립을 만들고 영상 업스케일로 선명도를 높여요.",
+          "en": "Generate clips from prompts and enhance clarity with video upscaling."
+        },
+        "inputs": {
+          "ko": ["문장", "기존 영상"],
+          "en": ["Text prompt", "Existing video"]
+        },
+        "outputs": {
+          "ko": ["영상 클립", "업스케일한 영상"],
+          "en": ["Video clips", "Upscaled video"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "Generate video clips from a single prompt."
+      },
+      {
+        "id": "image",
+        "medium": "image",
+        "summary": {
+          "ko": "문장·스케치·사진으로 이미지를 생성하고 확대·보정 도구를 사용해요.",
+          "en": "Generate images from prompts, sketches, or photos and use enlargement and editing tools."
+        },
+        "inputs": {
+          "ko": ["문장", "스케치", "사진"],
+          "en": ["Text prompt", "Sketch", "Photo"]
+        },
+        "outputs": {
+          "ko": ["생성 이미지", "보정 이미지"],
+          "en": ["Generated images", "Enhanced images"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "Generate images from prompts, sketches, or photos."
+      }
+    ]
+  },
+  {
+    "toolId": "getimg",
+    "reviewedAt": "2026-09-21T05:50:18.177494+00:00",
+    "sources": [
+      {
+        "id": "s1",
+        "url": "https://getimg.ai",
+        "title": "The ultimate AI creative platform | getimg.ai",
+        "method": "http-html-text",
+        "checkedAt": "2026-09-21T05:50:18.177494+00:00",
+        "evidenceFile": "research/products/2026-09-21T05-44-22-176157Z/getimg-f78252a7fc.json"
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "video",
+        "medium": "video",
+        "summary": {
+          "ko": "문장이나 이미지로 영상을 생성하고 영상 업스케일을 제공해요.",
+          "en": "Generate video from text or images and upscale existing clips."
+        },
+        "inputs": {
+          "ko": ["문장", "이미지", "영상"],
+          "en": ["Text prompt", "Image", "Video"]
+        },
+        "outputs": {
+          "ko": ["영상 클립", "업스케일한 영상"],
+          "en": ["Video clips", "Upscaled video"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "Text to Video\nImage to Video"
+      },
+      {
+        "id": "image",
+        "medium": "image",
+        "summary": {
+          "ko": "문장·참고 이미지로 이미지를 만들고 배경 제거·크기 조절·업스케일을 해요.",
+          "en": "Create images from text or references, remove backgrounds, resize, and upscale."
+        },
+        "inputs": {
+          "ko": ["문장", "이미지"],
+          "en": ["Text prompt", "Image"]
+        },
+        "outputs": {
+          "ko": ["생성 이미지", "배경 없는 이미지"],
+          "en": ["Generated images", "Background-free images"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "Image Upscaler\nVideo Upscaler\nSmart Image Resizer\nBackground Remover"
+      }
+    ]
+  },
+  {
+    "toolId": "imagineart",
+    "reviewedAt": "2026-09-21T05:50:18.177494+00:00",
+    "sources": [
+      {
+        "id": "s1",
+        "url": "https://www.imagine.art",
+        "title": "ImagineArt - AI Creative Suite | Images, Videos, Voice",
+        "method": "http-html-text",
+        "checkedAt": "2026-09-21T05:50:18.177494+00:00",
+        "evidenceFile": "research/products/2026-09-21T05-44-22-176157Z/imagineart-9e7e680f6a.json"
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "video",
+        "medium": "video",
+        "summary": {
+          "ko": "텍스트·이미지·영상 등의 참고 자료로 카메라 움직임과 효과가 있는 영상을 만들어요.",
+          "en": "Create video effects and camera motion with text, image, video, and audio references."
+        },
+        "inputs": {
+          "ko": ["문장", "이미지", "영상"],
+          "en": ["Text prompt", "Image", "Video"]
+        },
+        "outputs": {
+          "ko": ["영상 장면", "효과 영상"],
+          "en": ["Video scenes", "Video effects"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "Multimodal control — text, image, video, and audio in one pass."
+      },
+      {
+        "id": "image",
+        "medium": "image",
+        "summary": {
+          "ko": "이미지 생성 도구에서 아이디어를 시각화해요.",
+          "en": "Visualize ideas with an image generator."
+        },
+        "inputs": {
+          "ko": ["제작 아이디어"],
+          "en": ["Creative idea"]
+        },
+        "outputs": {
+          "ko": ["생성 이미지"],
+          "en": ["Generated images"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "Bring your ideas to life with realistic images and videos"
+      }
+    ]
+  },
+  {
+    "toolId": "seaart",
+    "reviewedAt": "2026-09-21T05:50:18.177494+00:00",
+    "sources": [
+      {
+        "id": "s1",
+        "url": "https://www.seaart.ai",
+        "title": "AI Creativity Community for Art, Video, Chat & Tools | SeaArt AI",
+        "method": "http-html-text",
+        "checkedAt": "2026-09-21T05:50:18.177494+00:00",
+        "evidenceFile": "research/products/2026-09-21T05-44-22-176157Z/seaart-d6ea284cb4.json"
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "video",
+        "medium": "video",
+        "summary": {
+          "ko": "참고 자료와 템플릿을 활용해 영상과 카메라 움직임 효과를 만들어요.",
+          "en": "Use references and templates to create videos and camera-motion effects."
+        },
+        "inputs": {
+          "ko": ["참고 자료"],
+          "en": ["References"]
+        },
+        "outputs": {
+          "ko": ["영상", "카메라 움직임 효과"],
+          "en": ["Video", "Camera-motion effects"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "Multi-Angle Camera Movement Video"
+      },
+      {
+        "id": "image",
+        "medium": "image",
+        "summary": {
+          "ko": "이미지 생성·편집 도구와 커뮤니티 템플릿으로 그림과 캐릭터를 만들어요.",
+          "en": "Create images and characters with generation, editing, and community templates."
+        },
+        "inputs": {
+          "ko": ["제작 아이디어"],
+          "en": ["Creative idea"]
+        },
+        "outputs": {
+          "ko": ["그림", "캐릭터"],
+          "en": ["Artwork", "Characters"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "Turn your ideas into images, videos, and characters"
+      }
+    ]
+  },
+  {
+    "toolId": "heygen",
+    "reviewedAt": "2026-09-21T05:50:18.177494+00:00",
+    "sources": [
+      {
+        "id": "s1",
+        "url": "https://www.heygen.com",
+        "title": "HeyGen: Create Realistic AI Videos of Yourself in Minutes",
+        "method": "http-html-text",
+        "checkedAt": "2026-09-21T05:50:18.177494+00:00",
+        "evidenceFile": "research/products/2026-09-21T05-44-22-176157Z/heygen-8d56c886c1.json"
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "video",
+        "medium": "video",
+        "summary": {
+          "ko": "대본에 따라 말하는 아바타 영상을 만들고 자막·보조 화면을 더해요.",
+          "en": "Create presenter-avatar videos from scripts and add captions and B-roll."
+        },
+        "inputs": {
+          "ko": ["대본"],
+          "en": ["Script"]
+        },
+        "outputs": {
+          "ko": ["아바타 발표 영상"],
+          "en": ["Avatar presenter video"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "Tone, delivery, and pacing all respond to your script."
+      }
+    ]
+  },
+  {
+    "toolId": "synthesia",
+    "reviewedAt": "2026-09-21T05:50:18.177494+00:00",
+    "sources": [
+      {
+        "id": "s1",
+        "url": "https://www.synthesia.io",
+        "title": "Synthesia: #1 AI Video Platform for Business",
+        "method": "http-html-text",
+        "checkedAt": "2026-09-21T05:50:18.177494+00:00",
+        "evidenceFile": "research/products/2026-09-21T05-44-22-176157Z/synthesia-2a6b6f09f5.json"
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "video",
+        "medium": "video",
+        "summary": {
+          "ko": "대본을 아바타와 AI 음성이 있는 교육·업무 영상으로 만들어요.",
+          "en": "Turn scripts into training and business videos with avatars and AI voices."
+        },
+        "inputs": {
+          "ko": ["대본"],
+          "en": ["Script"]
+        },
+        "outputs": {
+          "ko": ["교육 영상", "아바타 발표 영상"],
+          "en": ["Training video", "Avatar presenter video"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "Convert your scripts into high-quality voiceovers"
+      }
+    ]
+  },
+  {
+    "toolId": "did",
+    "reviewedAt": "2026-09-21T05:50:18.177494+00:00",
+    "sources": [
+      {
+        "id": "s1",
+        "url": "https://www.d-id.com",
+        "title": "D-ID | The #1 Choice for AI Generated Video Creation Platform",
+        "method": "http-html-text",
+        "checkedAt": "2026-09-21T05:50:18.177494+00:00",
+        "evidenceFile": "research/products/2026-09-21T05-44-22-176157Z/did-da20e96891.json"
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "video",
+        "medium": "video",
+        "summary": {
+          "ko": "대본·발표 자료·문서를 여러 언어로 말하는 아바타 영상으로 바꿔요.",
+          "en": "Turn scripts, decks, and documents into multilingual avatar videos."
+        },
+        "inputs": {
+          "ko": ["대본", "발표 자료", "문서"],
+          "en": ["Script", "Slides", "Documents"]
+        },
+        "outputs": {
+          "ko": ["아바타 설명 영상"],
+          "en": ["Avatar explainer video"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "Generate polished, multilingual avatar videos from scripts. briefs, decks, or documents."
+      }
+    ]
+  },
+  {
+    "toolId": "colossyan",
+    "reviewedAt": "2026-09-21T05:50:18.177494+00:00",
+    "sources": [
+      {
+        "id": "s1",
+        "url": "https://www.colossyan.com",
+        "title": "Colossyan Creator - AI Video Generator",
+        "method": "http-html-text",
+        "checkedAt": "2026-09-21T05:50:18.177494+00:00",
+        "evidenceFile": "research/products/2026-09-21T05-44-22-176157Z/colossyan-9cb91c2723.json"
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "video",
+        "medium": "video",
+        "summary": {
+          "ko": "문서·발표 자료·주제로 AI 발표자가 등장하는 설명 영상과 교육 과정을 만들어요.",
+          "en": "Build presenter-led explainers and courses from documents, slides, or a topic."
+        },
+        "inputs": {
+          "ko": ["문서", "발표 자료", "주제"],
+          "en": ["Document", "Presentation", "Topic"]
+        },
+        "outputs": {
+          "ko": ["설명 영상", "교육 과정"],
+          "en": ["Explainer video", "Training course"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "You start from a document, presentation, or topic description"
+      }
+    ]
+  },
+  {
+    "toolId": "invideo",
+    "reviewedAt": "2026-09-21T05:50:18.177494+00:00",
+    "sources": [
+      {
+        "id": "s1",
+        "url": "https://invideo.io",
+        "title": "invideo Editor - Create videos without limits",
+        "method": "http-html-text",
+        "checkedAt": "2026-09-21T05:50:18.177494+00:00",
+        "evidenceFile": "research/products/2026-09-21T05-44-22-176157Z/invideo-7b40e8aa13.json"
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "video",
+        "medium": "video",
+        "summary": {
+          "ko": "대본·아이디어로 장면 계획을 만들고 업로드한 영상을 자연어로 찾아 편집해요.",
+          "en": "Plan shots from a script or idea, then find and edit uploaded footage using plain language."
+        },
+        "inputs": {
+          "ko": ["대본", "아이디어", "촬영 영상"],
+          "en": ["Script", "Idea", "Recorded footage"]
+        },
+        "outputs": {
+          "ko": ["장면 계획", "편집 영상"],
+          "en": ["Shot plan", "Edited video"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "Turn any script or idea into a shot-by-shot plan"
+      }
+    ]
+  },
+  {
+    "toolId": "pictory",
+    "reviewedAt": "2026-09-21T05:50:18.177494+00:00",
+    "sources": [
+      {
+        "id": "s1",
+        "url": "https://pictory.ai",
+        "title": "Pictory - Text to Video AI",
+        "method": "http-html-text",
+        "checkedAt": "2026-09-21T05:50:18.177494+00:00",
+        "evidenceFile": "research/products/2026-09-21T05-44-22-176157Z/pictory-98c7631947.json"
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "video",
+        "medium": "video",
+        "summary": {
+          "ko": "대본·글·자료를 영상으로 바꾸고 기존 영상에서 하이라이트와 자막을 만들어요.",
+          "en": "Turn scripts and documents into videos and create highlights and captions from existing footage."
+        },
+        "inputs": {
+          "ko": ["대본", "문서", "기존 영상"],
+          "en": ["Script", "Document", "Existing video"]
+        },
+        "outputs": {
+          "ko": ["설명 영상", "짧은 하이라이트", "자막 영상", "유튜브 쇼츠"],
+          "en": ["Explainer video", "Short highlights", "Captioned video", "YouTube Shorts"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "Script to Video"
+      }
+    ]
+  },
+  {
+    "toolId": "fliki",
+    "reviewedAt": "2026-09-21T05:50:18.177494+00:00",
+    "sources": [
+      {
+        "id": "s1",
+        "url": "https://fliki.ai",
+        "title": "Fliki - Turn Any Idea Into Video With 2,000+ AI Voices",
+        "method": "http-html-text",
+        "checkedAt": "2026-09-21T05:50:18.177494+00:00",
+        "evidenceFile": "research/products/2026-09-21T05-44-22-176157Z/fliki-57227f320d.json"
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "video",
+        "medium": "video",
+        "summary": {
+          "ko": "대본·블로그 글·한 줄 아이디어에 화면, AI 내레이션, 음악, 자막을 붙여 영상을 만들어요.",
+          "en": "Turn a script, blog post, or idea into a video with visuals, AI narration, music, and subtitles."
+        },
+        "inputs": {
+          "ko": ["대본", "블로그 글", "아이디어"],
+          "en": ["Script", "Blog post", "Idea"]
+        },
+        "outputs": {
+          "ko": ["내레이션·자막 영상", "유튜브 쇼츠"],
+          "en": ["Narrated and subtitled video", "YouTube Shorts"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "Paste a script, blog post or one-line prompt."
+      }
+    ]
+  },
+  {
+    "toolId": "veed",
+    "reviewedAt": "2026-09-21T05:50:18.177494+00:00",
+    "sources": [
+      {
+        "id": "s1",
+        "url": "https://www.veed.io",
+        "title": "VEED – AI Video Creation Platform | Idea to Video Workflow",
+        "method": "http-html-text",
+        "checkedAt": "2026-09-21T05:50:18.177494+00:00",
+        "evidenceFile": "research/products/2026-09-21T05-44-22-176157Z/veed-08d9fbb6d5.json"
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "video",
+        "medium": "video",
+        "summary": {
+          "ko": "기존 영상을 편집하고 자동 자막·번역·짧은 클립으로 재가공해요.",
+          "en": "Edit existing video and repurpose it with automatic subtitles, translation, and short clips."
+        },
+        "inputs": {
+          "ko": ["기존 영상"],
+          "en": ["Existing video"]
+        },
+        "outputs": {
+          "ko": ["자막 영상", "짧은 클립"],
+          "en": ["Captioned video", "Short clips"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "Everything you need to edit, convert, subtitle and transcribe video"
+      }
+    ]
+  },
+  {
+    "toolId": "midjourney",
+    "reviewedAt": "2026-09-21T05:50:18.177494+00:00",
+    "sources": [
+      {
+        "id": "s1",
+        "url": "https://docs.midjourney.com/docs/prompts",
+        "title": "Prompt Basics – Midjourney Midjourney Docs",
+        "method": "http-html-text",
+        "checkedAt": "2026-09-21T05:50:18.177494+00:00",
+        "evidenceFile": "research/products/2026-09-21T05-45-46-067910Z/midjourney-6dff327989.json"
+      },
+      {
+        "id": "s2",
+        "url": "https://docs.midjourney.com/hc/en-us/sections/32013397184397-Using-Your-Own-Images",
+        "title": "Using Your Own Images – Midjourney Midjourney Docs",
+        "method": "http-html-text",
+        "checkedAt": "2026-09-21T05:50:18.177494+00:00",
+        "evidenceFile": "research/products/2026-09-21T05-45-46-067910Z/midjourney-95091b6411.json"
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "image",
+        "medium": "image",
+        "summary": {
+          "ko": "문장과 이미지 참고 자료로 그림·사진·일러스트를 생성해요.",
+          "en": "Generate art, photography, and illustrations from text and image references."
+        },
+        "inputs": {
+          "ko": ["문장", "참고 이미지"],
+          "en": ["Text prompt", "Reference image"]
+        },
+        "outputs": {
+          "ko": ["그림", "사진", "일러스트"],
+          "en": ["Artwork", "Photography", "Illustration"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "Creating with Midjourney starts"
+      },
+      {
+        "id": "video",
+        "medium": "video",
+        "summary": {
+          "ko": "이미지를 시작점으로 짧은 영상을 만들어 움직임을 더해요.",
+          "en": "Animate an image into a short video."
+        },
+        "inputs": {
+          "ko": ["이미지"],
+          "en": ["Image"]
+        },
+        "outputs": {
+          "ko": ["움직이는 이미지 클립"],
+          "en": ["Animated image clip"]
+        },
+        "sourceId": "s2",
+        "evidenceExcerpt": "Turn your images into captivating"
+      }
+    ]
+  },
+  {
+    "toolId": "gemini",
+    "reviewedAt": "2026-09-21T05:50:18.177494+00:00",
+    "sources": [
+      {
+        "id": "s1",
+        "url": "https://gemini.google/sg/overview/image-generation/?hl=en-SG",
+        "title": "Nano Banana 2 - Gemini AI image generator & photo editor",
+        "method": "http-html-text",
+        "checkedAt": "2026-09-21T05:50:18.177494+00:00",
+        "evidenceFile": "research/products/2026-09-21T05-45-46-067910Z/gemini-1c33fd91fa.json"
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "image",
+        "medium": "image",
+        "summary": {
+          "ko": "문장으로 이미지를 만들거나 사진을 올려 배경·사물·스타일을 대화로 바꿔요.",
+          "en": "Generate images from text or upload photos and change backgrounds, objects, or styles through conversation."
+        },
+        "inputs": {
+          "ko": ["문장", "사진"],
+          "en": ["Text prompt", "Photo"]
+        },
+        "outputs": {
+          "ko": ["생성 이미지", "편집한 사진"],
+          "en": ["Generated image", "Edited photo"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "telling Gemini to change the background, replace an object, or add an element"
+      }
+    ]
+  },
+  {
+    "toolId": "ideogram",
+    "reviewedAt": "2026-09-21T05:50:18.177494+00:00",
+    "sources": [
+      {
+        "id": "s1",
+        "url": "https://docs.ideogram.ai/",
+        "title": "Welcome to Ideogram | Ideogram",
+        "method": "http-html-text",
+        "checkedAt": "2026-09-21T05:50:18.177494+00:00",
+        "evidenceFile": "research/products/2026-09-21T05-45-46-067910Z/ideogram-630a731624.json"
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "image",
+        "medium": "image",
+        "summary": {
+          "ko": "글자가 들어간 포스터·로고를 생성하고 배경 제거·교체와 이미지 편집을 해요.",
+          "en": "Generate posters and logos with text, edit images, and remove or replace backgrounds."
+        },
+        "inputs": {
+          "ko": ["문장", "참고 이미지"],
+          "en": ["Text prompt", "Reference image"]
+        },
+        "outputs": {
+          "ko": ["문자가 들어간 포스터", "로고", "편집 이미지"],
+          "en": ["Text-bearing posters", "Logos", "Edited images"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "Ideogram excels at integrating text into images"
+      }
+    ]
+  },
+  {
+    "toolId": "recraft",
+    "reviewedAt": "2026-09-21T05:50:18.177494+00:00",
+    "sources": [
+      {
+        "id": "s1",
+        "url": "https://www.recraft.ai",
+        "title": "Recraft | AI for designers, creatives, sellers, and teams",
+        "method": "http-html-text",
+        "checkedAt": "2026-09-21T05:50:18.177494+00:00",
+        "evidenceFile": "research/products/2026-09-21T05-44-22-176157Z/recraft-8fac460dcd.json"
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "image",
+        "medium": "image",
+        "summary": {
+          "ko": "이미지·벡터·목업을 생성하고 참고 이미지에서 재사용할 스타일을 만들어요.",
+          "en": "Generate images, vectors, and mockups and build reusable styles from reference images."
+        },
+        "inputs": {
+          "ko": ["문장", "스타일 참고 이미지"],
+          "en": ["Text prompt", "Style reference images"]
+        },
+        "outputs": {
+          "ko": ["벡터", "목업", "스타일을 맞춘 이미지"],
+          "en": ["Vectors", "Mockups", "Styled images"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "generating and editing images, vectors, and mockups"
+      }
+    ]
+  },
+  {
+    "toolId": "nightcafe",
+    "reviewedAt": "2026-09-21T05:50:18.177494+00:00",
+    "sources": [
+      {
+        "id": "s1",
+        "url": "https://help.nightcafe.studio/portal/en/kb/articles/how-to-use-the-nano-banana-model-on-nightcafe",
+        "title": "Nano Banana on NightCafe",
+        "method": "official-web",
+        "checkedAt": "2026-09-21T05:50:18.177494+00:00",
+        "evidenceFile": "research/products/manual-2026-09-21/nightcafe.json"
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "image",
+        "medium": "image",
+        "summary": {
+          "ko": "모델을 선택해 문장으로 그림을 만들거나 기존 이미지를 편집해요.",
+          "en": "Choose a model to generate images from text or edit existing images."
+        },
+        "inputs": {
+          "ko": ["문장", "기존 이미지"],
+          "en": ["Text prompt", "Existing image"]
+        },
+        "outputs": {
+          "ko": ["생성·편집한 그림"],
+          "en": ["Generated and edited artwork"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "both text-to-image generation and image editing"
+      }
+    ]
+  },
+  {
+    "toolId": "tensor",
+    "reviewedAt": "2026-09-21T05:50:18.177494+00:00",
+    "sources": [
+      {
+        "id": "s1",
+        "url": "https://tensor.art",
+        "title": "FREE online image generator and model hosting site! | Tensor.Art",
+        "method": "http-html-text",
+        "checkedAt": "2026-09-21T05:50:18.177494+00:00",
+        "evidenceFile": "research/products/2026-09-21T05-44-22-176157Z/tensor-70bbf5a2c8.json"
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "image",
+        "medium": "image",
+        "summary": {
+          "ko": "캐릭터·사진·브랜드 비주얼을 만들고 참고 이미지로 편집해요.",
+          "en": "Create characters, photography, and brand visuals and edit from references."
+        },
+        "inputs": {
+          "ko": ["참고 이미지", "디자인 설명"],
+          "en": ["Reference image", "Design description"]
+        },
+        "outputs": {
+          "ko": ["캐릭터", "브랜드 비주얼", "사진"],
+          "en": ["Characters", "Brand visuals", "Photography"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "Chat to generate, edit, and perfect your designs"
+      }
+    ]
+  },
+  {
+    "toolId": "canva",
+    "reviewedAt": "2026-09-21T05:50:18.177494+00:00",
+    "sources": [
+      {
+        "id": "s1",
+        "url": "https://www.canva.com/help/using-magic-media/?query=magic+media",
+        "title": "Use Magic Media to create photos, graphic, and videos - Canva Help Center",
+        "method": "official-web",
+        "checkedAt": "2026-09-21T05:50:18.177494+00:00",
+        "evidenceFile": "research/products/manual-2026-09-21/canva.json"
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "image",
+        "medium": "image",
+        "summary": {
+          "ko": "원하는 모습·스타일·크기를 설명해 이미지와 그래픽을 만들어요.",
+          "en": "Describe the look, style, and size to generate images and graphics."
+        },
+        "inputs": {
+          "ko": ["문장"],
+          "en": ["Text prompt"]
+        },
+        "outputs": {
+          "ko": ["이미지", "그래픽"],
+          "en": ["Images", "Graphics"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "Generate unique images, graphics, or videos"
+      }
+    ]
+  },
+  {
+    "toolId": "photoroom",
+    "reviewedAt": "2026-09-21T05:50:18.177494+00:00",
+    "sources": [
+      {
+        "id": "s1",
+        "url": "https://www.photoroom.com",
+        "title": "AI-Powered Photo Editor and Listing Studio for Product Photography | Photoroom",
+        "method": "http-html-text",
+        "checkedAt": "2026-09-21T05:50:18.177494+00:00",
+        "evidenceFile": "research/products/2026-09-21T05-44-22-176157Z/photoroom-780df6420c.json"
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "image",
+        "medium": "image",
+        "summary": {
+          "ko": "상품 사진을 올려 새로운 상품 장면을 만들고 배경·불필요한 사물을 제거해요.",
+          "en": "Upload a product photo to generate product scenes and remove backgrounds or unwanted objects."
+        },
+        "inputs": {
+          "ko": ["상품 사진"],
+          "en": ["Product photo"]
+        },
+        "outputs": {
+          "ko": ["쇼핑몰 상품 사진", "배경 없는 상품 사진"],
+          "en": ["Store product photos", "Product cutouts"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "Just upload a product photo and Photoroom generates the visual."
+      }
+    ]
+  },
+  {
+    "toolId": "fotor",
+    "reviewedAt": "2026-09-21T05:50:18.177494+00:00",
+    "sources": [
+      {
+        "id": "s1",
+        "url": "https://www.fotor.com",
+        "title": "Photo Editor: Free Online Photo Editing & Image Editor | Fotor",
+        "method": "http-html-text",
+        "checkedAt": "2026-09-21T05:50:18.177494+00:00",
+        "evidenceFile": "research/products/2026-09-21T05-44-22-176157Z/fotor-30fd3c4ac8.json"
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "image",
+        "medium": "image",
+        "summary": {
+          "ko": "사진의 배경과 사물을 제거하고 흐림·해상도·오래된 사진을 보정해요.",
+          "en": "Remove backgrounds and objects, sharpen photos, upscale, and restore old pictures."
+        },
+        "inputs": {
+          "ko": ["사진"],
+          "en": ["Photo"]
+        },
+        "outputs": {
+          "ko": ["배경 없는 사진", "복원·보정 사진"],
+          "en": ["Background-free photos", "Restored and enhanced photos"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "Remove Object HOT Remove unwanted objects from photos."
+      }
+    ]
+  },
+  {
+    "toolId": "reve",
+    "reviewedAt": "2026-09-21T05:50:18.177494+00:00",
+    "sources": [
+      {
+        "id": "s1",
+        "url": "https://help.reve.com/hc/en-us/articles/46809604700052-Getting-started-with-Reve",
+        "title": "Getting started with Reve – Reve AI",
+        "method": "http-html-text",
+        "checkedAt": "2026-09-21T05:50:18.177494+00:00",
+        "evidenceFile": "research/products/2026-09-21T05-45-46-067910Z/reve-34cb9adaaa.json"
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "image",
+        "medium": "image",
+        "summary": {
+          "ko": "대화로 이미지를 생성·편집하고 드래그앤드롭 편집기로 세부를 조절해요.",
+          "en": "Generate and edit images through conversation, then refine details with drag-and-drop editing."
+        },
+        "inputs": {
+          "ko": ["대화", "참고 이미지"],
+          "en": ["Conversation", "Reference image"]
+        },
+        "outputs": {
+          "ko": ["생성·편집한 이미지"],
+          "en": ["Generated and edited images"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "generate and edit images through conversation"
+      }
+    ]
+  },
+  {
+    "toolId": "kittl",
+    "reviewedAt": "2026-09-21T05:50:18.177494+00:00",
+    "sources": [
+      {
+        "id": "s1",
+        "url": "https://www.kittl.com",
+        "title": "Kittl | The AI-First Design Platform for Creators",
+        "method": "http-html-text",
+        "checkedAt": "2026-09-21T05:50:18.177494+00:00",
+        "evidenceFile": "research/products/2026-09-21T05-44-22-176157Z/kittl-91e060cafd.json"
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "image",
+        "medium": "image",
+        "summary": {
+          "ko": "이미지·벡터를 생성하고 템플릿·목업·문자 효과로 브랜드와 상품 디자인을 만들어요.",
+          "en": "Generate images and vectors and use templates, mockups, and text effects for brand and product designs."
+        },
+        "inputs": {
+          "ko": ["디자인 아이디어", "이미지"],
+          "en": ["Design idea", "Image"]
+        },
+        "outputs": {
+          "ko": ["벡터", "상품 목업", "브랜드 디자인"],
+          "en": ["Vectors", "Product mockups", "Brand designs"]
+        },
+        "sourceId": "s1",
+        "evidenceExcerpt": "Create clean, editable vector artwork"
+      }
+    ]
+  }
+]

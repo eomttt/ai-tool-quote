@@ -1,0 +1,10 @@
+{
+  "toolId": "gemini",
+  "requestedUrl": "https://gemini.google.com",
+  "fetchedAt": "2026-09-21T05:44:23.258706+00:00",
+  "method": "http-html-text",
+  "purpose": "product",
+  "reviewStatus": "unreviewed",
+  "collectionStatus": "fetch-error",
+  "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082)>"
+}

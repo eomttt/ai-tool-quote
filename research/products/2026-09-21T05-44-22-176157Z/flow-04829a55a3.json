@@ -1,0 +1,17 @@
+{
+  "toolId": "flow",
+  "requestedUrl": "https://labs.google/fx/tools/flow",
+  "fetchedAt": "2026-09-21T05:44:23.184895+00:00",
+  "method": "http-html-text",
+  "purpose": "product",
+  "reviewStatus": "unreviewed",
+  "finalUrl": "https://flow.google.com/",
+  "httpStatus": 200,
+  "contentType": "text/html; charset=utf-8",
+  "contentSha256": "a09f99bf02a85191f9d95f7538e1d5997320cc0e03edeed5a8a12e47eab292fe",
+  "title": "Google Flow - AI Creative Studio for Video, Images & Custom Tools",
+  "text": "Google Flow - AI Creative Studio for Video, Images & Custom Tools\nSign in",
+  "pricingLinks": [],
+  "collectionStatus": "render-required",
+  "textSha256": "1c2a31baf186f73d785e14ea278036301a9f277a0da014f622a29c0599b8294a"
+}

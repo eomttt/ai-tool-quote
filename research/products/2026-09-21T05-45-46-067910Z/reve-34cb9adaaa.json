@@ -1,0 +1,17 @@
+{
+  "toolId": "reve",
+  "requestedUrl": "https://help.reve.com/hc/en-us/articles/46809604700052-Getting-started-with-Reve",
+  "fetchedAt": "2026-09-21T05:45:46.911539+00:00",
+  "method": "http-html-text",
+  "purpose": "product",
+  "reviewStatus": "unreviewed",
+  "finalUrl": "https://help.reve.com/hc/en-us/articles/46809604700052-Getting-started-with-Reve",
+  "httpStatus": 200,
+  "contentType": "text/html; charset=utf-8",
+  "contentSha256": "7902a91778c69abd63e73e447242979f16417413e96ccd08c729aa9805391435",
+  "title": "Getting started with Reve – Reve AI",
+  "text": "Getting started with Reve – Reve AI\nSkip to main content\nReve is sunsetting. You have until Sept 27th to create, and October 31st to download your work.\nLearn more here .\nGo to Reve\nReve AI\nGetting started with Reve\nThe basics\nLoading...\nGetting started with Reve\nReve is built on a simple idea: your creative vision comes first. We handle the complexity so you can focus on what you want to create.\nOur models are trained from the ground up by our in-house research team and are best-in-class at aesthetics, text rendering and detail preservation. You can generate and edit images through conversation, make precise adjustments with the drag-and-drop editor, create video and even integrate Reve into your own tools via the API.\nBut let's start with the basics! In this section you'll learn how to navigate Reve, create images and video and begin to get the most out of the product.\nNavigating Reve: Get familiar with the basics and find your way around the Reve workspace.\nCreating images on Reve: Learn how to generate images through chat, use custom instructions, adjust aspect ratios, attach references and other fundamentals.\nCreating video on Reve: Explore video creation using prompts or your images as reference frames, powered by our integration with Veo.\nReve API: An overview of Reve's API and where to learn more.\nReturn to top\nGot questions?\nIf you need additional support, we're here to help.\nSubmit a request",
+  "pricingLinks": [],
+  "collectionStatus": "collected",
+  "textSha256": "2d675757ffa4dd3bebccf8d38918bf7fc8df0914947f6b00f257ec21a8d767ae"
+}

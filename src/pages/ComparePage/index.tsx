@@ -1,22 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import {
-  ArrowDown,
-  ArrowUpRight,
-  Clapperboard,
-  Image,
-  Search,
-  SlidersHorizontal,
-  X,
-} from 'lucide-react';
+import { ArrowUpRight, Clapperboard, Image, Search, SlidersHorizontal, X } from 'lucide-react';
 import { Button } from '../../common/components/Button';
 import { Badge } from '../../common/components/Badge';
-import { Input } from '../../common/components/Input';
 import { Checkbox } from '../../common/components/Checkbox';
 import { Tabs, TabsList, TabsTrigger } from '../../common/components/Tabs';
 import { tools as catalogTools } from '../../domains/catalog/data/tools';
 import { scenarios } from '../../domains/catalog/data/scenarios';
-import { matchesToolSearch } from '../../domains/catalog/utils/search-tools';
+import { searchTools, recommendationFeature } from '../../domains/catalog/utils/search-tools';
 import { getPricing, pricingSnapshots } from '../../domains/catalog/data/pricing';
 import type { Billing, Medium, Tool } from '../../domains/catalog/models/model-tool';
 import { compareSubscriptionPrices } from '../../domains/catalog/utils/price-information';
@@ -24,20 +15,29 @@ import { ToolCard } from '../../domains/catalog/components/ToolCard';
 import { ToolPeek } from '../../domains/catalog/components/ToolPeek';
 import { ComparisonTable } from '../../domains/catalog/components/ComparisonTable';
 import { localizeTool } from '../../domains/catalog/utils/localize-catalog';
+import { SiteFooter } from '../../common/components/SiteFooter';
+import { pagePath } from '../../common/utils/page-route';
 
-export function ComparePage() {
+export function ComparePage({
+  initialMedium = 'video',
+  year = new Date().getUTCFullYear(),
+}: {
+  initialMedium?: Medium;
+  year?: number;
+}) {
   const { t, i18n } = useTranslation();
   const { t: catalogT } = useTranslation('catalog');
   const tools = catalogTools.map((tool) => localizeTool(tool, catalogT));
-  const searchRef = useRef<HTMLInputElement>(null);
+  const searchRef = useRef<HTMLTextAreaElement>(null);
   const detailTriggerRef = useRef<HTMLElement | null>(null);
   const comparisonRef = useRef<HTMLDivElement>(null);
-  const [medium, setMedium] = useState<Medium>('video');
+  const medium = initialMedium;
   const [billing, setBilling] = useState<Billing>('monthly');
   const [search, setSearch] = useState('');
-  const [scenarioId, setScenarioId] = useState<string>();
+  const [query, setQuery] = useState('');
   const mediumScenarios = scenarios.filter((item) => item.medium === medium);
-  const selectedScenario = mediumScenarios.find((item) => item.id === scenarioId);
+  const recommendations = searchTools(query);
+  const recommendationsById = new Map(recommendations.map((item) => [item.id, item]));
   const [onlyPriced, setOnlyPriced] = useState(false);
   const [sort, setSort] = useState('featured');
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
@@ -63,9 +63,7 @@ export function ComparePage() {
   const filteredTools = tools
     .filter((tool) => {
       return (
-        tool.media.includes(medium) &&
-        (!selectedScenario || selectedScenario.toolIds.includes(tool.id)) &&
-        matchesToolSearch(tool, medium, search) &&
+        (query ? recommendationsById.has(tool.id) : tool.media.includes(medium)) &&
         (!onlyPriced || Boolean(getPricing(tool.id)))
       );
     })
@@ -74,15 +72,16 @@ export function ComparePage() {
       if (sort === 'price') {
         return compareSubscriptionPrices(getPricing(a.id), getPricing(b.id), billing);
       }
-      return Number(Boolean(b.featured)) - Number(Boolean(a.featured));
+      return query
+        ? (recommendationsById.get(b.id)?.score ?? 0) -
+            (recommendationsById.get(a.id)?.score ?? 0) || a.id.localeCompare(b.id)
+        : Number(Boolean(b.featured)) - Number(Boolean(a.featured));
     });
-  function handleMediumChange(value: string) {
-    if (value !== 'video' && value !== 'image') return;
-    setMedium(value);
-    setScenarioId(undefined);
-    setDetailToolId(undefined);
-    setSelectedIds([]);
-    setComparisonOpen(false);
+  function displayMedium(tool: Tool) {
+    return (
+      recommendationsById.get(tool.id)?.scenario?.medium ??
+      (tool.media.includes(medium) ? medium : (tool.media[0] ?? medium))
+    );
   }
   function handleBillingChange(value: string) {
     if (value === 'monthly' || value === 'annual') setBilling(value);
@@ -110,7 +109,7 @@ export function ComparePage() {
   }
   function handleResetFilters() {
     setSearch('');
-    setScenarioId(undefined);
+    setQuery('');
     setOnlyPriced(false);
   }
   return (
@@ -136,7 +135,7 @@ export function ComparePage() {
         </div>
       </header>
       <main id="top">
-        <section className="hero content-width" aria-labelledby="hero-title">
+        <section className="hero content-width search-intro" aria-labelledby="hero-title">
           <div>
             <p className="eyebrow">{t('hero.eyebrow')}</p>
             <h1 id="hero-title">
@@ -149,34 +148,6 @@ export function ComparePage() {
               <br />
               {t('hero.descriptionSecond')}
             </p>
-            <Button asChild variant="outline">
-              <a href="#catalog">
-                {t('hero.browse')}
-                <ArrowDown />
-              </a>
-            </Button>
-          </div>
-          <div className="hero-index" aria-label={t('hero.indexLabel', { count: tools.length })}>
-            <span className="eyebrow">{t('hero.collection')}</span>
-            <div>
-              <strong>{tools.length.toString().padStart(2, '0')}</strong>
-              <span>
-                {t('hero.tools')}
-                <br />
-                {t('hero.possibilities')}
-              </span>
-            </div>
-            <div className="hero-index-bottom">
-              <span>
-                <Clapperboard size={15} />
-                {t('medium.video')}
-              </span>
-              <span>
-                <Image size={15} />
-                {t('medium.image')}
-              </span>
-              <span>↗</span>
-            </div>
           </div>
         </section>
         <section className="catalog-section" id="catalog">
@@ -188,59 +159,108 @@ export function ComparePage() {
               </div>
               <p>{t('catalog.subtitle')}</p>
             </div>
-            <div className="category-line">
-              <Tabs value={medium} onValueChange={handleMediumChange}>
-                <TabsList aria-label={t('medium.label')} className="medium-tabs">
-                  <TabsTrigger value="video">
-                    <Clapperboard />
-                    {t('medium.video')}
-                    <Badge variant="secondary">
-                      {tools.filter((tool) => tool.media.includes('video')).length}
-                    </Badge>
-                  </TabsTrigger>
-                  <TabsTrigger value="image">
-                    <Image />
-                    {t('medium.image')}
-                    <Badge variant="secondary">
-                      {tools.filter((tool) => tool.media.includes('image')).length}
-                    </Badge>
-                  </TabsTrigger>
-                </TabsList>
-              </Tabs>
-              <span className="category-hint">
-                {t('catalog.hint')}
-                <ArrowUpRight size={14} />
-              </span>
-            </div>
+            {!query ? (
+              <div className="category-line">
+                <Tabs value={medium}>
+                  <TabsList aria-label={t('medium.label')} className="medium-tabs">
+                    <TabsTrigger value="video" asChild>
+                      <a href={`${pagePath(i18n.resolvedLanguage ?? 'en')}#catalog`}>
+                        <Clapperboard />
+                        {t('medium.video')}
+                        <Badge variant="secondary">
+                          {tools.filter((tool) => tool.media.includes('video')).length}
+                        </Badge>
+                      </a>
+                    </TabsTrigger>
+                    <TabsTrigger value="image" asChild>
+                      <a
+                        href={`${pagePath(i18n.resolvedLanguage ?? 'en', 'catalog', 'image')}#catalog`}
+                      >
+                        <Image />
+                        {t('medium.image')}
+                        <Badge variant="secondary">
+                          {tools.filter((tool) => tool.media.includes('image')).length}
+                        </Badge>
+                      </a>
+                    </TabsTrigger>
+                  </TabsList>
+                </Tabs>
+                <span className="category-hint">
+                  {t('catalog.hint')}
+                  <ArrowUpRight size={14} />
+                </span>
+              </div>
+            ) : null}
             <div className={`catalog-workspace ${detailTool ? 'has-peek' : ''}`}>
               <section className="catalog-results" aria-label={t('catalog.results')}>
-                <div className="search-row">
-                  <div className="search-field">
-                    <Search size={18} />
-                    <Input
-                      ref={searchRef}
-                      type="search"
-                      aria-label={t('search.label')}
-                      placeholder={t(`search.placeholder.${medium}`)}
-                      aria-describedby="search-hint"
-                      value={search}
-                      onChange={(event) => {
-                        setSearch(event.currentTarget.value);
-                      }}
-                    />
-                    {search ? (
+                <form
+                  className="situation-search"
+                  onSubmit={(event) => {
+                    event.preventDefault();
+                    setQuery(search.trim());
+                    setSort('featured');
+                    setOnlyPriced(false);
+                  }}
+                >
+                  <textarea
+                    ref={searchRef}
+                    rows={3}
+                    maxLength={1000}
+                    aria-label={t('search.label')}
+                    placeholder={t(`search.placeholder.${medium}`)}
+                    aria-describedby="search-hint"
+                    value={search}
+                    onChange={(event) => {
+                      setSearch(event.currentTarget.value);
+                    }}
+                  />
+                  <div className="situation-search-actions">
+                    <span>{t('search.inputHint')}</span>
+                    {search || query ? (
                       <Button
+                        type="button"
                         variant="ghost"
                         size="icon-xs"
-                        onClick={() => setSearch('')}
+                        onClick={handleResetFilters}
                         aria-label={t('search.clear')}
                       >
                         <X />
                       </Button>
-                    ) : (
-                      <kbd>/</kbd>
-                    )}
+                    ) : null}
+                    <Button type="submit" disabled={!search.trim()}>
+                      <Search />
+                      {t('search.submit')}
+                    </Button>
                   </div>
+                </form>
+                <p id="search-hint" className="search-hint">
+                  {t('search.hint')}
+                </p>
+                <div className="scenario-examples" role="group" aria-label={t('search.examples')}>
+                  {mediumScenarios.slice(0, 3).map((item) => (
+                    <Button
+                      key={item.id}
+                      variant="outline"
+                      size="sm"
+                      onClick={() => {
+                        const prompt = catalogT(item.prompt);
+                        setSearch(prompt);
+                        setQuery(prompt);
+                        setSort('featured');
+                        setOnlyPriced(false);
+                      }}
+                    >
+                      {catalogT(item.prompt)}
+                    </Button>
+                  ))}
+                </div>
+                {query ? (
+                  <div className="recommendation-heading">
+                    <h3>{t('recommendation.title')}</h3>
+                    <p>{t('recommendation.description', { count: tools.length })}</p>
+                  </div>
+                ) : null}
+                <div className="results-toolbar">
                   <div className="sort-field">
                     <SlidersHorizontal size={15} />
                     <select
@@ -248,41 +268,14 @@ export function ComparePage() {
                       value={sort}
                       onChange={(event) => setSort(event.currentTarget.value)}
                     >
-                      <option value="featured">{t('sort.featured')}</option>
+                      <option value="featured">
+                        {t(query ? 'sort.relevance' : 'sort.featured')}
+                      </option>
                       <option value="price">{t('sort.price')}</option>
                       <option value="name">{t('sort.name')}</option>
                     </select>
                   </div>
                 </div>
-                <p id="search-hint" className="search-hint">
-                  {t('search.hint')}
-                </p>
-                <div className="use-case-filters" role="group" aria-label={t('scenario.label')}>
-                  <Button
-                    variant={!selectedScenario ? 'default' : 'outline'}
-                    size="sm"
-                    aria-pressed={!selectedScenario}
-                    onClick={() => setScenarioId(undefined)}
-                  >
-                    {t('scenario.all')}
-                  </Button>
-                  {mediumScenarios.map((item) => (
-                    <Button
-                      key={item.id}
-                      variant={scenarioId === item.id ? 'default' : 'outline'}
-                      size="sm"
-                      aria-pressed={scenarioId === item.id}
-                      onClick={() => {
-                        setScenarioId(item.id);
-                      }}
-                    >
-                      {catalogT(item.label)}
-                    </Button>
-                  ))}
-                </div>
-                {selectedScenario ? (
-                  <p className="scenario-description">{catalogT(selectedScenario.description)}</p>
-                ) : null}
                 <div className="results-meta">
                   <p role="status">{t('catalog.count', { count: filteredTools.length })}</p>
                   <label className="checkbox-label">
@@ -305,6 +298,9 @@ export function ComparePage() {
                   {comparisonOpen && selectedTools.length >= 2 ? (
                     <ComparisonTable
                       tools={selectedTools}
+                      toolMedia={Object.fromEntries(
+                        selectedTools.map((tool) => [tool.id, displayMedium(tool)]),
+                      )}
                       medium={medium}
                       billing={billing}
                       onClose={() => setComparisonOpen(false)}
@@ -313,11 +309,20 @@ export function ComparePage() {
                 </div>
                 {filteredTools.length ? (
                   <div className="tool-grid">
-                    {filteredTools.map((tool) => (
+                    {filteredTools.map((tool, index) => (
                       <ToolCard
                         key={tool.id}
                         tool={tool}
-                        medium={medium}
+                        medium={displayMedium(tool)}
+                        recommendation={
+                          query
+                            ? {
+                                rank: index + 1,
+                                reason: recommendationFeature(tool, displayMedium(tool), query),
+                                situation: recommendationsById.get(tool.id)?.scenario?.label,
+                              }
+                            : undefined
+                        }
                         billing={billing}
                         selected={selectedIds.includes(tool.id)}
                         active={detailTool?.id === tool.id}
@@ -347,7 +352,8 @@ export function ComparePage() {
               {detailTool ? (
                 <ToolPeek
                   tool={detailTool}
-                  medium={medium}
+                  query={query}
+                  medium={displayMedium(detailTool)}
                   billing={billing}
                   onClose={handleCloseDetail}
                   onSelectTool={handleDetail}
@@ -368,14 +374,7 @@ export function ComparePage() {
           </div>
         </section>
       </main>
-      <footer className="site-footer content-width">
-        <span className="brand">
-          {t('brand')}
-          <span className="footer-dot">© {new Date().getFullYear()}</span>
-        </span>
-        <p>{t('footer.tagline')}</p>
-        <a href="#top">{t('footer.top')}</a>
-      </footer>
+      <SiteFooter year={year} medium={medium} />
       {selectedTools.length ? (
         <aside className="compare-tray" aria-label={t('compare.tray')}>
           <span className="tray-label">

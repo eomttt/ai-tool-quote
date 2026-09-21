@@ -1,0 +1,17 @@
+{
+  "toolId": "midjourney",
+  "requestedUrl": "https://docs.midjourney.com/hc/en-us/sections/32013397184397-Using-Your-Own-Images",
+  "fetchedAt": "2026-09-21T05:45:46.608584+00:00",
+  "method": "http-html-text",
+  "purpose": "product",
+  "reviewStatus": "unreviewed",
+  "finalUrl": "https://docs.midjourney.com/hc/en-us/sections/32013397184397-Using-Your-Own-Images",
+  "httpStatus": 200,
+  "contentType": "text/html; charset=utf-8",
+  "contentSha256": "b66c5c7adea78183a810623e2818a5c2b27129f6dae1aa1278d7d1bd5f41dd34",
+  "title": "Using Your Own Images – Midjourney Midjourney Docs",
+  "text": "Using Your Own Images – Midjourney\nMidjourney Docs\nSkip to main content\nMidjourney\nToggle navigation menu\nMidjourney\nDocumentation\nUsing Your Own Images\nUsing Your Own Images\nVideo\nTurn your images into captivating 5 second videos using Midjourney! Welcome to the exciting world of video creation with Midjourney! You can now...\nImage Prompts\nWant to influence the content, composition, and colors of your Midjourney creations? Include an image as part of your prompt! For more informati...\nStyle Reference\nWant to match the look and feel of another image? You can provide Midjourney with a Style Reference! For more information about V8.2, see our Ve...\nEdit Model\nWant to edit an image — or combine several — just by describing what you want? Use the Edit model to make your vision come to life! For more inf...\nOmni Reference\nWant to put a person or object into your images? You can provide Midjourney with an Omni Reference! When using V8.X, use the Edit Model instead—...\nDescribe\nLet your images inspire new ideas—use Describe to explore creative prompts! Describe has been updated to give longer, more detailed prompts for ...\nEditor\nCustomize your images using Midjourney's powerful tools! Inpainting and outpainting now use the new Edit Model for V8.X. For more information ab...\nMidjourney Website\nMidjourney Discord Server\nCategories\n< % categories.forEach(function(category, index) { %>\n< %= category.name %>\n< %= partial('partial-article-list-sections', {\nid: 'category-' + category.id,\nparentId: '#sidebar-navigation',\nsections: category.sections,\nactiveCategoryId: activeCategoryId,\nactiveSectionId: activeSectionId,\nactiveArticleId: activeArticleId,\npartial: partial\n}) %>\n< % }); %>\n< % if (sections.length) { %>\n< % sections.forEach(function(section) { %>\n< %= section.name %>\n< %= partial('partial-article-list-sections', {\nid: 'section-' + section.id,\nparentId: '#' + id,\nsections: section.sections,\nactiveCategoryId: activeCategoryId,\nactiveSectionId: activeSectionId,\nactiveArticleId: activeArticleId,\npartial: partial\n}) %>\n< % if (section.articles.length) { %>\n< % section.articles.forEach(function(article) { %>\n< %= article.title %>\n< % }); %>\n< % } %>\n< % }); %>\n< % } %>\n< % var getColumnClasses = function(columnNumber) {\nvar classNames = 'col-12';\nif (columnNumber >= 2) classNames += ' md:col-6';\nif (columnNumber >= 3) classNames += ' lg:col-4';\nif (columnNumber >= 4) classNames += ' xl:col-3';\nreturn classNames;\n} %>\n< % if (articles.length) { %>\n< % articles.forEach(function(article) { %>\n•\n< % if (excerptLength > 0 && article.body) { %>\n< %= article.title %>\n< %= Util.getExcerpt(article.body, 147) %>\n< % } else { %>\n< %= article.title %>\n< % } %>\n< % }) %>\n< % } %>",
+  "pricingLinks": [],
+  "collectionStatus": "collected",
+  "textSha256": "1a934f46adb3b7d369e14aded32e616c2109238c3e21a0a1a1516c41f85236dd"
+}

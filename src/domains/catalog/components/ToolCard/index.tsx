@@ -15,6 +15,7 @@ interface ToolCardProps {
   selectionFull: boolean;
   onCompare: () => void;
   onDetail: () => void;
+  recommendation?: { rank: number; reason: string; situation?: string };
 }
 export function ToolCard({
   tool,
@@ -25,8 +26,10 @@ export function ToolCard({
   selectionFull,
   onCompare,
   onDetail,
+  recommendation,
 }: ToolCardProps) {
   const { t } = useTranslation();
+  const { t: catalogT } = useTranslation('catalog');
   const features = tool.mediaFeatures?.[medium] ?? tool.features;
   return (
     <article className={`tool-card ${active ? 'tool-card-active' : ''}`}>
@@ -40,6 +43,14 @@ export function ToolCard({
       />
       <div className="card-topline">
         <ToolLogo tool={tool} />
+        {recommendation ? (
+          <span
+            aria-label={t('recommendation.rank', { count: recommendation.rank })}
+            className="text-sm text-muted-foreground"
+          >
+            {recommendation.rank.toString().padStart(2, '0')}
+          </span>
+        ) : null}
         <span className="card-compare-control">
           <Button
             variant={selected ? 'secondary' : 'ghost'}
@@ -57,11 +68,21 @@ export function ToolCard({
         <h3>{tool.name}</h3>
       </div>
       <p className="tool-best-for">{tool.bestFor}</p>
-      <ul className="card-features">
-        {features.slice(0, 2).map((feature) => (
-          <li key={feature}>{feature}</li>
-        ))}
-      </ul>
+      {recommendation ? (
+        <div className="recommendation-reason">
+          <span>
+            {t('recommendation.reason')}
+            {recommendation.situation ? ` · ${catalogT(recommendation.situation)}` : ''}
+          </span>
+          <p>{recommendation.reason}</p>
+        </div>
+      ) : (
+        <ul className="card-features">
+          {features.slice(0, 2).map((feature) => (
+            <li key={feature}>{feature}</li>
+          ))}
+        </ul>
+      )}
       <div className="tags">
         {(tool.mediaTags?.[medium] ?? tool.tags).slice(0, 3).map((tag) => (
           <Badge key={tag} variant="secondary">

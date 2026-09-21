@@ -1,0 +1,233 @@
+{
+  "synonyms": [
+    {
+      "term": "nanobanana",
+      "aliases": ["나노 바나나", "나노바나나", "nano banana", "nanobanana"]
+    },
+    {
+      "term": "faceless",
+      "aliases": [
+        "얼굴 공개 없이",
+        "얼굴 안 나오게",
+        "얼굴 없이",
+        "얼굴을 안",
+        "촬영 없이",
+        "직접 촬영하지 않고",
+        "without filming",
+        "without showing my face",
+        "without camera"
+      ]
+    },
+    {
+      "term": "behindscenes",
+      "aliases": [
+        "촬영 비하인드",
+        "비하인드컷",
+        "비하인드 컷",
+        "비하인드",
+        "메이킹 필름",
+        "behind the scenes",
+        "behind-the-scenes",
+        "behind cut",
+        "backstage"
+      ]
+    },
+    {
+      "term": "youtube",
+      "aliases": ["유튜브", "유투브", "youtube"]
+    },
+    {
+      "term": "shorts",
+      "aliases": ["쇼츠", "숏츠", "숏폼", "short form", "short-form", "shorts"]
+    },
+    {
+      "term": "instagram",
+      "aliases": ["인스타그램", "인스타", "instagram"]
+    },
+    {
+      "term": "reels",
+      "aliases": ["릴스", "reels"]
+    },
+    {
+      "term": "tiktok",
+      "aliases": ["틱톡", "tiktok"]
+    },
+    {
+      "term": "thumbnail",
+      "aliases": ["썸네일", "섬네일", "썸내일", "thumbnail", "thumbnails"]
+    },
+    {
+      "term": "product",
+      "aliases": ["상품", "제품", "product", "products"]
+    },
+    {
+      "term": "shop",
+      "aliases": ["쇼핑몰", "상세페이지", "온라인 판매", "ecommerce", "e-commerce", "shop"]
+    },
+    {
+      "term": "photo",
+      "aliases": ["사진", "photos", "photographs", "photo"]
+    },
+    {
+      "term": "image",
+      "aliases": ["이미지", "images", "image", "pictures", "picture"]
+    },
+    {
+      "term": "video",
+      "aliases": ["영상", "비디오", "videos", "video"]
+    },
+    {
+      "term": "animate",
+      "aliases": [
+        "움직이게",
+        "움직이는",
+        "움직임",
+        "애니메이션",
+        "animate",
+        "animated",
+        "animation",
+        "motion",
+        "moving"
+      ]
+    },
+    {
+      "term": "caption",
+      "aliases": ["자막", "subtitles", "subtitle", "captions", "caption"]
+    },
+    {
+      "term": "background",
+      "aliases": ["배경", "backgrounds", "background"]
+    },
+    {
+      "term": "remove",
+      "aliases": ["지우기", "지우고", "지우는", "제거", "누끼", "remove", "removing"]
+    },
+    {
+      "term": "enhance",
+      "aliases": [
+        "고화질",
+        "화질",
+        "선명하게",
+        "업스케일",
+        "upscale",
+        "enhance",
+        "resolution",
+        "sharpen"
+      ]
+    },
+    {
+      "term": "avatar",
+      "aliases": ["아바타", "avatars", "avatar"]
+    },
+    {
+      "term": "script",
+      "aliases": ["대본", "scripts", "script"]
+    },
+    {
+      "term": "explain",
+      "aliases": [
+        "설명",
+        "발표",
+        "강의",
+        "교육",
+        "explainer",
+        "presentation",
+        "training",
+        "tutorial"
+      ]
+    },
+    {
+      "term": "narration",
+      "aliases": ["내레이션", "나레이션", "더빙", "narration", "voiceover"]
+    },
+    {
+      "term": "character",
+      "aliases": ["캐릭터", "characters", "character"]
+    },
+    {
+      "term": "illustration",
+      "aliases": ["일러스트", "일러스트레이션", "illustration", "illustrations"]
+    },
+    {
+      "term": "profile",
+      "aliases": ["프로필", "셀카", "headshot", "portrait", "selfie", "profile"]
+    },
+    {
+      "term": "poster",
+      "aliases": ["포스터", "전단지", "posters", "poster", "flyer"]
+    },
+    {
+      "term": "promote",
+      "aliases": ["홍보", "광고", "promotion", "promotional", "promo", "commercial", "advertising"]
+    }
+  ],
+  "stopWords": [
+    "나",
+    "내",
+    "제",
+    "저",
+    "제가",
+    "나는",
+    "저는",
+    "이런걸로",
+    "이런",
+    "걸로",
+    "좀",
+    "하고",
+    "싶어",
+    "싶어요",
+    "싶다",
+    "싶은데",
+    "만들기",
+    "만들고",
+    "만드는",
+    "만들어",
+    "만들어줘",
+    "만들어주세요",
+    "만들",
+    "만들어서",
+    "만들고싶어",
+    "만들고싶어요",
+    "올려보고",
+    "올리고",
+    "올릴",
+    "올리기",
+    "올려",
+    "싶습니다",
+    "보려고",
+    "보려는데",
+    "보고",
+    "수",
+    "있는",
+    "있을까",
+    "추천",
+    "해줘",
+    "해주세요",
+    "도구",
+    "ai",
+    "i",
+    "my",
+    "a",
+    "an",
+    "the",
+    "to",
+    "want",
+    "would",
+    "like",
+    "make",
+    "making",
+    "create",
+    "creating",
+    "please",
+    "can",
+    "you",
+    "help",
+    "me",
+    "with",
+    "for",
+    "and",
+    "on",
+    "upload",
+    "post"
+  ]
+}

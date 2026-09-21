@@ -1,19 +1,25 @@
+import { getProductProfile } from '../data/product-profiles';
 import type { TFunction } from 'i18next';
 import type { PricingAudit, PricingSnapshot, Tool } from '../models/model-tool';
 
 export function localizeTool(tool: Tool, t: TFunction<'catalog'>): Tool {
   const text = (value: string) => t(value, { defaultValue: value });
+  const profile = getProductProfile(tool.id);
+  const summaries = (medium: 'video' | 'image') =>
+    profile?.capabilities
+      .filter((item) => item.medium === medium)
+      .map((item) => text(item.summary.ko));
   return {
     ...tool,
-    description: text(tool.description),
+    description: text(profile?.capabilities[0]?.summary.ko ?? tool.description),
     bestFor: text(tool.bestFor),
     consideration: text(tool.consideration),
-    features: tool.features.map(text),
+    features: profile?.capabilities.map((item) => text(item.summary.ko)) ?? tool.features.map(text),
     tags: tool.tags.map(text),
     note: tool.note ? text(tool.note) : undefined,
     mediaFeatures: {
-      video: tool.mediaFeatures?.video?.map(text),
-      image: tool.mediaFeatures?.image?.map(text),
+      video: summaries('video') ?? tool.mediaFeatures?.video?.map(text),
+      image: summaries('image') ?? tool.mediaFeatures?.image?.map(text),
     },
     mediaTags: {
       video: tool.mediaTags?.video?.map(text),

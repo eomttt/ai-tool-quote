@@ -1,0 +1,12 @@
+{
+  "toolId": "canva",
+  "requestedUrl": "https://www.canva.com/help/using-magic-media/?query=magic+media",
+  "checkedAt": "2026-09-21T05:50:18.177494+00:00",
+  "method": "official-web",
+  "reviewStatus": "reviewed",
+  "collectionStatus": "collected",
+  "title": "Use Magic Media to create photos, graphic, and videos - Canva Help Center",
+  "text": "Generate unique images, graphics, or videos by describing what you want to see, then choose your preferred style and size.",
+  "textSha256": "dddd6ba11333be3821f7cf0d2281dcbb4742d6d7bc3eb4834dc65b9f0cf55d9b",
+  "note": "Official help text read through web retrieval after direct HTTP returned Unsupported client. Only the cited excerpt is retained."
+}
