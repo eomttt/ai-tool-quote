@@ -1,6 +1,7 @@
 import type { NextConfig } from 'next';
 
 const config: NextConfig = {
+  agentRules: false,
   output: process.env.BUILD_STANDALONE === 'true' ? 'standalone' : undefined,
   poweredByHeader: false,
   async redirects() {
