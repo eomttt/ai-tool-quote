@@ -211,7 +211,11 @@ export function ComparePage({
                     aria-describedby="search-hint"
                     value={search}
                     onChange={(event) => {
-                      setSearch(event.currentTarget.value);
+                      const value = event.currentTarget.value;
+                      setSearch(value);
+                      if (!value.trim()) {
+                        setQuery('');
+                      }
                     }}
                   />
                   <div className="situation-search-actions">
