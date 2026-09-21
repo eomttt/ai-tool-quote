@@ -363,6 +363,8 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 .tool-card {
+  position: relative;
+  isolation: isolate;
   min-width: 0;
   border: 1px solid var(--border);
   border-radius: 10px;
@@ -373,6 +375,17 @@
   transition:
     border-color 0.15s,
     box-shadow 0.15s;
+}
+.card-detail {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+}
+.card-compare-control {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
 }
 .tool-card:hover {
   border-color: #a3a3a3;

@@ -27,30 +27,35 @@ export function ToolCard({
   const features = tool.mediaFeatures?.[medium] ?? tool.features;
   return (
     <article className={`tool-card ${active ? 'tool-card-active' : ''}`}>
+      <button
+        type="button"
+        className="card-detail"
+        onClick={onDetail}
+        aria-label={`${tool.name} 상세 보기`}
+        aria-expanded={active}
+        aria-controls={active ? 'tool-detail' : undefined}
+      />
       <div className="card-topline">
         <span className="tool-logo" aria-hidden="true">
           {tool.monogram}
         </span>
-        <Button
-          variant={selected ? 'secondary' : 'ghost'}
-          size="sm"
-          onClick={onCompare}
-          aria-label={`${tool.name} ${selected ? '비교에서 제거' : '비교에 추가'}`}
-          aria-pressed={selected}
-          disabled={!selected && selectionFull}
-        >
-          {selected ? <Check /> : <Plus />} 비교
-        </Button>
+        <span className="card-compare-control">
+          <Button
+            variant={selected ? 'secondary' : 'ghost'}
+            size="sm"
+            onClick={onCompare}
+            aria-label={`${tool.name} ${selected ? '비교에서 제거' : '비교에 추가'}`}
+            aria-pressed={selected}
+            disabled={!selected && selectionFull}
+          >
+            {selected ? <Check /> : <Plus />} 비교
+          </Button>
+        </span>
       </div>
-      <button
-        className="tool-title"
-        onClick={onDetail}
-        aria-expanded={active}
-        aria-controls={active ? 'tool-detail' : undefined}
-      >
+      <div className="tool-title">
         <h3>{tool.name}</h3>
-        <ArrowUpRight size={19} />
-      </button>
+        <ArrowUpRight size={19} aria-hidden="true" />
+      </div>
       <p className="tool-best-for">{tool.bestFor}</p>
       <ul className="card-features">
         {features.slice(0, 2).map((feature) => (
@@ -66,14 +71,7 @@ export function ToolCard({
       </div>
       <div className="card-bottom">
         <PriceSummary pricing={getPricing(tool.id)} billing={billing} />
-        <Button
-          variant="ghost"
-          size="icon-sm"
-          onClick={onDetail}
-          aria-label={`${tool.name} 상세 보기`}
-        >
-          <ArrowUpRight />
-        </Button>
+        <ArrowUpRight size={16} aria-hidden="true" />
       </div>
     </article>
   );
