@@ -1,8 +1,11 @@
 import type { Allowance, Billing, Currency, Plan, PricingSnapshot } from '../models/model-tool';
-export function formatMoney(amount: number, currency: Currency = 'USD') {
-  return new Intl.NumberFormat(currency === 'KRW' ? 'ko-KR' : 'en-US', {
+import { i18n } from '../../../common/utils/create-i18n';
+
+export function formatMoney(amount: number, currency: Currency = 'USD', language = 'ko') {
+  return new Intl.NumberFormat(language === 'ko' ? 'ko-KR' : 'en-US', {
     style: 'currency',
     currency,
+    currencyDisplay: 'narrowSymbol',
     maximumFractionDigits: currency === 'KRW' ? 0 : 2,
   }).format(amount);
 }
@@ -20,17 +23,11 @@ export function getEntryPlan(pricing: PricingSnapshot | undefined, billing: Bill
       (a, b) => (monthlyPrice(a, billing) ?? Infinity) - (monthlyPrice(b, billing) ?? Infinity),
     )[0];
 }
-export function formatAllowance(allowance: Allowance) {
-  const label = {
-    credits: '크레딧',
-    tokens: '토큰',
-    'fast-tokens': 'Fast 토큰',
-    'gpu-minutes': 'Fast GPU분',
-    'compute-units': '컴퓨트 유닛',
-  };
-  return `${allowance.amount.toLocaleString('ko-KR')} ${label[allowance.unit]}`;
+export function formatAllowance(allowance: Allowance, language = 'ko') {
+  const t = i18n.getFixedT(language, 'ui');
+  return `${allowance.amount.toLocaleString(language)} ${t(`allowance.${allowance.unit}`)}`;
 }
-export function subscriptionUnitPrice(plan: Plan, billing: Billing) {
+export function subscriptionUnitPrice(plan: Plan, billing: Billing, language = 'ko') {
   const price = monthlyPrice(plan, billing);
   const allowance =
     billing === 'annual' && plan.annualIncluded ? plan.annualIncluded : plan.included;
@@ -42,16 +39,27 @@ export function subscriptionUnitPrice(plan: Plan, billing: Billing) {
     priceAmount: (price / monthlyAllowance) * unitAmount,
     label:
       allowance.unit === 'gpu-minutes'
-        ? 'Fast GPU 1시간'
-        : formatAllowance({ amount: unitAmount, unit: allowance.unit }),
+        ? i18n.getFixedT(language, 'ui')('allowance.gpuHour')
+        : formatAllowance({ amount: unitAmount, unit: allowance.unit }, language),
   };
 }
-export function planAllowance(plan: Plan, billing: Billing) {
-  if (monthlyPrice(plan, billing) === undefined) return '선택한 결제 주기의 포함량 미확인';
+export function planAllowance(plan: Plan, billing: Billing, language = 'ko') {
+  const t = i18n.getFixedT(language, 'ui');
+  if (monthlyPrice(plan, billing) === undefined) return t('allowance.unavailable');
   if (billing === 'annual' && plan.annualIncluded)
-    return `연 ${formatAllowance(plan.annualIncluded)} 포함`;
-  if (plan.included) return `월 ${formatAllowance(plan.included)} 포함`;
-  return plan.allowanceNote ?? '기능별 이용 한도 적용';
+    return t('allowance.annual', { amount: formatAllowance(plan.annualIncluded, language) });
+  if (plan.included)
+    return t('allowance.monthly', { amount: formatAllowance(plan.included, language) });
+  return plan.allowanceNote ?? t('allowance.featureLimits');
+}
+
+export function formatReviewDate(date: string, language = 'ko') {
+  return new Intl.DateTimeFormat(language, {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+    timeZone: 'UTC',
+  }).format(new Date(`${date}T00:00:00Z`));
 }
 export function compareSubscriptionPrices(
   a: PricingSnapshot | undefined,

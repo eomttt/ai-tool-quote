@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   ArrowDown,
   ArrowUpRight,
@@ -13,15 +14,19 @@ import { Badge } from '../../common/components/Badge';
 import { Input } from '../../common/components/Input';
 import { Checkbox } from '../../common/components/Checkbox';
 import { Tabs, TabsList, TabsTrigger } from '../../common/components/Tabs';
-import { tools, useCases } from '../../domains/catalog/data/tools';
+import { tools as catalogTools, useCases } from '../../domains/catalog/data/tools';
 import { getPricing, pricingSnapshots } from '../../domains/catalog/data/pricing';
 import type { Billing, Medium, Tool, UseCase } from '../../domains/catalog/models/model-tool';
 import { compareSubscriptionPrices } from '../../domains/catalog/utils/price-information';
 import { ToolCard } from '../../domains/catalog/components/ToolCard';
 import { ToolPeek } from '../../domains/catalog/components/ToolPeek';
 import { ComparisonTable } from '../../domains/catalog/components/ComparisonTable';
+import { localizeTool } from '../../domains/catalog/utils/localize-catalog';
 
 export function ComparePage() {
+  const { t, i18n } = useTranslation();
+  const { t: catalogT } = useTranslation('catalog');
+  const tools = catalogTools.map((tool) => localizeTool(tool, catalogT));
   const searchRef = useRef<HTMLInputElement>(null);
   const detailTriggerRef = useRef<HTMLElement | null>(null);
   const comparisonRef = useRef<HTMLDivElement>(null);
@@ -32,7 +37,8 @@ export function ComparePage() {
   const [onlyPriced, setOnlyPriced] = useState(false);
   const [sort, setSort] = useState('featured');
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
-  const [detailTool, setDetailTool] = useState<Tool>();
+  const [detailToolId, setDetailToolId] = useState<string>();
+  const detailTool = tools.find((tool) => tool.id === detailToolId);
   const [comparisonOpen, setComparisonOpen] = useState(false);
   useEffect(() => {
     function handleSearchShortcut(event: KeyboardEvent) {
@@ -74,7 +80,7 @@ export function ComparePage() {
       );
     })
     .toSorted((a, b) => {
-      if (sort === 'name') return a.name.localeCompare(b.name);
+      if (sort === 'name') return a.name.localeCompare(b.name, i18n.resolvedLanguage);
       if (sort === 'price') {
         return compareSubscriptionPrices(getPricing(a.id), getPricing(b.id), billing);
       }
@@ -84,7 +90,7 @@ export function ComparePage() {
     if (value !== 'video' && value !== 'image') return;
     setMedium(value);
     setUseCase('all');
-    setDetailTool(undefined);
+    setDetailToolId(undefined);
     setSelectedIds([]);
     setComparisonOpen(false);
   }
@@ -106,10 +112,10 @@ export function ComparePage() {
       !document.activeElement.closest('#tool-detail')
     )
       detailTriggerRef.current = document.activeElement;
-    setDetailTool(tool);
+    setDetailToolId(tool.id);
   }
   function handleCloseDetail() {
-    setDetailTool(undefined);
+    setDetailToolId(undefined);
     detailTriggerRef.current?.focus();
   }
   function handleResetFilters() {
@@ -120,64 +126,64 @@ export function ComparePage() {
   return (
     <>
       <a className="skip-link" href="#catalog">
-        도구 목록으로 바로가기
+        {t('skip')}
       </a>
       <header className="site-header">
         <div className="header-inner">
-          <a className="brand" href="#top" aria-label="툴견적 홈">
+          <a className="brand" href="#top" aria-label={t('brand.home')}>
             <span className="brand-mark">t.</span>
-            <span>툴견적</span>
+            <span>{t('brand')}</span>
             <Badge variant="outline">BETA</Badge>
           </a>
-          <nav aria-label="주 메뉴">
-            <a href="#catalog">도구 탐색</a>
+          <nav aria-label={t('nav.label')}>
+            <a href="#catalog">{t('nav.browse')}</a>
             <a href="#price-guide">
-              가격 안내
+              {t('nav.pricing')}
               <ArrowUpRight size={13} />
             </a>
           </nav>
-          <span className="header-note">A directory for your next idea.</span>
+          <span className="header-note">{t('header.note')}</span>
         </div>
       </header>
       <main id="top">
         <section className="hero content-width" aria-labelledby="hero-title">
           <div>
-            <p className="eyebrow">THE CREATIVE AI DIRECTORY</p>
+            <p className="eyebrow">{t('hero.eyebrow')}</p>
             <h1 id="hero-title">
-              만들고 싶은 것에,
+              {t('hero.title')}
               <br />
-              <span>맞는 AI를.</span>
+              <span>{t('hero.accent')}</span>
             </h1>
             <p className="hero-description">
-              각 도구가 잘하는 일부터 요금제까지.
+              {t('hero.description')}
               <br />
-              영상과 이미지를 위한 AI 도구를 차분히 비교해 보세요.
+              {t('hero.descriptionSecond')}
             </p>
             <Button asChild variant="outline">
               <a href="#catalog">
-                도구 둘러보기
+                {t('hero.browse')}
                 <ArrowDown />
               </a>
             </Button>
           </div>
-          <div className="hero-index" aria-label={`${tools.length}개 도구, 영상과 이미지 2개 분야`}>
-            <span className="eyebrow">EXPLORE THE COLLECTION</span>
+          <div className="hero-index" aria-label={t('hero.indexLabel', { count: tools.length })}>
+            <span className="eyebrow">{t('hero.collection')}</span>
             <div>
               <strong>{tools.length.toString().padStart(2, '0')}</strong>
               <span>
-                AI TOOLS
+                {t('hero.tools')}
                 <br />
-                한곳에서 살펴보는 가능성
+                {t('hero.possibilities')}
               </span>
             </div>
             <div className="hero-index-bottom">
               <span>
                 <Clapperboard size={15} />
-                VIDEO
+                {t('medium.video')}
               </span>
               <span>
                 <Image size={15} />
-                IMAGE
+                {t('medium.image')}
               </span>
               <span>↗</span>
             </div>
@@ -187,24 +193,24 @@ export function ComparePage() {
           <div className="content-width">
             <div className="catalog-heading">
               <div>
-                <p className="eyebrow">01 — DISCOVER</p>
-                <h2>어떤 작업을 시작할까요?</h2>
+                <p className="eyebrow">{t('catalog.eyebrow')}</p>
+                <h2>{t('catalog.title')}</h2>
               </div>
-              <p>좋은 도구를 찾는 가장 짧은 여정.</p>
+              <p>{t('catalog.subtitle')}</p>
             </div>
             <div className="category-line">
               <Tabs value={medium} onValueChange={handleMediumChange}>
-                <TabsList aria-label="제작할 콘텐츠" className="medium-tabs">
+                <TabsList aria-label={t('medium.label')} className="medium-tabs">
                   <TabsTrigger value="video">
                     <Clapperboard />
-                    영상
+                    {t('medium.video')}
                     <Badge variant="secondary">
                       {tools.filter((tool) => tool.media.includes('video')).length}
                     </Badge>
                   </TabsTrigger>
                   <TabsTrigger value="image">
                     <Image />
-                    이미지
+                    {t('medium.image')}
                     <Badge variant="secondary">
                       {tools.filter((tool) => tool.media.includes('image')).length}
                     </Badge>
@@ -212,20 +218,20 @@ export function ComparePage() {
                 </TabsList>
               </Tabs>
               <span className="category-hint">
-                도구를 누르면 특징을 자세히 볼 수 있어요
+                {t('catalog.hint')}
                 <ArrowUpRight size={14} />
               </span>
             </div>
             <div className={`catalog-workspace ${detailTool ? 'has-peek' : ''}`}>
-              <section className="catalog-results" aria-label="AI 도구 검색 결과">
+              <section className="catalog-results" aria-label={t('catalog.results')}>
                 <div className="search-row">
                   <div className="search-field">
                     <Search size={18} />
                     <Input
                       ref={searchRef}
                       type="search"
-                      aria-label="AI 도구 검색"
-                      placeholder="이름, 기능, 만들고 싶은 것으로 검색"
+                      aria-label={t('search.label')}
+                      placeholder={t('search.placeholder')}
                       value={search}
                       onChange={(event) => {
                         setSearch(event.currentTarget.value);
@@ -236,7 +242,7 @@ export function ComparePage() {
                         variant="ghost"
                         size="icon-xs"
                         onClick={() => setSearch('')}
-                        aria-label="검색어 지우기"
+                        aria-label={t('search.clear')}
                       >
                         <X />
                       </Button>
@@ -247,17 +253,17 @@ export function ComparePage() {
                   <div className="sort-field">
                     <SlidersHorizontal size={15} />
                     <select
-                      aria-label="도구 정렬"
+                      aria-label={t('sort.label')}
                       value={sort}
                       onChange={(event) => setSort(event.currentTarget.value)}
                     >
-                      <option value="featured">주요 도구순</option>
-                      <option value="price">통화별 구독료순</option>
-                      <option value="name">이름순</option>
+                      <option value="featured">{t('sort.featured')}</option>
+                      <option value="price">{t('sort.price')}</option>
+                      <option value="name">{t('sort.name')}</option>
                     </select>
                   </div>
                 </div>
-                <div className="use-case-filters" aria-label="제작 용도">
+                <div className="use-case-filters" aria-label={t('useCase.label')}>
                   {useCases
                     .filter(
                       (item) =>
@@ -276,14 +282,12 @@ export function ComparePage() {
                           setUseCase(item.id);
                         }}
                       >
-                        {item.label}
+                        {t(`useCase.${item.id}`)}
                       </Button>
                     ))}
                 </div>
                 <div className="results-meta">
-                  <p role="status">
-                    <strong>{filteredTools.length}</strong>개 도구
-                  </p>
+                  <p role="status">{t('catalog.count', { count: filteredTools.length })}</p>
                   <label className="checkbox-label">
                     <Checkbox
                       checked={onlyPriced}
@@ -291,12 +295,12 @@ export function ComparePage() {
                         setOnlyPriced(value === true);
                       }}
                     />
-                    요금표 있는 도구만
+                    {t('catalog.onlyPriced')}
                   </label>
                   <Tabs value={billing} onValueChange={handleBillingChange}>
-                    <TabsList aria-label="결제 주기">
-                      <TabsTrigger value="monthly">월간</TabsTrigger>
-                      <TabsTrigger value="annual">연간</TabsTrigger>
+                    <TabsList aria-label={t('billing.label')}>
+                      <TabsTrigger value="monthly">{t('billing.monthly')}</TabsTrigger>
+                      <TabsTrigger value="annual">{t('billing.annual')}</TabsTrigger>
                     </TabsList>
                   </Tabs>
                 </div>
@@ -329,16 +333,18 @@ export function ComparePage() {
                 ) : (
                   <div className="empty-state">
                     <Search />
-                    <h3>검색 결과가 없어요</h3>
-                    <p>검색어나 용도 필터를 바꿔보세요.</p>
+                    <h3>{t('empty.title')}</h3>
+                    <p>{t('empty.description')}</p>
                     <Button variant="outline" onClick={handleResetFilters}>
-                      검색 조건 초기화
+                      {t('empty.reset')}
                     </Button>
                   </div>
                 )}
                 <p className="catalog-disclosure">
-                  {tools.length}개 도구의 특징을 소개하고, {pricingSnapshots.length}개 도구의
-                  요금표를 제공해요. 가격은 공식 사이트에서 확인한 시점 기준입니다.
+                  {t('catalog.disclosure', {
+                    count: tools.length,
+                    priced: pricingSnapshots.length,
+                  })}
                 </p>
               </section>
               {detailTool ? (
@@ -353,21 +359,13 @@ export function ComparePage() {
             </div>
             <details className="price-guide" id="price-guide">
               <summary>
-                가격은 어떻게 비교하나요?<span>+</span>
+                {t('guide.title')}
+                <span>+</span>
               </summary>
               <div>
-                <p>
-                  월 구독료, 포함된 크레딧이나 사용 시간, 확인된 추가 구매 가격을 보여줘요. 연간
-                  요금은 월 환산액과 연 선결제액을 함께 표시해요.
-                </p>
-                <p>
-                  구독료 환산은 가격을 이해하기 위한 참고값이에요. 같은 크레딧 수라도 도구별 사용
-                  방식이 달라, 만들 수 있는 영상 수나 이미지 수를 의미하지 않아요.
-                </p>
-                <p>
-                  실시간 수집은 아직 제공하지 않아요. 확인 후 30일이 지나면 재확인 표시를 붙이고
-                  마지막 확인 가격을 유지해요. 주요 도구순은 편집 순서이며 품질 순위가 아닙니다.
-                </p>
+                <p>{t('guide.prices')}</p>
+                <p>{t('guide.units')}</p>
+                <p>{t('guide.updates')}</p>
               </div>
             </details>
           </div>
@@ -375,15 +373,16 @@ export function ComparePage() {
       </main>
       <footer className="site-footer content-width">
         <span className="brand">
-          툴견적<span className="footer-dot">© {new Date().getFullYear()}</span>
+          {t('brand')}
+          <span className="footer-dot">© {new Date().getFullYear()}</span>
         </span>
-        <p>Less searching. More creating.</p>
-        <a href="#top">맨 위로 ↑</a>
+        <p>{t('footer.tagline')}</p>
+        <a href="#top">{t('footer.top')}</a>
       </footer>
       {selectedTools.length ? (
-        <aside className="compare-tray" aria-label="선택한 비교 도구">
+        <aside className="compare-tray" aria-label={t('compare.tray')}>
           <span className="tray-label">
-            비교 <strong>{selectedTools.length}/3</strong>
+            {t('compare.label')} <strong>{selectedTools.length}/3</strong>
           </span>
           <div className="tray-tools">
             {selectedTools.map((tool) => (
@@ -392,7 +391,7 @@ export function ComparePage() {
                 variant="secondary"
                 size="sm"
                 onClick={() => handleCompare(tool.id)}
-                aria-label={`${tool.name} 선택 해제`}
+                aria-label={t('compare.remove', { name: tool.name })}
               >
                 {tool.name}
                 <X />
@@ -407,7 +406,7 @@ export function ComparePage() {
               setComparisonOpen(false);
             }}
           >
-            비우기
+            {t('compare.clear')}
           </Button>
           <Button
             disabled={selectedTools.length < 2}
@@ -418,18 +417,16 @@ export function ComparePage() {
               );
             }}
           >
-            비교하기
+            {t('compare.action')}
             <ArrowUpRight />
           </Button>
           <span className="sr-only" role="status">
-            {selectedTools.length}개 선택. 최대 3개까지 비교할 수 있습니다.
+            {t('compare.status', { count: selectedTools.length })}
           </span>
         </aside>
       ) : null}
       <span className="sr-only" role="status">
-        {detailTool
-          ? `${detailTool.name} 상세 패널이 열렸습니다. 다른 도구를 계속 탐색할 수 있습니다.`
-          : ''}
+        {detailTool ? t('detail.status', { name: detailTool.name }) : ''}
       </span>
     </>
   );

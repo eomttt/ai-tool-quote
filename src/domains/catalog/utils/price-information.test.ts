@@ -136,7 +136,7 @@ describe('공개 요금 비교', () => {
     };
     expect(planAllowance(limited, 'monthly')).toBe('무료 대비 AI 한도 10배');
     expect(subscriptionUnitPrice(limited, 'monthly')).toBeUndefined();
-    expect(planAllowance(limited, 'annual')).toBe('선택한 결제 주기의 포함량 미확인');
+    expect(planAllowance(limited, 'annual')).toBe('선택한 결제 주기의 포함량 정보 없음');
     const annualOnly: Plan = { name: 'Annual', annualAmount: 120 };
     expect(monthlyPrice(annualOnly, 'monthly')).toBeUndefined();
     expect(monthlyPrice(annualOnly, 'annual')).toBe(10);

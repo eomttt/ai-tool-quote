@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { X } from 'lucide-react';
 import { Button } from '../../../../common/components/Button';
 import type { Billing, Medium, Tool } from '../../models/model-tool';
@@ -14,14 +15,16 @@ export function ComparisonTable({
   billing: Billing;
   onClose: () => void;
 }) {
+  const { t } = useTranslation();
+  const { t: catalogT } = useTranslation('catalog');
   return (
     <section className="comparison-section" aria-labelledby="comparison-title">
       <div className="comparison-heading">
         <div>
-          <span className="eyebrow">SIDE BY SIDE</span>
-          <h2 id="comparison-title">선택한 도구 한눈에 보기</h2>
+          <span className="eyebrow">{t('compare.eyebrow')}</span>
+          <h2 id="comparison-title">{t('compare.title')}</h2>
         </div>
-        <Button variant="ghost" size="icon" onClick={onClose} aria-label="비교표 닫기">
+        <Button variant="ghost" size="icon" onClick={onClose} aria-label={t('compare.close')}>
           <X />
         </Button>
       </div>
@@ -29,7 +32,7 @@ export function ComparisonTable({
         <table className="comparison-table">
           <thead>
             <tr>
-              <th>비교 항목</th>
+              <th>{t('compare.item')}</th>
               {tools.map((tool) => (
                 <th key={tool.id}>{tool.name}</th>
               ))}
@@ -37,13 +40,13 @@ export function ComparisonTable({
           </thead>
           <tbody>
             <tr>
-              <th>이런 작업에</th>
+              <th>{t('compare.bestFor')}</th>
               {tools.map((tool) => (
                 <td key={tool.id}>{tool.bestFor}</td>
               ))}
             </tr>
             <tr>
-              <th>주요 기능</th>
+              <th>{t('compare.features')}</th>
               {tools.map((tool) => (
                 <td key={tool.id}>
                   <ul>
@@ -55,7 +58,7 @@ export function ComparisonTable({
               ))}
             </tr>
             <tr>
-              <th>시작 요금</th>
+              <th>{t('compare.price')}</th>
               {tools.map((tool) => (
                 <td key={tool.id}>
                   <PriceSummary pricing={getPricing(tool.id)} billing={billing} />
@@ -63,15 +66,20 @@ export function ComparisonTable({
               ))}
             </tr>
             <tr>
-              <th>과금 방식</th>
-              {tools.map((tool) => (
-                <td key={tool.id}>
-                  {getPricing(tool.id)?.summary ?? '가격 정보 미등록 · 상세 출처 참고'}
-                </td>
-              ))}
+              <th>{t('compare.billing')}</th>
+              {tools.map((tool) => {
+                const summary = getPricing(tool.id)?.summary;
+                return (
+                  <td key={tool.id}>
+                    {summary
+                      ? catalogT(summary, { defaultValue: summary })
+                      : t('compare.noPricing')}
+                  </td>
+                );
+              })}
             </tr>
             <tr>
-              <th>살펴볼 점</th>
+              <th>{t('compare.consideration')}</th>
               {tools.map((tool) => (
                 <td key={tool.id}>{tool.consideration}</td>
               ))}

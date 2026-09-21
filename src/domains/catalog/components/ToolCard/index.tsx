@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { ArrowRight, Check, Plus } from 'lucide-react';
 import { Button } from '../../../../common/components/Button';
 import { Badge } from '../../../../common/components/Badge';
@@ -25,6 +26,7 @@ export function ToolCard({
   onCompare,
   onDetail,
 }: ToolCardProps) {
+  const { t } = useTranslation();
   const features = tool.mediaFeatures?.[medium] ?? tool.features;
   return (
     <article className={`tool-card ${active ? 'tool-card-active' : ''}`}>
@@ -32,7 +34,7 @@ export function ToolCard({
         type="button"
         className="card-detail"
         onClick={onDetail}
-        aria-label={`${tool.name} 상세 보기`}
+        aria-label={t('detail.open', { name: tool.name })}
         aria-expanded={active}
         aria-controls={active ? 'tool-detail' : undefined}
       />
@@ -43,11 +45,11 @@ export function ToolCard({
             variant={selected ? 'secondary' : 'ghost'}
             size="sm"
             onClick={onCompare}
-            aria-label={`${tool.name} ${selected ? '비교에서 제거' : '비교에 추가'}`}
+            aria-label={t(selected ? 'compare.exclude' : 'compare.add', { name: tool.name })}
             aria-pressed={selected}
             disabled={!selected && selectionFull}
           >
-            {selected ? <Check /> : <Plus />} 비교
+            {selected ? <Check /> : <Plus />} {t('compare.label')}
           </Button>
         </span>
       </div>
@@ -73,7 +75,7 @@ export function ToolCard({
           className="inline-flex shrink-0 items-center gap-1.5 text-xs text-muted-foreground"
           aria-hidden="true"
         >
-          상세 보기 <ArrowRight size={16} />
+          {t('detail.action')} <ArrowRight size={16} />
         </span>
       </div>
     </article>
