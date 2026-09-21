@@ -1,26 +1,39 @@
-import type { QuoteInput, QuoteResult } from '../../models/model-tool';
-import { formatUsd } from '../../utils/calculate-quote';
-
-export function PriceSummary({ quote, input }: { quote: QuoteResult; input: QuoteInput }) {
-  if (quote.status !== 'ready')
+import type { Billing, PricingSnapshot } from '../../models/model-tool';
+import {
+  formatAllowance,
+  formatUsd,
+  getEntryPlan,
+  monthlyPrice,
+} from '../../utils/price-information';
+export function PriceSummary({
+  pricing,
+  billing,
+}: {
+  pricing: PricingSnapshot | undefined;
+  billing: Billing;
+}) {
+  const plan = getEntryPlan(pricing, billing);
+  const price = plan ? monthlyPrice(plan, billing) : undefined;
+  if (!plan || price === undefined)
     return (
       <div className="price-summary">
-        <span className="price-unavailable">{quote.message}</span>
-        <p>공식 사이트에서 요금을 확인해 주세요.</p>
+        <strong className="price-pending">
+          {pricing ? '연간 요금 확인 중' : '요금표 확인 중'}
+        </strong>
+        <p>{pricing ? '상세에서 월간 요금을 볼 수 있어요' : '공식 사이트에서 요금을 확인하세요'}</p>
       </div>
     );
   return (
     <div className="price-summary">
       <div>
-        <strong className="price">{formatUsd(quote.monthlyUsd)}</strong>
-        <span className="price-unit"> / 월{input.billing === 'annual' ? ' 환산' : ' 예상'}</span>
+        <strong className="price">{formatUsd(price)}</strong>
+        <span> / 월{billing === 'annual' ? ' 환산' : ''}부터</span>
       </div>
       <p>
-        {quote.plan.name} · {quote.model} · {quote.resolution}
+        {plan.name} · 월 {formatAllowance(plan.included)}
       </p>
-      {quote.plan.note ? <p className="annual-charge">{quote.plan.note}</p> : null}
-      {input.billing === 'annual' ? (
-        <p className="annual-charge">연 {formatUsd(quote.chargeUsd)} 선결제</p>
+      {billing === 'annual' && plan.annualUsd !== undefined ? (
+        <p>연 {formatUsd(plan.annualUsd)} 선결제</p>
       ) : null}
     </div>
   );

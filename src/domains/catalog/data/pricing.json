@@ -3,100 +3,280 @@
     "toolId": "runway",
     "checkedAt": "2026-09-21",
     "reviewAfterDays": 30,
-    "region": "미국 · USD · 세금 별도",
-    "sources": ["https://runway.com/pricing", "https://academy.runwayml.com/models-pricing"],
+    "region": "미국 공개 USD 요금 · 세금 별도",
+    "sources": ["https://runway.com/pricing"],
+    "billingModel": "subscription-credits",
+    "summary": "월 구독에 크레딧이 포함돼요. 영상과 이미지 기능에서 사용하고, 부족하면 추가 구매할 수 있어요.",
     "plans": [
       {
         "name": "Standard",
         "monthlyUsd": 15,
-        "annualUsd": 144,
-        "monthlyCredits": 625
+        "included": {
+          "amount": 625,
+          "unit": "credits"
+        },
+        "annualUsd": 144
       },
       {
         "name": "Pro",
         "monthlyUsd": 35,
-        "annualUsd": 336,
-        "monthlyCredits": 2250
+        "included": {
+          "amount": 2250,
+          "unit": "credits"
+        },
+        "annualUsd": 336
       },
       {
         "name": "Max",
         "monthlyUsd": 95,
-        "annualUsd": 912,
-        "monthlyCredits": 9500
+        "included": {
+          "amount": 9500,
+          "unit": "credits"
+        },
+        "annualUsd": 912
       }
     ],
-    "rates": [
-      {
-        "medium": "video",
-        "model": "Gen-4.5",
-        "resolution": "720p",
-        "seconds": 5,
-        "credits": 60
-      },
-      {
-        "medium": "video",
-        "model": "Gen-4.5",
-        "resolution": "720p",
-        "seconds": 10,
-        "credits": 120
-      },
-      {
-        "medium": "image",
-        "model": "Gen-4 Image",
-        "resolution": "720p",
-        "credits": 5
-      },
-      {
-        "medium": "image",
-        "model": "Gen-4 Image",
-        "resolution": "1080p",
-        "credits": 8
-      }
-    ],
-    "note": "Gen-4.5는 초당 12크레딧, Gen-4 Image는 720p 장당 5크레딧입니다. 기본 생성만 계산하며 음성·업스케일·추가 크레딧 구매는 제외합니다. 무료 125크레딧은 일회성이므로 월 견적에 포함하지 않습니다."
+    "topUps": [],
+    "note": "모델마다 크레딧 사용 방식이 달라요. Standard·Pro의 월 크레딧은 다음 결제일까지 사용할 수 있어요.",
+    "topUpNote": "추가 크레딧은 최소 1,000개부터 구매할 수 있어요. 실제 구매 가격은 결제 화면에서 확인해 주세요.",
+    "freeTier": "무료 플랜은 최초 125크레딧을 제공해요."
   },
   {
     "toolId": "pika",
     "checkedAt": "2026-09-21",
     "reviewAfterDays": 30,
-    "region": "미국 · USD · 세금 별도",
+    "region": "미국 공개 USD 요금 · 세금 별도",
     "sources": ["https://pika.art/pricing"],
+    "billingModel": "subscription-credits",
+    "summary": "월 구독 크레딧과 별도로 크레딧 팩을 구매할 수 있어요.",
     "plans": [
       {
         "name": "Starter",
         "monthlyUsd": 10,
+        "included": {
+          "amount": 900,
+          "unit": "credits"
+        },
         "annualUsd": 96,
-        "monthlyCredits": 900,
-        "note": "상업 이용 미포함"
+        "note": "상업적 이용 라이선스 제외"
       },
       {
         "name": "Creator",
         "monthlyUsd": 35,
-        "annualUsd": 336,
-        "monthlyCredits": 3150
+        "included": {
+          "amount": 3150,
+          "unit": "credits"
+        },
+        "annualUsd": 336
       },
       {
         "name": "Fancy",
         "monthlyUsd": 95,
+        "included": {
+          "amount": 8550,
+          "unit": "credits"
+        },
         "annualUsd": 912,
-        "monthlyCredits": 8550
+        "note": "기본 Fancy 옵션 기준"
       }
     ],
-    "rates": [
+    "topUps": [
       {
-        "medium": "video",
-        "model": "Wan 3.0",
-        "resolution": "720p",
-        "seconds": 5,
-        "credits": 33
+        "amount": 1500,
+        "unit": "credits",
+        "priceUsd": 25
       },
       {
-        "medium": "image",
-        "model": "Nano Banana 2",
-        "resolution": "1K",
-        "credits": 8
+        "amount": 3000,
+        "unit": "credits",
+        "priceUsd": 50
+      },
+      {
+        "amount": 6000,
+        "unit": "credits",
+        "priceUsd": 100
       }
     ],
-    "note": "영상은 Wan 3.0의 720p·5초, 이미지는 Nano Banana 2의 1K 기준입니다. Starter에는 상업용 라이선스가 포함되지 않습니다. 추가 팩과 고용량 Fancy는 견적에서 제외합니다."
+    "note": "구독 크레딧은 이월되지 않아요. 구매한 추가 크레딧은 유지돼요. 상업적 이용은 플랜별로 확인하세요."
+  },
+  {
+    "toolId": "firefly",
+    "checkedAt": "2026-09-21",
+    "reviewAfterDays": 30,
+    "region": "미국 공개 USD 요금 · 세금 별도",
+    "sources": ["https://www.adobe.com/products/firefly/plans.html"],
+    "billingModel": "subscription-credits",
+    "summary": "구독에 생성 크레딧이 포함돼요. 프리미엄 기능은 크레딧을 사용하고, 일반 이미지 기능은 별도 조건을 따릅니다.",
+    "plans": [
+      {
+        "name": "Standard",
+        "monthlyUsd": 9.99,
+        "included": {
+          "amount": 2000,
+          "unit": "credits"
+        }
+      },
+      {
+        "name": "Pro",
+        "monthlyUsd": 19.99,
+        "included": {
+          "amount": 4000,
+          "unit": "credits"
+        }
+      }
+    ],
+    "topUps": [],
+    "note": "프로모션을 제외한 월간 정가예요. 연간 결제 가격은 아직 확인하지 않았어요.",
+    "topUpNote": "추가 크레딧 상품과 구매 조건은 공식 요금표를 확인해 주세요."
+  },
+  {
+    "toolId": "midjourney",
+    "checkedAt": "2026-09-21",
+    "reviewAfterDays": 30,
+    "region": "미국 공개 USD 요금 · 세금 별도",
+    "sources": [
+      "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans"
+    ],
+    "billingModel": "subscription-time",
+    "summary": "크레딧 대신 빠른 생성에 사용하는 Fast GPU 시간을 월 구독으로 제공해요.",
+    "plans": [
+      {
+        "name": "Basic",
+        "monthlyUsd": 10,
+        "included": {
+          "amount": 200,
+          "unit": "gpu-minutes"
+        },
+        "annualUsd": 96
+      },
+      {
+        "name": "Standard",
+        "monthlyUsd": 30,
+        "included": {
+          "amount": 900,
+          "unit": "gpu-minutes"
+        },
+        "annualUsd": 288,
+        "note": "Relax 모드 이미지 생성 포함"
+      },
+      {
+        "name": "Pro",
+        "monthlyUsd": 60,
+        "included": {
+          "amount": 1800,
+          "unit": "gpu-minutes"
+        },
+        "annualUsd": 576
+      },
+      {
+        "name": "Mega",
+        "monthlyUsd": 120,
+        "included": {
+          "amount": 3600,
+          "unit": "gpu-minutes"
+        },
+        "annualUsd": 1152
+      }
+    ],
+    "topUps": [
+      {
+        "amount": 60,
+        "unit": "gpu-minutes",
+        "priceUsd": 4
+      }
+    ],
+    "note": "Relax 모드와 동시 생성 수는 플랜마다 달라요. GPU 시간은 완성 영상의 재생 시간이 아니에요."
+  },
+  {
+    "toolId": "getimg",
+    "checkedAt": "2026-09-21",
+    "reviewAfterDays": 30,
+    "region": "미국 공개 USD 요금 · 세금 별도",
+    "sources": ["https://getimg.ai/pricing"],
+    "billingModel": "subscription-credits",
+    "summary": "여러 이미지·영상 모델에서 사용할 크레딧을 구독해요. 팀 플랜은 좌석 단위로 결제해요.",
+    "plans": [
+      {
+        "name": "Entry",
+        "monthlyUsd": 10,
+        "included": {
+          "amount": 3000,
+          "unit": "credits"
+        },
+        "annualUsd": 96
+      },
+      {
+        "name": "Core",
+        "monthlyUsd": 30,
+        "included": {
+          "amount": 15000,
+          "unit": "credits"
+        },
+        "annualUsd": 300,
+        "note": "1석 기준"
+      },
+      {
+        "name": "Plus",
+        "monthlyUsd": 65,
+        "included": {
+          "amount": 35000,
+          "unit": "credits"
+        },
+        "annualUsd": 660,
+        "note": "1석 기준"
+      },
+      {
+        "name": "Ultra",
+        "monthlyUsd": 175,
+        "included": {
+          "amount": 100000,
+          "unit": "credits"
+        },
+        "annualUsd": 1800,
+        "note": "1석 기준"
+      }
+    ],
+    "topUps": [],
+    "note": "월 포함 크레딧 기준이에요. 여러 좌석을 사용하면 좌석 수에 따라 비용이 늘어나요.",
+    "topUpNote": "Plus·Ultra에서 추가 크레딧을 구매할 수 있어요. 구매 가격은 결제 화면에서 확인해 주세요."
+  },
+  {
+    "toolId": "leonardo",
+    "checkedAt": "2026-09-21",
+    "reviewAfterDays": 30,
+    "region": "미국 공개 USD 요금 · 세금 별도",
+    "sources": ["https://leonardo.ai/pricing"],
+    "billingModel": "subscription-tokens",
+    "summary": "월 구독에 Fast 토큰이 포함돼요. 상위 플랜은 일부 모델의 Relax 생성도 제공해요.",
+    "plans": [
+      {
+        "name": "Essential",
+        "monthlyUsd": 12,
+        "included": {
+          "amount": 8500,
+          "unit": "tokens"
+        }
+      },
+      {
+        "name": "Premium",
+        "monthlyUsd": 30,
+        "included": {
+          "amount": 25000,
+          "unit": "tokens"
+        }
+      },
+      {
+        "name": "Ultimate",
+        "monthlyUsd": 60,
+        "included": {
+          "amount": 60000,
+          "unit": "tokens"
+        }
+      }
+    ],
+    "topUps": [],
+    "note": "Relax 생성과 토큰 적립 조건은 플랜별로 달라요. 연간 결제 가격은 아직 확인하지 않았어요.",
+    "topUpNote": "유료 플랜에서 토큰을 추가 구매할 수 있어요. 구매 가격은 결제 화면에서 확인해 주세요.",
+    "freeTier": "무료 플랜은 하루 150 Fast 토큰을 제공하며, 생성물이 공개돼요."
   }
 ]

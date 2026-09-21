@@ -1,14 +1,17 @@
 export type Medium = 'video' | 'image';
 export type UseCase = 'all' | 'generate' | 'avatar' | 'edit' | 'design' | 'product';
 export type Billing = 'monthly' | 'annual';
-export type Resolution = 'native' | '720p' | '1080p' | '1K';
-
+export type AllowanceUnit = 'credits' | 'tokens' | 'gpu-minutes';
 export interface Tool {
   id: string;
   name: string;
   monogram: string;
   color: string;
   description: string;
+  bestFor: string;
+  features: string[];
+  consideration: string;
+  mediaFeatures?: { video?: string[]; image?: string[] };
   media: Medium[];
   useCases: UseCase[];
   tags: string[];
@@ -19,54 +22,31 @@ export interface Tool {
   featured?: boolean;
   note?: string;
 }
-
+export interface Allowance {
+  amount: number;
+  unit: AllowanceUnit;
+}
 export interface Plan {
   name: string;
   monthlyUsd: number;
   annualUsd?: number;
-  monthlyCredits: number;
+  included: Allowance;
   note?: string;
 }
-
-export interface GenerationRate {
-  medium: Medium;
-  model: string;
-  resolution: Resolution;
-  seconds?: number;
-  credits: number;
+export interface CreditPack extends Allowance {
+  priceUsd: number;
 }
-
 export interface PricingSnapshot {
   toolId: string;
   checkedAt: string;
   reviewAfterDays: number;
   region: string;
   sources: string[];
+  billingModel: 'subscription-credits' | 'subscription-time' | 'subscription-tokens';
+  summary: string;
   plans: Plan[];
-  rates: GenerationRate[];
+  topUps: CreditPack[];
+  topUpNote?: string;
+  freeTier?: string;
   note: string;
 }
-
-export interface QuoteInput {
-  medium: Medium;
-  quantity: number;
-  seconds: number;
-  resolution: Resolution;
-  attempts: number;
-  billing: Billing;
-}
-
-export type QuoteResult =
-  | {
-      status: 'ready';
-      plan: Plan;
-      model: string;
-      resolution: Resolution;
-      credits: number;
-      generations: number;
-      monthlyUsd: number;
-      chargeUsd: number;
-      capacity: number;
-      checkedAt: string;
-    }
-  | { status: 'unavailable' | 'unsupported' | 'exceeded' | 'stale' | 'invalid'; message: string };
