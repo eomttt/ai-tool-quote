@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ES2023",
     "lib": ["ES2023", "DOM", "DOM.Iterable"],
-    "types": ["vite/client"],
+    "types": ["node"],
     "module": "ESNext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
@@ -18,7 +18,22 @@
       "@/*": ["./src/*"]
     },
     "allowJs": true,
-    "checkJs": true
+    "checkJs": true,
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "esModuleInterop": true
   },
-  "include": ["src", "vite.config.ts", "server.mjs"]
+  "include": [
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts",
+    "src",
+    "next.config.ts",
+    "vitest.config.ts"
+  ],
+  "exclude": ["node_modules", ".next/standalone"]
 }

@@ -41,3 +41,20 @@ export function createSiteConfig(input: z.input<typeof siteConfigSchema>) {
 }
 
 export type SiteConfig = ReturnType<typeof createSiteConfig>;
+
+export function siteConfigFromEnvironment(environment: NodeJS.ProcessEnv = process.env) {
+  const preview = Boolean(environment.VERCEL_ENV && environment.VERCEL_ENV !== 'production');
+  const publicSiteUrl = preview
+    ? undefined
+    : environment.PUBLIC_SITE_URL ||
+      (environment.VERCEL_PROJECT_PRODUCTION_URL
+        ? `https://${environment.VERCEL_PROJECT_PRODUCTION_URL}`
+        : undefined);
+  return createSiteConfig({
+    publicSiteUrl,
+    adsenseClient: environment.ADSENSE_CLIENT,
+    adsenseEnabled:
+      !preview && environment.NODE_ENV === 'production' && environment.ADSENSE_ENABLED === 'true',
+    contactEmail: environment.CONTACT_EMAIL,
+  });
+}

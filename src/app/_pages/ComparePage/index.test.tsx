@@ -1,7 +1,7 @@
 import { expect, it } from 'vitest';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { I18nextProvider } from 'react-i18next';
-import { createAppI18n } from '../../common/utils/create-i18n';
+import { createAppI18n } from '../../../common/utils/create-i18n';
 import { ComparePage } from './index';
 
 it('renders navigation, filters, price guide, and accessibility text in each language', async () => {
@@ -28,4 +28,5 @@ it('renders navigation, filters, price guide, and accessibility text in each lan
   expect(english).toContain('I want to make Shorts and upload them to YouTube');
   expect(english).toContain('Find tools');
   expect(korean).toContain('28개 도구');
+  expect(korean).not.toContain('BETA');
 });

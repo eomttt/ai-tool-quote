@@ -1,0 +1,9 @@
+.git
+.env*
+.cache
+research
+docs
+dist
+.next
+coverage
+__pycache__

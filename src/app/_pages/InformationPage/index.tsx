@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
-import type { PageData } from '../../common/models/model-page';
-import { SiteFooter } from '../../common/components/SiteFooter';
-import { pagePath } from '../../common/utils/page-route';
+import type { PageData } from '../../../common/models/model-page';
+import { SiteFooter } from '../../../common/components/SiteFooter';
+import { pagePath } from '../../../common/utils/page-route';
 
 export function InformationPage({ page }: { page: PageData }) {
   const { t } = useTranslation();

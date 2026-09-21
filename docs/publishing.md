@@ -1,10 +1,10 @@
 # 웹 게시
 
-Vite의 React 서버 렌더링과 Express를 사용합니다. Node 서버가 첫 응답에 목록·도구 설명·제목을 HTML로 보내고, 브라우저에서 React가 검색·상세·비교 동작을 연결합니다. 정적 파일만 올리는 호스팅으로는 실행할 수 없습니다.
+Next.js 16 App Router를 사용합니다. 요청마다 목록·도구 설명·제목을 HTML로 보내고, 브라우저에서 React가 검색·상세·비교 동작을 연결합니다. 공개 주소는 https://ai-tool-quote.vercel.app 입니다.
 
 ## 서버 실행
 
-Node.js 22.12 이상이 필요합니다.
+Node.js 22를 사용합니다. 개발 서버는 `npm run dev`로 실행하며 주소는 `http://127.0.0.1:5173`입니다.
 
 ```sh
 npm ci
@@ -15,15 +15,30 @@ npm run start
 
 `.env`에서 공개 HTTPS 도메인을 `PUBLIC_SITE_URL`에 입력합니다. 경로 없는 주소를 사용합니다. `CONTACT_EMAIL`은 사이트의 문의처이며 선택 사항입니다. 미설정 시 운영자의 공개 GitHub 프로필로 연결합니다. 비밀 값이나 계정 비밀번호를 넣는 항목은 없습니다.
 
-프로덕션 서버는 기본 `0.0.0.0:4173`을 사용합니다. 호스팅이 제공하는 `PORT`와 필요하면 `HOST`를 설정합니다. TLS 종료와 HTTPS 연결은 호스팅 또는 앞단 프록시에서 구성합니다. 상태 확인 URL은 `/healthz`입니다. 정적 자산은 캐시하고 HTML은 재검증합니다.
+로컬 프로덕션 서버는 기본 `0.0.0.0:4173`을 사용합니다. 다른 포트가 필요하면 `npx next start --port 8080`으로 실행합니다. 상태 확인 URL은 `/healthz`이며, HTML은 요청마다 렌더링하고 빌드된 정적 자산은 캐시합니다.
 
-Docker를 사용하는 호스팅에는 저장소의 Dockerfile을 사용할 수 있습니다. 컨테이너 기본 포트는 8080입니다. 컨테이너 빌드·실제 호스팅 배포는 아직 검증하지 않았습니다. 지원 플랫폼을 정한 뒤 해당 환경의 빌드·실행·도메인 연결을 확인합니다.
+Dockerfile은 Next.js standalone 결과물과 정적 자산을 복사합니다. 컨테이너 기본 포트는 8080입니다. 컨테이너 빌드는 아직 검증하지 않았습니다.
+
+## Vercel 배포
+
+`vercel.json`은 Next.js 프리셋을 사용하며, `package.json`은 Node.js 22를 지정합니다. Vercel이 `npm run build`를 실행해 서버 함수와 정적 자산을 배포합니다. Express 서버나 별도의 정적 파일 복사 단계는 없습니다.
+
+```sh
+npx vercel link --project ai-tool-quote --scope hyuntae-eoms-projects
+npx vercel --prod
+```
+
+프로덕션에서는 `PUBLIC_SITE_URL`이 없으면 Vercel이 제공하는 프로젝트의 기본 프로덕션 주소를 사용합니다. 도메인을 연결하면 `PUBLIC_SITE_URL`을 해당 HTTPS 주소로 설정합니다. Preview 배포는 공개 도메인 설정을 적용하지 않아 검색 색인을 차단합니다.
+
+`.vercel/`과 `.env.local`은 로컬 연결·인증 파일이므로 커밋하지 않습니다. `.vercelignore`는 환경 파일과 조사 자료를 업로드에서 제외합니다. CLI 배포는 GitHub push와 별개이며, Git 자동 배포는 Vercel GitHub 앱에 저장소 접근 권한을 부여하고 연결한 뒤 사용할 수 있습니다.
+
+현재 광고는 꺼져 있습니다. [Vercel Hobby 정책](https://vercel.com/docs/limits/fair-use-guidelines#commercial-usage)은 개인의 비상업적 사용만 허용하므로, AdSense를 붙여 수익화하기 전에는 Pro 이상의 요금제가 필요합니다.
 
 ## 언어와 검색 노출
 
-루트 방문은 HTTP `Accept-Language`의 한국어·영어 우선순위로 언어를 정하며, 지원 언어가 없으면 영어입니다. `/ko/`, `/en/`, `/ko/images`, `/en/images`는 언어가 고정된 URL입니다. 소개와 개인정보 안내도 각각 `/ko/about`, `/en/about`, `/ko/privacy`, `/en/privacy`에 있습니다.
+루트 방문은 HTTP `Accept-Language`의 한국어·영어 우선순위로 언어를 정하며, 지원 언어가 없으면 영어입니다. `/ko`, `/en`, `/ko/images`, `/en/images`는 언어가 고정된 URL입니다. 소개와 개인정보 안내도 각각 `/ko/about`, `/en/about`, `/ko/privacy`, `/en/privacy`에 있습니다.
 
-언어별 canonical, hreflang, 기본 Open Graph 메타데이터와 `/sitemap.xml`, `/robots.txt`를 제공합니다. `PUBLIC_SITE_URL`이 없거나 개발 모드이면 검색 색인 금지로 응답합니다. 공개 도메인을 정해 프로덕션 모드로 실행해야 색인이 허용됩니다. SSR이 검색 순위나 색인 등록을 보장하지는 않습니다. 도구 상세는 탐색 중 여는 패널이며 별도 상세 URL은 없습니다.
+Next.js Metadata API로 언어별 canonical, hreflang, Open Graph를 생성합니다. `/sitemap.xml`과 `/robots.txt`는 Route Handler가 응답합니다. 공개 주소가 없거나 개발·Preview 배포이면 검색 색인을 금지하며, 도구 상세는 별도 URL 없이 탐색 중 여는 패널입니다.
 
 ## AdSense 연결
 

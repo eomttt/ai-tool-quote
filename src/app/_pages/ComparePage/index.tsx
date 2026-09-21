@@ -1,21 +1,20 @@
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ArrowUpRight, Search, SlidersHorizontal, X } from 'lucide-react';
-import { Button } from '../../common/components/Button';
-import { Badge } from '../../common/components/Badge';
-import { Checkbox } from '../../common/components/Checkbox';
-import { Tabs, TabsList, TabsTrigger } from '../../common/components/Tabs';
-import { tools as catalogTools } from '../../domains/catalog/data/tools';
-import { scenarios } from '../../domains/catalog/data/scenarios';
-import { searchTools, recommendationFeature } from '../../domains/catalog/utils/search-tools';
-import { getPricing, pricingSnapshots } from '../../domains/catalog/data/pricing';
-import type { Billing, Medium, Tool } from '../../domains/catalog/models/model-tool';
-import { compareSubscriptionPrices } from '../../domains/catalog/utils/price-information';
-import { ToolCard } from '../../domains/catalog/components/ToolCard';
-import { ToolPeek } from '../../domains/catalog/components/ToolPeek';
-import { ComparisonTable } from '../../domains/catalog/components/ComparisonTable';
-import { localizeTool } from '../../domains/catalog/utils/localize-catalog';
-import { SiteFooter } from '../../common/components/SiteFooter';
+import { Button } from '../../../common/components/Button';
+import { Checkbox } from '../../../common/components/Checkbox';
+import { Tabs, TabsList, TabsTrigger } from '../../../common/components/Tabs';
+import { tools as catalogTools } from '../../../domains/catalog/data/tools';
+import { scenarios } from '../../../domains/catalog/data/scenarios';
+import { searchTools, recommendationFeature } from '../../../domains/catalog/utils/search-tools';
+import { getPricing, pricingSnapshots } from '../../../domains/catalog/data/pricing';
+import type { Billing, Medium, Tool } from '../../../domains/catalog/models/model-tool';
+import { compareSubscriptionPrices } from '../../../domains/catalog/utils/price-information';
+import { ToolCard } from '../../../domains/catalog/components/ToolCard';
+import { ToolPeek } from '../../../domains/catalog/components/ToolPeek';
+import { ComparisonTable } from '../../../domains/catalog/components/ComparisonTable';
+import { localizeTool } from '../../../domains/catalog/utils/localize-catalog';
+import { SiteFooter } from '../../../common/components/SiteFooter';
 
 export function ComparePage({
   initialMedium = 'video',
@@ -133,7 +132,6 @@ export function ComparePage({
           <a className="brand" href="#top" aria-label={t('brand.home')}>
             <span className="brand-mark">t.</span>
             <span>{t('brand')}</span>
-            <Badge variant="outline">BETA</Badge>
           </a>
           <nav aria-label={t('nav.label')}>
             <a href="#catalog">{t('nav.browse')}</a>

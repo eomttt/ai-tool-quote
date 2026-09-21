@@ -1,10 +1,10 @@
 # 툴견적
 
-하고 싶은 상황을 입력하면 영상·이미지 제작 도구와 맡길 수 있는 작업을 찾아주는 React 검색 사이트입니다. 38개 도구의 활용 방법과 기능을 소개하고, 공식 가격을 확인한 36개 도구의 요금표를 제공합니다.
+하고 싶은 상황을 입력하면 영상·이미지 제작 도구와 맡길 수 있는 작업을 찾아주는 Next.js 검색 사이트입니다. 38개 도구의 활용 방법과 기능을 소개하고, 공식 가격을 확인한 36개 도구의 요금표를 제공합니다.
 
 ## 실행
 
-Node.js 22.12 이상을 사용합니다.
+Node.js 22를 사용합니다.
 
 ```sh
 npm ci
@@ -54,12 +54,13 @@ JSON은 Zod로 검증합니다. 도구 ID 중복, 연결되지 않은 가격 ID,
 
 흑백 색상과 shadcn/ui의 Button, Badge, Input, Checkbox, Tabs, Separator를 사용합니다. 공식 CLI의 new-york 컴포넌트를 가져와 기존 디렉터리 규칙에 맞춰 `common/components/이름/index.tsx`에 배치했습니다. 스타일은 Tailwind CSS 4와 CSS 변수로 구성합니다.
 
-- `src/router`: 진입점
-- `src/pages/ComparePage`: 탐색 페이지와 선택 상태
+- `src/app`: Next.js 라우트, 레이아웃, 메타데이터
+- `src/app/_pages/ComparePage`: 탐색 페이지와 선택 상태
+- `src/router/App.tsx`: 언어별 클라이언트 진입점
 - `src/domains/catalog`: 도구 데이터, 검증, 특징·가격 표시
 - `src/common`: 공통 UI와 스타일
 
-공식 요금표를 확인한 뒤 JSON으로 관리합니다. 공식 페이지를 수동 명령으로 수집하는 크롤러를 제공합니다. 정기 실행 주기는 아직 정하지 않았습니다. SSR·언어별 URL·사이트맵·AdSense 연결 코드를 준비했습니다. 공개 배포와 광고 송출은 아직 시작하지 않았습니다. [게시 방법](docs/publishing.md)에 서버 실행과 도메인·게시자 ID 설정을 정리했습니다. 결제와 콘텐츠 생성은 제공하지 않습니다. 가격 갱신 방식은 [가격 갱신 문서](docs/pricing-updates.md)에 정리했습니다.
+공식 요금표를 확인한 뒤 JSON으로 관리합니다. 공식 페이지를 수동 명령으로 수집하는 크롤러를 제공합니다. 정기 실행 주기는 아직 정하지 않았습니다. SSR·언어별 URL·사이트맵·AdSense 연결 코드를 준비했습니다. [Vercel](https://ai-tool-quote.vercel.app)에 공개 배포했으며 광고는 꺼져 있습니다. [게시 방법](docs/publishing.md)에 서버 실행과 도메인·게시자 ID 설정을 정리했습니다. 결제와 콘텐츠 생성은 제공하지 않습니다. 가격 갱신 방식은 [가격 갱신 문서](docs/pricing-updates.md)에 정리했습니다.
 
 ## 공식 요금 수집
 

@@ -41,6 +41,6 @@ export function pagePath(
   kind: PageData['kind'] = 'catalog',
   medium: PageData['medium'] = 'video',
 ) {
-  const suffix = kind === 'catalog' ? (medium === 'image' ? '/images' : '/') : `/${kind}`;
+  const suffix = kind === 'catalog' ? (medium === 'image' ? '/images' : '') : `/${kind}`;
   return `/${language === 'ko' ? 'ko' : 'en'}${suffix}`;
 }
