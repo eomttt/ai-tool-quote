@@ -154,7 +154,7 @@
   "privacy.searchTitle": "Searches and selections",
   "privacy.search": "Search input and tool selections are processed in your current browser. The app does not transmit or save them on a server. We do not offer accounts or file uploads. Browser language preferences determine the initial page language.",
   "privacy.connectionTitle": "Page requests",
-  "privacy.connection": "Page requests send your IP address, requested URL, and browser information to the server and hosting service. Access logs may be retained according to the hosting service configuration. The site also connects to Google Fonts to load typefaces.",
+  "privacy.connection": "Page requests send your IP address, requested URL, and browser information to the server and hosting service. Access logs may be retained according to the hosting service configuration. Fonts are served by this site.",
   "privacy.adsTitle": "Advertising and cookies",
   "privacy.adsDisabled": "We are not loading Google advertising code at present. The app does not use advertising cookies or analytics tools.",
   "privacy.adsEnabled": "We may serve ads through Google AdSense. Google and third-party advertising vendors may use cookies, device information, and IP addresses to deliver ads.",
