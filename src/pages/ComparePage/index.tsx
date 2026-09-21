@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ArrowUpRight, Clapperboard, Image, Search, SlidersHorizontal, X } from 'lucide-react';
+import { ArrowUpRight, Search, SlidersHorizontal, X } from 'lucide-react';
 import { Button } from '../../common/components/Button';
 import { Badge } from '../../common/components/Badge';
 import { Checkbox } from '../../common/components/Checkbox';
@@ -16,7 +16,6 @@ import { ToolPeek } from '../../domains/catalog/components/ToolPeek';
 import { ComparisonTable } from '../../domains/catalog/components/ComparisonTable';
 import { localizeTool } from '../../domains/catalog/utils/localize-catalog';
 import { SiteFooter } from '../../common/components/SiteFooter';
-import { pagePath } from '../../common/utils/page-route';
 
 export function ComparePage({
   initialMedium = 'video',
@@ -31,14 +30,14 @@ export function ComparePage({
   const searchRef = useRef<HTMLTextAreaElement>(null);
   const detailTriggerRef = useRef<HTMLElement | null>(null);
   const comparisonRef = useRef<HTMLDivElement>(null);
-  const medium = initialMedium;
+  const [resultMedium, setResultMedium] = useState<Medium | 'all'>(initialMedium);
+  const medium = resultMedium === 'all' ? initialMedium : resultMedium;
   const [billing, setBilling] = useState<Billing>('monthly');
   const [search, setSearch] = useState('');
   const [query, setQuery] = useState('');
   const mediumScenarios = scenarios.filter((item) => item.medium === medium);
   const recommendations = searchTools(query);
   const recommendationsById = new Map(recommendations.map((item) => [item.id, item]));
-  const [resultMedium, setResultMedium] = useState<Medium | 'all'>('all');
   const [onlyPriced, setOnlyPriced] = useState(false);
   const [onlyFree, setOnlyFree] = useState(false);
   const hasResultFilters = resultMedium !== 'all' || onlyPriced || onlyFree;
@@ -63,9 +62,7 @@ export function ComparePage({
     return () => document.removeEventListener('keydown', handleSearchShortcut);
   }, []);
   const selectedTools = tools.filter((tool) => selectedIds.includes(tool.id));
-  const matchedTools = tools.filter((tool) =>
-    query ? recommendationsById.has(tool.id) : tool.media.includes(medium),
-  );
+  const matchedTools = query ? tools.filter((tool) => recommendationsById.has(tool.id)) : tools;
   const filteredTools = matchedTools
     .filter((tool) => {
       const pricing = getPricing(tool.id);
@@ -173,44 +170,13 @@ export function ComparePage({
               </div>
               <p>{t('catalog.subtitle')}</p>
             </div>
-            {!query ? (
-              <div className="category-line">
-                <Tabs value={medium}>
-                  <TabsList aria-label={t('medium.label')} className="medium-tabs">
-                    <TabsTrigger value="video" asChild>
-                      <a href={`${pagePath(i18n.resolvedLanguage ?? 'en')}#catalog`}>
-                        <Clapperboard />
-                        {t('medium.video')}
-                        <Badge variant="secondary">
-                          {tools.filter((tool) => tool.media.includes('video')).length}
-                        </Badge>
-                      </a>
-                    </TabsTrigger>
-                    <TabsTrigger value="image" asChild>
-                      <a
-                        href={`${pagePath(i18n.resolvedLanguage ?? 'en', 'catalog', 'image')}#catalog`}
-                      >
-                        <Image />
-                        {t('medium.image')}
-                        <Badge variant="secondary">
-                          {tools.filter((tool) => tool.media.includes('image')).length}
-                        </Badge>
-                      </a>
-                    </TabsTrigger>
-                  </TabsList>
-                </Tabs>
-                <span className="category-hint">
-                  {t('catalog.hint')}
-                  <ArrowUpRight size={14} />
-                </span>
-              </div>
-            ) : null}
             <div className={`catalog-workspace ${detailTool ? 'has-peek' : ''}`}>
               <section className="catalog-results" aria-label={t('catalog.results')}>
                 <form
                   className="situation-search"
                   onSubmit={(event) => {
                     event.preventDefault();
+                    if (!query) setResultMedium('all');
                     setQuery(search.trim());
                     setSort('featured');
                   }}
@@ -262,6 +228,7 @@ export function ComparePage({
                       size="sm"
                       onClick={() => {
                         const prompt = catalogT(item.prompt);
+                        if (!query) setResultMedium('all');
                         setSearch(prompt);
                         setQuery(prompt);
                         setSort('featured');
@@ -294,34 +261,32 @@ export function ComparePage({
                     </Button>
                   </div>
                   <div className="result-filters-fields">
-                    {query ? (
-                      <fieldset className="result-filter-group">
-                        <legend>{t('medium.label')}</legend>
-                        <div className="result-filter-options">
+                    <fieldset className="result-filter-group">
+                      <legend>{t('medium.label')}</legend>
+                      <div className="result-filter-options">
+                        <Button
+                          type="button"
+                          variant={resultMedium === 'all' ? 'default' : 'outline'}
+                          size="sm"
+                          aria-pressed={resultMedium === 'all'}
+                          onClick={() => setResultMedium('all')}
+                        >
+                          {t('filters.allMedia')}
+                        </Button>
+                        {(['video', 'image'] satisfies Medium[]).map((value) => (
                           <Button
+                            key={value}
                             type="button"
-                            variant={resultMedium === 'all' ? 'default' : 'outline'}
+                            variant={resultMedium === value ? 'default' : 'outline'}
                             size="sm"
-                            aria-pressed={resultMedium === 'all'}
-                            onClick={() => setResultMedium('all')}
+                            aria-pressed={resultMedium === value}
+                            onClick={() => setResultMedium(value)}
                           >
-                            {t('filters.allMedia')}
+                            {t(`medium.${value}`)}
                           </Button>
-                          {(['video', 'image'] satisfies Medium[]).map((value) => (
-                            <Button
-                              key={value}
-                              type="button"
-                              variant={resultMedium === value ? 'default' : 'outline'}
-                              size="sm"
-                              aria-pressed={resultMedium === value}
-                              onClick={() => setResultMedium(value)}
-                            >
-                              {t(`medium.${value}`)}
-                            </Button>
-                          ))}
-                        </div>
-                      </fieldset>
-                    ) : null}
+                        ))}
+                      </div>
+                    </fieldset>
                     <fieldset className="result-filter-group">
                       <legend>{t('filters.pricing')}</legend>
                       <div className="result-filter-options result-filter-checkboxes">
@@ -346,7 +311,7 @@ export function ComparePage({
                 </section>
                 <div className="results-meta">
                   <p role="status">
-                    {hasResultFilters
+                    {query && hasResultFilters
                       ? t('filters.count', {
                           count: filteredTools.length,
                           total: matchedTools.length,
