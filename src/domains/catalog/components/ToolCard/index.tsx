@@ -1,4 +1,4 @@
-import { ArrowUpRight, Check, Plus } from 'lucide-react';
+import { ArrowRight, Check, Plus } from 'lucide-react';
 import { Button } from '../../../../common/components/Button';
 import { Badge } from '../../../../common/components/Badge';
 import type { Billing, Medium, Tool } from '../../models/model-tool';
@@ -54,7 +54,6 @@ export function ToolCard({
       </div>
       <div className="tool-title">
         <h3>{tool.name}</h3>
-        <ArrowUpRight size={19} aria-hidden="true" />
       </div>
       <p className="tool-best-for">{tool.bestFor}</p>
       <ul className="card-features">
@@ -71,7 +70,12 @@ export function ToolCard({
       </div>
       <div className="card-bottom">
         <PriceSummary pricing={getPricing(tool.id)} billing={billing} />
-        <ArrowUpRight size={16} aria-hidden="true" />
+        <span
+          className="inline-flex shrink-0 items-center gap-1.5 text-xs text-muted-foreground"
+          aria-hidden="true"
+        >
+          상세 보기 <ArrowRight size={16} />
+        </span>
       </div>
     </article>
   );
