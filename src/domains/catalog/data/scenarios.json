@@ -1,0 +1,185 @@
+[
+  {
+    "id": "short-form",
+    "medium": "video",
+    "label": "쇼츠·릴스 만들기",
+    "description": "짧은 장면 생성부터 기존 영상의 재편집까지, 소셜 콘텐츠에 쓸 도구를 살펴보세요.",
+    "keywords": [
+      "유튜브 쇼츠",
+      "인스타그램 인스타 릴스",
+      "틱톡 숏폼",
+      "짧은 영상",
+      "youtube shorts",
+      "instagram reels",
+      "tiktok short form social video",
+      "Make Shorts and Reels"
+    ],
+    "toolIds": ["higgsfield", "pika", "pixverse", "dreamina", "invideo", "pictory", "fliki", "veed"]
+  },
+  {
+    "id": "animate-photo",
+    "medium": "video",
+    "label": "사진을 움직이게 만들기",
+    "description": "갖고 있는 사진이나 이미지를 시작점으로 움직임이 있는 영상 장면을 만들어요.",
+    "keywords": [
+      "사진 이미지 움직이게 움직이는 움직임",
+      "사진을 영상으로",
+      "이미지를 영상으로",
+      "사진 애니메이션",
+      "animate photo picture image",
+      "image to video",
+      "bring photos to life",
+      "moving picture",
+      "Animate a photo"
+    ],
+    "toolIds": ["runway", "luma", "kling", "hailuo", "pixverse", "vidu", "leonardo", "midjourney"]
+  },
+  {
+    "id": "behind-the-scenes",
+    "medium": "video",
+    "label": "촬영 비하인드 만들기",
+    "description": "참고 이미지와 장면 설명으로 촬영장 느낌의 가상 비하인드 영상을 구성해 보세요.",
+    "keywords": [
+      "촬영 비하인드 비하인드컷 비하인드 컷",
+      "비하인드 씬 메이킹 필름",
+      "영화 촬영장 현장",
+      "behind cut",
+      "behind the scenes bts",
+      "making of film set backstage",
+      "Create behind-the-scenes videos"
+    ],
+    "toolIds": ["runway", "higgsfield", "flow", "luma", "kling", "vidu", "ltx"]
+  },
+  {
+    "id": "product-video",
+    "medium": "video",
+    "label": "제품 홍보 영상 만들기",
+    "description": "제품을 보여줄 장면을 만들거나, 대본과 미디어를 엮어 광고 영상 초안을 만들어요.",
+    "keywords": [
+      "제품 상품 브랜드 홍보 광고 영상",
+      "쇼핑몰 상세페이지 영상",
+      "product promo promotion ad advertising commercial marketing video",
+      "ecommerce shop",
+      "Make a product promo video"
+    ],
+    "toolIds": ["higgsfield", "runway", "kling", "invideo", "veed", "ltx"]
+  },
+  {
+    "id": "present-without-camera",
+    "medium": "video",
+    "label": "촬영 없이 설명 영상 만들기",
+    "description": "직접 카메라 앞에 서지 않고, 대본을 아바타나 내레이션이 있는 설명 영상으로 만들어요.",
+    "keywords": [
+      "얼굴 공개 없이 안 나오게 촬영 없이",
+      "발표 강의 교육 온보딩 설명 영상",
+      "아바타 대본 말하는 사진",
+      "faceless without camera filming",
+      "avatar presenter presentation training tutorial explainer narration talking photo",
+      "Explain without filming yourself"
+    ],
+    "toolIds": ["heygen", "synthesia", "did", "colossyan", "fliki", "invideo"]
+  },
+  {
+    "id": "caption-video",
+    "medium": "video",
+    "label": "영상에 자막 넣고 다듬기",
+    "description": "이미 찍은 영상에 자막을 넣거나, 긴 영상을 짧게 정리할 때 살펴보세요.",
+    "keywords": [
+      "자동 자막 넣기 달기",
+      "영상 편집 다듬기 긴 영상 요약 자르기",
+      "add subtitles captions",
+      "edit trim summarize repurpose existing long video",
+      "Add captions and edit a video"
+    ],
+    "toolIds": ["veed", "pictory", "invideo"]
+  },
+  {
+    "id": "thumbnail",
+    "medium": "image",
+    "label": "유튜브 썸네일 만들기",
+    "description": "썸네일에 쓸 이미지를 생성하거나, 제목과 레이아웃을 더할 도구를 찾아보세요.",
+    "keywords": [
+      "유튜브 썸네일 섬네일 썸내일",
+      "블로그 대표 이미지 커버",
+      "youtube thumbnail",
+      "blog cover image",
+      "Make a YouTube thumbnail"
+    ],
+    "toolIds": ["canva", "ideogram", "gemini", "fotor", "kittl", "firefly"]
+  },
+  {
+    "id": "product-photo",
+    "medium": "image",
+    "label": "판매할 상품 사진 꾸미기",
+    "description": "상품 사진의 배경을 바꾸거나, 판매 페이지에 쓸 시각 소재를 만들어요.",
+    "keywords": [
+      "쇼핑몰 상세페이지 판매 제품 상품 사진",
+      "상품 배경 교체 꾸미기",
+      "product photo photography ecommerce shop listing",
+      "product background marketing advertising",
+      "Style photos for your shop"
+    ],
+    "toolIds": ["photoroom", "firefly", "gemini", "canva", "fotor"]
+  },
+  {
+    "id": "profile-photo",
+    "medium": "image",
+    "label": "프로필 사진 만들기",
+    "description": "인물 사진을 다듬거나 원하는 분위기의 프로필 이미지를 만드는 데 쓸 수 있어요.",
+    "keywords": [
+      "프로필 사진 인물 셀카 보정",
+      "profile photo picture portrait headshot selfie",
+      "Create a profile photo"
+    ],
+    "toolIds": ["fotor", "gemini", "firefly", "krea"]
+  },
+  {
+    "id": "character-art",
+    "medium": "image",
+    "label": "내 캐릭터·일러스트 만들기",
+    "description": "이야기나 게임에 쓸 캐릭터와 일러스트를 만들고 스타일을 탐색해요.",
+    "keywords": [
+      "캐릭터 일러스트 그림 게임 웹툰 만화 애니",
+      "character illustration art drawing game comic anime",
+      "Create characters and illustrations"
+    ],
+    "toolIds": [
+      "midjourney",
+      "leonardo",
+      "openart",
+      "seaart",
+      "tensor",
+      "nightcafe",
+      "recraft",
+      "reve"
+    ]
+  },
+  {
+    "id": "clean-photo",
+    "medium": "image",
+    "label": "사진 배경·화질 다듬기",
+    "description": "배경을 지우거나 바꾸고, 사진의 해상도와 디테일을 다듬는 도구를 살펴보세요.",
+    "keywords": [
+      "사진 배경 지우기 제거 바꾸기 누끼",
+      "사진 화질 선명하게 고화질 업스케일 보정 복원",
+      "remove change background",
+      "enhance upscale sharpen retouch restore photo resolution quality",
+      "Clean up and enhance photos"
+    ],
+    "toolIds": ["photoroom", "magnific", "krea", "fotor", "firefly", "getimg", "gemini"]
+  },
+  {
+    "id": "social-design",
+    "medium": "image",
+    "label": "SNS 게시물·포스터 만들기",
+    "description": "문구가 들어가는 이미지와 그래픽을 만들거나, 템플릿에 배치해 게시물을 완성해요.",
+    "keywords": [
+      "인스타 인스타그램 SNS 게시물 카드뉴스",
+      "포스터 배너 광고 전단지 디자인",
+      "instagram social media post carousel",
+      "poster banner flyer graphic design typography",
+      "Design social posts and posters"
+    ],
+    "toolIds": ["canva", "ideogram", "recraft", "kittl", "dreamina", "imagineart"]
+  }
+]

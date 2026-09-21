@@ -14,9 +14,11 @@ import { Badge } from '../../common/components/Badge';
 import { Input } from '../../common/components/Input';
 import { Checkbox } from '../../common/components/Checkbox';
 import { Tabs, TabsList, TabsTrigger } from '../../common/components/Tabs';
-import { tools as catalogTools, useCases } from '../../domains/catalog/data/tools';
+import { tools as catalogTools } from '../../domains/catalog/data/tools';
+import { scenarios } from '../../domains/catalog/data/scenarios';
+import { matchesToolSearch } from '../../domains/catalog/utils/search-tools';
 import { getPricing, pricingSnapshots } from '../../domains/catalog/data/pricing';
-import type { Billing, Medium, Tool, UseCase } from '../../domains/catalog/models/model-tool';
+import type { Billing, Medium, Tool } from '../../domains/catalog/models/model-tool';
 import { compareSubscriptionPrices } from '../../domains/catalog/utils/price-information';
 import { ToolCard } from '../../domains/catalog/components/ToolCard';
 import { ToolPeek } from '../../domains/catalog/components/ToolPeek';
@@ -33,7 +35,9 @@ export function ComparePage() {
   const [medium, setMedium] = useState<Medium>('video');
   const [billing, setBilling] = useState<Billing>('monthly');
   const [search, setSearch] = useState('');
-  const [useCase, setUseCase] = useState<UseCase>('all');
+  const [scenarioId, setScenarioId] = useState<string>();
+  const mediumScenarios = scenarios.filter((item) => item.medium === medium);
+  const selectedScenario = mediumScenarios.find((item) => item.id === scenarioId);
   const [onlyPriced, setOnlyPriced] = useState(false);
   const [sort, setSort] = useState('featured');
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
@@ -56,26 +60,12 @@ export function ComparePage() {
     return () => document.removeEventListener('keydown', handleSearchShortcut);
   }, []);
   const selectedTools = tools.filter((tool) => selectedIds.includes(tool.id));
-  const normalizedSearch = search.trim().toLocaleLowerCase().replaceAll(' ', '');
   const filteredTools = tools
     .filter((tool) => {
-      const searchText = [
-        tool.name,
-        tool.description,
-        tool.bestFor,
-        ...tool.features,
-        ...(tool.mediaFeatures?.[medium] ?? []),
-        ...tool.tags,
-        ...(tool.mediaTags?.[medium] ?? []),
-        ...(tool.aliases ?? []),
-      ]
-        .join(' ')
-        .toLocaleLowerCase()
-        .replaceAll(' ', '');
       return (
         tool.media.includes(medium) &&
-        (useCase === 'all' || tool.useCases.includes(useCase)) &&
-        searchText.includes(normalizedSearch) &&
+        (!selectedScenario || selectedScenario.toolIds.includes(tool.id)) &&
+        matchesToolSearch(tool, medium, search) &&
         (!onlyPriced || Boolean(getPricing(tool.id)))
       );
     })
@@ -89,7 +79,7 @@ export function ComparePage() {
   function handleMediumChange(value: string) {
     if (value !== 'video' && value !== 'image') return;
     setMedium(value);
-    setUseCase('all');
+    setScenarioId(undefined);
     setDetailToolId(undefined);
     setSelectedIds([]);
     setComparisonOpen(false);
@@ -120,7 +110,7 @@ export function ComparePage() {
   }
   function handleResetFilters() {
     setSearch('');
-    setUseCase('all');
+    setScenarioId(undefined);
     setOnlyPriced(false);
   }
   return (
@@ -231,7 +221,8 @@ export function ComparePage() {
                       ref={searchRef}
                       type="search"
                       aria-label={t('search.label')}
-                      placeholder={t('search.placeholder')}
+                      placeholder={t(`search.placeholder.${medium}`)}
+                      aria-describedby="search-hint"
                       value={search}
                       onChange={(event) => {
                         setSearch(event.currentTarget.value);
@@ -263,29 +254,35 @@ export function ComparePage() {
                     </select>
                   </div>
                 </div>
-                <div className="use-case-filters" aria-label={t('useCase.label')}>
-                  {useCases
-                    .filter(
-                      (item) =>
-                        item.id === 'all' ||
-                        tools.some(
-                          (tool) => tool.media.includes(medium) && tool.useCases.includes(item.id),
-                        ),
-                    )
-                    .map((item) => (
-                      <Button
-                        key={item.id}
-                        variant={useCase === item.id ? 'default' : 'outline'}
-                        size="sm"
-                        aria-pressed={useCase === item.id}
-                        onClick={() => {
-                          setUseCase(item.id);
-                        }}
-                      >
-                        {t(`useCase.${item.id}`)}
-                      </Button>
-                    ))}
+                <p id="search-hint" className="search-hint">
+                  {t('search.hint')}
+                </p>
+                <div className="use-case-filters" role="group" aria-label={t('scenario.label')}>
+                  <Button
+                    variant={!selectedScenario ? 'default' : 'outline'}
+                    size="sm"
+                    aria-pressed={!selectedScenario}
+                    onClick={() => setScenarioId(undefined)}
+                  >
+                    {t('scenario.all')}
+                  </Button>
+                  {mediumScenarios.map((item) => (
+                    <Button
+                      key={item.id}
+                      variant={scenarioId === item.id ? 'default' : 'outline'}
+                      size="sm"
+                      aria-pressed={scenarioId === item.id}
+                      onClick={() => {
+                        setScenarioId(item.id);
+                      }}
+                    >
+                      {catalogT(item.label)}
+                    </Button>
+                  ))}
                 </div>
+                {selectedScenario ? (
+                  <p className="scenario-description">{catalogT(selectedScenario.description)}</p>
+                ) : null}
                 <div className="results-meta">
                   <p role="status">{t('catalog.count', { count: filteredTools.length })}</p>
                   <label className="checkbox-label">

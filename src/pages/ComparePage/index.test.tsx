@@ -22,6 +22,10 @@ it('renders navigation, filters, price guide, and accessibility text in each lan
       <ComparePage />
     </I18nextProvider>,
   );
-  expect(korean).toContain('어떤 작업을 시작할까요?');
+  expect(korean).toContain('어떤 걸 만들고 싶으세요?');
+  expect(korean).toContain('촬영 비하인드 만들기');
+  expect(korean).not.toContain('장면·이미지 생성');
+  expect(english).toContain('Make Shorts and Reels');
+  expect(english).toContain('Create behind-the-scenes videos');
   expect(korean).toContain('28개 도구');
 });

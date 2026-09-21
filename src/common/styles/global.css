@@ -313,11 +313,23 @@
   background: transparent;
   padding-block: 8px;
 }
+.search-hint,
+.scenario-description {
+  color: var(--muted-foreground);
+  font-size: 12px;
+  line-height: 1.7;
+}
+.search-hint {
+  margin-top: 8px;
+}
+.scenario-description {
+  margin-bottom: 18px;
+}
 .use-case-filters {
   display: flex;
   flex-wrap: wrap;
   gap: 7px;
-  padding-block: 18px 22px;
+  padding-block: 14px 18px;
 }
 .use-case-filters button {
   font-size: 12px;
