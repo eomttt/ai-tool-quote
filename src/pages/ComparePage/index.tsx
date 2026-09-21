@@ -31,7 +31,6 @@ export function ComparePage() {
   const [useCase, setUseCase] = useState<UseCase>('all');
   const [onlyPriced, setOnlyPriced] = useState(false);
   const [sort, setSort] = useState('featured');
-  const [visibleCount, setVisibleCount] = useState(12);
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const [detailTool, setDetailTool] = useState<Tool>();
   const [comparisonOpen, setComparisonOpen] = useState(false);
@@ -90,7 +89,6 @@ export function ComparePage() {
     if (value !== 'video' && value !== 'image') return;
     setMedium(value);
     setUseCase('all');
-    setVisibleCount(12);
     setDetailTool(undefined);
     setSelectedIds([]);
     setComparisonOpen(false);
@@ -123,7 +121,6 @@ export function ComparePage() {
     setSearch('');
     setUseCase('all');
     setOnlyPriced(false);
-    setVisibleCount(12);
   }
   return (
     <>
@@ -237,7 +234,6 @@ export function ComparePage() {
                       value={search}
                       onChange={(event) => {
                         setSearch(event.currentTarget.value);
-                        setVisibleCount(12);
                       }}
                     />
                     {search ? (
@@ -283,7 +279,6 @@ export function ComparePage() {
                         aria-pressed={useCase === item.id}
                         onClick={() => {
                           setUseCase(item.id);
-                          setVisibleCount(12);
                         }}
                       >
                         {item.label}
@@ -299,7 +294,6 @@ export function ComparePage() {
                       checked={onlyPriced}
                       onCheckedChange={(value) => {
                         setOnlyPriced(value === true);
-                        setVisibleCount(12);
                       }}
                     />
                     요금표 있는 도구만
@@ -323,7 +317,7 @@ export function ComparePage() {
                 </div>
                 {filteredTools.length ? (
                   <div className="tool-grid">
-                    {filteredTools.slice(0, visibleCount).map((tool) => (
+                    {filteredTools.map((tool) => (
                       <ToolCard
                         key={tool.id}
                         tool={tool}
@@ -347,19 +341,6 @@ export function ComparePage() {
                     </Button>
                   </div>
                 )}
-                {filteredTools.length > visibleCount ? (
-                  <Button
-                    variant="outline"
-                    className="show-more"
-                    onClick={() => setVisibleCount((current) => current + 12)}
-                  >
-                    도구 더 보기
-                    <span>
-                      {visibleCount} / {filteredTools.length}
-                    </span>
-                    <ArrowDown />
-                  </Button>
-                ) : null}
                 <p className="catalog-disclosure">
                   {tools.length}개 도구의 특징을 소개하고, {pricingSnapshots.length}개 도구의
                   요금표를 제공해요. 가격은 공식 사이트에서 확인한 시점 기준입니다.
