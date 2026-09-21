@@ -1,0 +1,102 @@
+[
+  {
+    "toolId": "runway",
+    "checkedAt": "2026-09-21",
+    "reviewAfterDays": 30,
+    "region": "미국 · USD · 세금 별도",
+    "sources": ["https://runway.com/pricing", "https://academy.runwayml.com/models-pricing"],
+    "plans": [
+      {
+        "name": "Standard",
+        "monthlyUsd": 15,
+        "annualUsd": 144,
+        "monthlyCredits": 625
+      },
+      {
+        "name": "Pro",
+        "monthlyUsd": 35,
+        "annualUsd": 336,
+        "monthlyCredits": 2250
+      },
+      {
+        "name": "Max",
+        "monthlyUsd": 95,
+        "annualUsd": 912,
+        "monthlyCredits": 9500
+      }
+    ],
+    "rates": [
+      {
+        "medium": "video",
+        "model": "Gen-4.5",
+        "resolution": "720p",
+        "seconds": 5,
+        "credits": 60
+      },
+      {
+        "medium": "video",
+        "model": "Gen-4.5",
+        "resolution": "720p",
+        "seconds": 10,
+        "credits": 120
+      },
+      {
+        "medium": "image",
+        "model": "Gen-4 Image",
+        "resolution": "720p",
+        "credits": 5
+      },
+      {
+        "medium": "image",
+        "model": "Gen-4 Image",
+        "resolution": "1080p",
+        "credits": 8
+      }
+    ],
+    "note": "Gen-4.5는 초당 12크레딧, Gen-4 Image는 720p 장당 5크레딧입니다. 기본 생성만 계산하며 음성·업스케일·추가 크레딧 구매는 제외합니다. 무료 125크레딧은 일회성이므로 월 견적에 포함하지 않습니다."
+  },
+  {
+    "toolId": "pika",
+    "checkedAt": "2026-09-21",
+    "reviewAfterDays": 30,
+    "region": "미국 · USD · 세금 별도",
+    "sources": ["https://pika.art/pricing"],
+    "plans": [
+      {
+        "name": "Starter",
+        "monthlyUsd": 10,
+        "annualUsd": 96,
+        "monthlyCredits": 900,
+        "note": "상업 이용 미포함"
+      },
+      {
+        "name": "Creator",
+        "monthlyUsd": 35,
+        "annualUsd": 336,
+        "monthlyCredits": 3150
+      },
+      {
+        "name": "Fancy",
+        "monthlyUsd": 95,
+        "annualUsd": 912,
+        "monthlyCredits": 8550
+      }
+    ],
+    "rates": [
+      {
+        "medium": "video",
+        "model": "Wan 3.0",
+        "resolution": "720p",
+        "seconds": 5,
+        "credits": 33
+      },
+      {
+        "medium": "image",
+        "model": "Nano Banana 2",
+        "resolution": "1K",
+        "credits": 8
+      }
+    ],
+    "note": "영상은 Wan 3.0의 720p·5초, 이미지는 Nano Banana 2의 1K 기준입니다. Starter에는 상업용 라이선스가 포함되지 않습니다. 추가 팩과 고용량 Fancy는 견적에서 제외합니다."
+  }
+]
