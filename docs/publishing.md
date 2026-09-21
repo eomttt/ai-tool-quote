@@ -27,9 +27,14 @@ Docker를 사용하는 호스팅에는 저장소의 Dockerfile을 사용할 수 
 
 ## AdSense 연결
 
-사이트에 광고를 게재해 수익을 받는 제품은 Google AdSense입니다. 계정에서 받은 게시자 ID를 `ADSENSE_CLIENT=ca-pub-...`에 입력하면 프로덕션 카탈로그에 계정 확인 메타 태그가 생기고 `/ads.txt`가 게시됩니다. `ADSENSE_ENABLED=false` 상태에서도 사이트 소유 확인을 진행할 수 있습니다.
+사이트에 광고를 게재해 수익을 받는 제품은 Google AdSense입니다. 처음에는 [자동 광고](https://support.google.com/adsense/answer/9261805?hl=ko) 하나로 시작합니다. 기존 공통 스크립트를 사용하므로 개별 광고 단위 ID나 배너 이미지는 필요하지 않으며, 광고 형식·양·제외 위치는 AdSense 계정에서 조정합니다.
 
-[AdSense 사이트 등록과 검토](https://support.google.com/adsense/answer/7584263?hl=en)를 진행하고, 해당 계정에서 자동 광고를 설정합니다. 승인 전에는 코드만 넣어도 광고가 게재되지 않습니다. 공개 도메인과 올바른 게시자 ID가 있을 때 `ADSENSE_ENABLED=true`로 설정하면 카탈로그에 자동 광고 스크립트를 로드합니다. 소개·개인정보·404 페이지에는 광고 스크립트를 넣지 않습니다. 기본값과 개발 모드에서는 광고가 꺼집니다.
+1. 사이트를 공개 HTTPS 도메인에 배포하고 `PUBLIC_SITE_URL`을 설정합니다.
+2. AdSense 계정을 만들고 사이트를 등록합니다. 발급받은 게시자 ID를 `ADSENSE_CLIENT=ca-pub-...`에 입력합니다.
+3. `ADSENSE_ENABLED=false`를 유지한 채 배포합니다. 자동으로 생성되는 계정 확인 메타 태그 또는 `/ads.txt`로 사이트를 확인하고 [검토를 요청](https://support.google.com/adsense/answer/7584263?hl=ko)합니다.
+4. 사이트 승인 후 계정에서 자동 광고를 설정하고 `ADSENSE_ENABLED=true`로 배포합니다.
+
+승인 전에는 코드만 넣어도 광고가 게재되지 않습니다. 광고 스크립트는 활성화된 프로덕션 카탈로그에서만 로드하며, 개발 모드와 소개·개인정보·404 페이지에서는 꺼집니다.
 
 EEA·영국·스위스에 광고를 게재할 경우 [Google이 요구하는 인증 CMP](https://support.google.com/adsense/answer/13554020?hl=en)를 계정에서 설정해야 합니다. 동의 관리는 아직 구성하지 않았습니다. 실제 호스팅의 로그 처리, 문의처, 사용 지역과 광고 설정에 맞춰 개인정보 안내를 검토하고 게시합니다. 현재 구현은 광고 연결을 위한 준비이며 계정 심사·동의 설정·광고 송출 확인까지 완료한 상태가 아닙니다.
 
