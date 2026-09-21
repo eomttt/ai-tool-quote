@@ -38,7 +38,10 @@ export function ComparePage({
   const mediumScenarios = scenarios.filter((item) => item.medium === medium);
   const recommendations = searchTools(query);
   const recommendationsById = new Map(recommendations.map((item) => [item.id, item]));
+  const [resultMedium, setResultMedium] = useState<Medium | 'all'>('all');
   const [onlyPriced, setOnlyPriced] = useState(false);
+  const [onlyFree, setOnlyFree] = useState(false);
+  const hasResultFilters = resultMedium !== 'all' || onlyPriced || onlyFree;
   const [sort, setSort] = useState('featured');
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const [detailToolId, setDetailToolId] = useState<string>();
@@ -60,11 +63,16 @@ export function ComparePage({
     return () => document.removeEventListener('keydown', handleSearchShortcut);
   }, []);
   const selectedTools = tools.filter((tool) => selectedIds.includes(tool.id));
-  const filteredTools = tools
+  const matchedTools = tools.filter((tool) =>
+    query ? recommendationsById.has(tool.id) : tool.media.includes(medium),
+  );
+  const filteredTools = matchedTools
     .filter((tool) => {
+      const pricing = getPricing(tool.id);
       return (
-        (query ? recommendationsById.has(tool.id) : tool.media.includes(medium)) &&
-        (!onlyPriced || Boolean(getPricing(tool.id)))
+        (resultMedium === 'all' || tool.media.includes(resultMedium)) &&
+        (!onlyPriced || Boolean(pricing)) &&
+        (!onlyFree || Boolean(pricing?.freeTier))
       );
     })
     .toSorted((a, b) => {
@@ -78,6 +86,7 @@ export function ComparePage({
         : Number(Boolean(b.featured)) - Number(Boolean(a.featured));
     });
   function displayMedium(tool: Tool) {
+    if (resultMedium !== 'all' && tool.media.includes(resultMedium)) return resultMedium;
     return (
       recommendationsById.get(tool.id)?.scenario?.medium ??
       (tool.media.includes(medium) ? medium : (tool.media[0] ?? medium))
@@ -107,10 +116,15 @@ export function ComparePage({
     setDetailToolId(undefined);
     detailTriggerRef.current?.focus();
   }
-  function handleResetFilters() {
+  function handleResetResultFilters() {
+    setResultMedium('all');
+    setOnlyPriced(false);
+    setOnlyFree(false);
+  }
+  function handleClearSearch() {
     setSearch('');
     setQuery('');
-    setOnlyPriced(false);
+    handleResetResultFilters();
   }
   return (
     <>
@@ -199,7 +213,6 @@ export function ComparePage({
                     event.preventDefault();
                     setQuery(search.trim());
                     setSort('featured');
-                    setOnlyPriced(false);
                   }}
                 >
                   <textarea
@@ -215,6 +228,7 @@ export function ComparePage({
                       setSearch(value);
                       if (!value.trim()) {
                         setQuery('');
+                        handleResetResultFilters();
                       }
                     }}
                   />
@@ -225,7 +239,7 @@ export function ComparePage({
                         type="button"
                         variant="ghost"
                         size="icon-xs"
-                        onClick={handleResetFilters}
+                        onClick={handleClearSearch}
                         aria-label={t('search.clear')}
                       >
                         <X />
@@ -251,7 +265,6 @@ export function ComparePage({
                         setSearch(prompt);
                         setQuery(prompt);
                         setSort('featured');
-                        setOnlyPriced(false);
                       }}
                     >
                       {catalogT(item.prompt)}
@@ -264,9 +277,83 @@ export function ComparePage({
                     <p>{t('recommendation.description', { count: tools.length })}</p>
                   </div>
                 ) : null}
-                <div className="results-toolbar">
+                <section className="result-filters" aria-labelledby="result-filters-title">
+                  <div className="result-filters-heading">
+                    <h3 id="result-filters-title">
+                      <SlidersHorizontal size={15} aria-hidden="true" />
+                      {t('filters.title')}
+                    </h3>
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="sm"
+                      disabled={!hasResultFilters}
+                      onClick={handleResetResultFilters}
+                    >
+                      {t('filters.reset')}
+                    </Button>
+                  </div>
+                  <div className="result-filters-fields">
+                    {query ? (
+                      <fieldset className="result-filter-group">
+                        <legend>{t('medium.label')}</legend>
+                        <div className="result-filter-options">
+                          <Button
+                            type="button"
+                            variant={resultMedium === 'all' ? 'default' : 'outline'}
+                            size="sm"
+                            aria-pressed={resultMedium === 'all'}
+                            onClick={() => setResultMedium('all')}
+                          >
+                            {t('filters.allMedia')}
+                          </Button>
+                          {(['video', 'image'] satisfies Medium[]).map((value) => (
+                            <Button
+                              key={value}
+                              type="button"
+                              variant={resultMedium === value ? 'default' : 'outline'}
+                              size="sm"
+                              aria-pressed={resultMedium === value}
+                              onClick={() => setResultMedium(value)}
+                            >
+                              {t(`medium.${value}`)}
+                            </Button>
+                          ))}
+                        </div>
+                      </fieldset>
+                    ) : null}
+                    <fieldset className="result-filter-group">
+                      <legend>{t('filters.pricing')}</legend>
+                      <div className="result-filter-options result-filter-checkboxes">
+                        <label className="checkbox-label">
+                          <Checkbox
+                            checked={onlyPriced}
+                            onCheckedChange={(value) => setOnlyPriced(value === true)}
+                          />
+                          {t('catalog.onlyPriced')}
+                        </label>
+                        <label className="checkbox-label">
+                          <Checkbox
+                            checked={onlyFree}
+                            onCheckedChange={(value) => setOnlyFree(value === true)}
+                          />
+                          {t('filters.onlyFree')}
+                        </label>
+                      </div>
+                    </fieldset>
+                  </div>
+                  {onlyFree ? <p className="result-filters-note">{t('filters.freeNote')}</p> : null}
+                </section>
+                <div className="results-meta">
+                  <p role="status">
+                    {hasResultFilters
+                      ? t('filters.count', {
+                          count: filteredTools.length,
+                          total: matchedTools.length,
+                        })
+                      : t('catalog.count', { count: filteredTools.length })}
+                  </p>
                   <div className="sort-field">
-                    <SlidersHorizontal size={15} />
                     <select
                       aria-label={t('sort.label')}
                       value={sort}
@@ -279,18 +366,6 @@ export function ComparePage({
                       <option value="name">{t('sort.name')}</option>
                     </select>
                   </div>
-                </div>
-                <div className="results-meta">
-                  <p role="status">{t('catalog.count', { count: filteredTools.length })}</p>
-                  <label className="checkbox-label">
-                    <Checkbox
-                      checked={onlyPriced}
-                      onCheckedChange={(value) => {
-                        setOnlyPriced(value === true);
-                      }}
-                    />
-                    {t('catalog.onlyPriced')}
-                  </label>
                   <Tabs value={billing} onValueChange={handleBillingChange}>
                     <TabsList aria-label={t('billing.label')}>
                       <TabsTrigger value="monthly">{t('billing.monthly')}</TabsTrigger>
@@ -339,10 +414,15 @@ export function ComparePage({
                 ) : (
                   <div className="empty-state">
                     <Search />
-                    <h3>{t('empty.title')}</h3>
-                    <p>{t('empty.description')}</p>
-                    <Button variant="outline" onClick={handleResetFilters}>
-                      {t('empty.reset')}
+                    <h3>{t(matchedTools.length ? 'filters.emptyTitle' : 'empty.title')}</h3>
+                    <p>
+                      {t(matchedTools.length ? 'filters.emptyDescription' : 'empty.description')}
+                    </p>
+                    <Button
+                      variant="outline"
+                      onClick={matchedTools.length ? handleResetResultFilters : handleClearSearch}
+                    >
+                      {t(matchedTools.length ? 'filters.clear' : 'empty.reset')}
                     </Button>
                   </div>
                 )}
