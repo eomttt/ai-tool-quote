@@ -16,6 +16,7 @@
       "I want to make Shorts and upload them to YouTube"
     ],
     "toolIds": [
+      "runway",
       "higgsfield",
       "pika",
       "pixverse",
@@ -31,6 +32,10 @@
     "platforms": ["유튜브", "인스타그램", "틱톡"],
     "basis": "editorial",
     "evidence": [
+      {
+        "toolId": "runway",
+        "capabilityIds": ["video"]
+      },
       {
         "toolId": "higgsfield",
         "capabilityIds": ["video"]

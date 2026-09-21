@@ -33,6 +33,12 @@ describe('searching by situation', () => {
     }
   });
 
+  it('includes video clip creation tools when searching for short-form content', () => {
+    for (const query of ['쇼츠', '릴스', '쇼츠, 릴스', 'Shorts and Reels']) {
+      expect(findTools(query, 'video')).toContain('runway');
+    }
+  });
+
   it('keeps name, alias, and feature searches working', () => {
     expect(findTools('  RUNWAY  ', 'video')).toEqual(['runway']);
     expect(findTools('higgs field', 'video')).toEqual(['higgsfield']);
