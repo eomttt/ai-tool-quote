@@ -176,6 +176,7 @@ export function ComparePage({
                   className="situation-search"
                   onSubmit={(event) => {
                     event.preventDefault();
+                    if (!search.trim()) return;
                     if (!query) setResultMedium('all');
                     setQuery(search.trim());
                     setSort('featured');
@@ -187,8 +188,19 @@ export function ComparePage({
                     maxLength={1000}
                     aria-label={t('search.label')}
                     placeholder={t(`search.placeholder.${medium}`)}
-                    aria-describedby="search-hint"
+                    aria-describedby="search-keyboard-hint search-hint"
                     value={search}
+                    onKeyDown={(event) => {
+                      if (
+                        event.key !== 'Enter' ||
+                        event.shiftKey ||
+                        event.nativeEvent.isComposing ||
+                        event.nativeEvent.keyCode === 229
+                      )
+                        return;
+                      event.preventDefault();
+                      if (!event.repeat && search.trim()) event.currentTarget.form?.requestSubmit();
+                    }}
                     onChange={(event) => {
                       const value = event.currentTarget.value;
                       setSearch(value);
@@ -199,7 +211,7 @@ export function ComparePage({
                     }}
                   />
                   <div className="situation-search-actions">
-                    <span>{t('search.inputHint')}</span>
+                    <span id="search-keyboard-hint">{t('search.inputHint')}</span>
                     {search || query ? (
                       <Button
                         type="button"

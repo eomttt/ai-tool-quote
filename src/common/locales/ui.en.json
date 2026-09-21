@@ -169,7 +169,7 @@
   "contact.profile": "eomttt public profile",
   "notFound.title": "Page not found",
   "notFound.description": "Check the address or return to tool discovery.",
-  "search.inputHint": "Tell us what you have, what you want to make, and where it will go.",
+  "search.inputHint": "Enter to search · Shift + Enter for a new line",
   "search.submit": "Find tools",
   "search.examples": "Example situations",
   "sort.relevance": "Most relevant",

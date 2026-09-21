@@ -169,7 +169,7 @@
   "contact.profile": "eomttt 공개 프로필",
   "notFound.title": "페이지를 찾을 수 없어요",
   "notFound.description": "주소를 확인하거나 도구 탐색으로 돌아가 주세요.",
-  "search.inputHint": "가진 재료, 만들고 싶은 결과, 올릴 곳을 편하게 적어주세요.",
+  "search.inputHint": "Enter로 검색 · Shift + Enter로 줄바꿈",
   "search.submit": "맞는 도구 찾기",
   "search.examples": "상황 입력 예시",
   "sort.relevance": "상황과 관련 높은 순",
