@@ -11,6 +11,10 @@ const toolSchema = z
     id: identifier,
     name: text,
     monogram: text,
+    icon: z
+      .string()
+      .regex(/^\/tool-icons\/[a-z0-9-]+\.(png|ico|svg|webp|jpg|gif)$/)
+      .optional(),
     color: text,
     description: text,
     bestFor: text,

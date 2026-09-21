@@ -7,6 +7,7 @@ export interface Tool {
   id: string;
   name: string;
   monogram: string;
+  icon?: string;
   color: string;
   description: string;
   bestFor: string;

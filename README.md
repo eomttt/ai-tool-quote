@@ -27,7 +27,7 @@ npm run format:check
 
 ## 데이터
 
-- `src/domains/catalog/data/tools.json`: 이름, 제작 분야, 용도, 특징, 살펴볼 점, 검색어, 공식 출처.
+- `src/domains/catalog/data/tools.json`: 이름, 대표 아이콘 경로, 제작 분야, 용도, 특징, 살펴볼 점, 검색어, 공식 출처.
 - `src/domains/catalog/data/pricing-audits.json`: 38개 도구의 확인 결과, 수집 방법, 출처와 근거 파일.
 - `src/domains/catalog/data/pricing.json`: 과금 방식, 요금제, 월·연 포함량, 통화, 추가 구매 팩, 확인일과 공식 가격 출처.
 
@@ -59,3 +59,16 @@ npm run test:pricing-sources
 Python 3.9 이상과 네트워크 연결이 필요합니다. HTTP 수집 원문은 `research/pricing/`에 저장하고 원본 HTML은 `.cache/pricing-sources/`에 보관합니다. 브라우저 확인 기록과 도구별 결과는 [수집 결과](research/README.md)에서 볼 수 있습니다.
 
 크롤러는 공개 가격 JSON을 덮어쓰지 않습니다. 수집 내용에서 결제 주기·할인·통화·포함량을 확인한 뒤 반영합니다.
+
+## 도구 아이콘 수집
+
+```sh
+npm run fetch:icons
+npm run fetch:icons -- --tool higgsfield
+```
+
+공식 사이트가 선언한 아이콘을 내려받아 `public/tool-icons/`에 보관합니다. 큰 Apple Touch Icon과 밝은 화면용 아이콘을 우선하고, 선언이 없으면 사이트의 `/favicon.ico`를 확인합니다. 외부 아이콘 서비스는 사용하지 않습니다.
+
+수집한 38개 아이콘의 원본 주소, 발견한 페이지, 수집 시각, 파일 해시는 [아이콘 출처 기록](research/icon-sources.json)에 남겼습니다. 공식 사이트의 아이콘 원본을 수정하지 않고 서비스 식별용으로 표시합니다. 브랜드의 권리는 각 서비스에 있습니다.
+
+수집에 성공한 아이콘만 도구 JSON에 반영합니다. 재수집에 실패하면 기존 파일을 유지합니다. 화면에서 이미지를 불러오지 못하면 도구의 글자 아이콘을 표시합니다. 교체 후에는 카드·상세 패널·추천 목록에서 모양을 확인합니다.

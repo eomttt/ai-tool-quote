@@ -6,6 +6,7 @@ import { Separator } from '../../../../common/components/Separator';
 import type { Billing, Medium, Tool } from '../../models/model-tool';
 import { tools } from '../../data/tools';
 import { getPricing, getPricingAudit } from '../../data/pricing';
+import { ToolLogo } from '../ToolLogo';
 import {
   formatAllowance,
   formatMoney,
@@ -52,9 +53,7 @@ export function ToolPeek({ tool, medium, billing, onClose, onSelectTool }: ToolP
       </div>
       <div className="peek-scroll" key={tool.id}>
         <div className="peek-identity">
-          <span className="tool-logo large" aria-hidden="true">
-            {tool.monogram}
-          </span>
+          <ToolLogo tool={tool} size="large" />
           <div>
             <h2 id="peek-title">{tool.name}</h2>
             <p>
@@ -118,7 +117,7 @@ export function ToolPeek({ tool, medium, billing, onClose, onSelectTool }: ToolP
                     key={candidate.id}
                     onClick={() => onSelectTool(candidate)}
                   >
-                    <span className="tool-logo mini">{candidate.monogram}</span>
+                    <ToolLogo tool={candidate} size="mini" />
                     <span>{candidate.name}</span>
                     <ArrowRight />
                   </Button>

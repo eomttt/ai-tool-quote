@@ -12,6 +12,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "crawl:pricing": "python3 scripts/crawl-pricing.py",
+    "fetch:icons": "python3 scripts/fetch-tool-icons.py",
     "test:pricing-sources": "python3 -m unittest discover -s scripts -p \"test_*.py\""
   },
   "dependencies": {

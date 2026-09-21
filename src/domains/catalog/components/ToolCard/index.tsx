@@ -4,6 +4,7 @@ import { Badge } from '../../../../common/components/Badge';
 import type { Billing, Medium, Tool } from '../../models/model-tool';
 import { getPricing } from '../../data/pricing';
 import { PriceSummary } from '../PriceSummary';
+import { ToolLogo } from '../ToolLogo';
 interface ToolCardProps {
   tool: Tool;
   medium: Medium;
@@ -36,9 +37,7 @@ export function ToolCard({
         aria-controls={active ? 'tool-detail' : undefined}
       />
       <div className="card-topline">
-        <span className="tool-logo" aria-hidden="true">
-          {tool.monogram}
-        </span>
+        <ToolLogo tool={tool} />
         <span className="card-compare-control">
           <Button
             variant={selected ? 'secondary' : 'ghost'}
