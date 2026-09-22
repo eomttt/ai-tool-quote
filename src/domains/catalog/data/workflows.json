@@ -1,0 +1,507 @@
+[
+  {
+    "id": "shorts-to-social",
+    "title": {
+      "ko": "쇼츠·릴스, 제작부터 게시까지",
+      "en": "Shorts & Reels, from creation to publishing"
+    },
+    "description": {
+      "ko": "내가 가진 재료에 맞춰 필요한 단계를 고르고, 도구와 공식 안내를 따라가세요.",
+      "en": "Choose the steps you need, then explore tools and official guides for each one."
+    },
+    "example": {
+      "ko": "AI로 쇼츠를 만들어 유튜브와 인스타그램에 올리고 싶어",
+      "en": "I want to make AI Shorts and post them to YouTube and Instagram"
+    },
+    "keywords": [
+      "쇼츠 숏폼 릴스 유튜브 인스타그램 영상 제작 편집 자막 채널 업로드 게시 분석",
+      "shorts reels youtube instagram video creation editing captions channel upload publish analytics"
+    ],
+    "triggerTerms": ["shorts", "reels"],
+    "platformTerms": ["youtube", "instagram"],
+    "steps": [
+      {
+        "id": "generate",
+        "title": {
+          "ko": "장면 만들기",
+          "en": "Create clips"
+        },
+        "summary": {
+          "ko": "설명이나 참고 이미지에 맞는 영상 제작 도구를 고르세요.",
+          "en": "Choose a video tool for your description or reference images."
+        },
+        "input": {
+          "ko": "준비한 장면 설명 또는 참고 이미지",
+          "en": "Your shot descriptions or reference images"
+        },
+        "output": {
+          "ko": "편집에 사용할 영상 클립",
+          "en": "Video clips ready for editing"
+        },
+        "handoff": {
+          "ko": "클립을 내려받아 다음 단계의 편집 도구에 넣으세요.",
+          "en": "Download the clips and import them into the editor in the next step."
+        },
+        "dependsOn": [],
+        "resourceIds": ["runway", "higgsfield"]
+      },
+      {
+        "id": "edit",
+        "title": {
+          "ko": "영상 완성하기",
+          "en": "Finish the video"
+        },
+        "summary": {
+          "ko": "클립 연결부터 음성·자막, 세로 영상 내보내기까지 마무리하세요.",
+          "en": "Assemble clips, add voice and captions, and export a vertical video."
+        },
+        "input": {
+          "ko": "영상 클립과 필요한 음성·대본",
+          "en": "Video clips and any narration or script you already have"
+        },
+        "output": {
+          "ko": "게시할 세로 영상 파일",
+          "en": "A finished vertical video file"
+        },
+        "handoff": {
+          "ko": "영상 파일을 보관하고 게시할 계정을 준비하세요.",
+          "en": "Keep the exported file ready and prepare the accounts you will publish from."
+        },
+        "dependsOn": ["generate"],
+        "resourceIds": ["capcut"]
+      },
+      {
+        "id": "channels",
+        "title": {
+          "ko": "채널 준비하기",
+          "en": "Prepare accounts"
+        },
+        "summary": {
+          "ko": "게시할 플랫폼의 계정과 프로필을 준비하세요.",
+          "en": "Prepare the accounts and profiles for your chosen platforms."
+        },
+        "input": {
+          "ko": "사용할 계정, 채널 이름과 프로필 이미지",
+          "en": "Your account, channel name, and profile image"
+        },
+        "output": {
+          "ko": "게시할 YouTube 채널 또는 Instagram 계정",
+          "en": "Your publishing channel or account"
+        },
+        "handoff": {
+          "ko": "선택한 계정에 로그인한 상태로 영상 파일을 업로드하세요.",
+          "en": "Sign in to the chosen accounts and upload your finished video."
+        },
+        "dependsOn": [],
+        "resourceIds": ["youtube-channel", "instagram-channel"]
+      },
+      {
+        "id": "publish",
+        "title": {
+          "ko": "게시하기",
+          "en": "Publish"
+        },
+        "summary": {
+          "ko": "플랫폼별로 제목·설명·커버와 공개 설정을 확인하세요.",
+          "en": "Review platform-specific titles, captions, covers, and visibility."
+        },
+        "input": {
+          "ko": "완성한 영상 파일과 게시할 계정",
+          "en": "Your finished video and publishing accounts"
+        },
+        "output": {
+          "ko": "게시된 쇼츠·릴스 링크",
+          "en": "Links to your published Shorts or Reels"
+        },
+        "handoff": {
+          "ko": "게시 링크를 보관하고 분석 화면에서 반응을 살펴보세요.",
+          "en": "Keep the published links and review the response in each platform’s analytics."
+        },
+        "dependsOn": ["edit", "channels"],
+        "resourceIds": ["youtube-publish", "instagram-publish"]
+      },
+      {
+        "id": "review",
+        "title": {
+          "ko": "반응 확인하기",
+          "en": "Review the response"
+        },
+        "summary": {
+          "ko": "분석 화면과 댓글을 살펴보고 다음 영상의 변경점을 기록하세요.",
+          "en": "Read analytics and comments, then note what to change next time."
+        },
+        "input": {
+          "ko": "게시된 영상과 플랫폼 분석 데이터",
+          "en": "Published videos and platform analytics"
+        },
+        "output": {
+          "ko": "다음 영상에서 바꿔볼 점 한 가지",
+          "en": "One change to try in the next video"
+        },
+        "handoff": {
+          "ko": "변경점이 정해지면 필요한 제작·편집 단계로 돌아가세요.",
+          "en": "Return to the relevant creation or editing step when you are ready to try that change."
+        },
+        "dependsOn": ["publish"],
+        "resourceIds": ["youtube-review", "instagram-review"]
+      }
+    ],
+    "resources": [
+      {
+        "id": "runway",
+        "name": "Runway",
+        "kind": "tool",
+        "platform": "all",
+        "url": "https://runwayml.com/",
+        "reason": {
+          "ko": "참고 이미지의 구도를 유지하면서 피사체와 카메라의 움직임을 설명해 영상으로 만들 때 살펴보세요.",
+          "en": "Use a reference image to set the composition, then describe subject and camera movement."
+        },
+        "actions": [
+          {
+            "ko": "참고 이미지와 원하는 움직임을 넣어 짧은 클립을 생성하세요.",
+            "en": "Add your reference image and describe the motion to generate a clip."
+          },
+          {
+            "ko": "사용할 장면을 골라 영상 파일로 내려받으세요.",
+            "en": "Choose the shots to keep and download the video files."
+          }
+        ],
+        "sourceIds": ["runway-motion"],
+        "toolId": "runway"
+      },
+      {
+        "id": "higgsfield",
+        "name": "Higgsfield",
+        "kind": "tool",
+        "platform": "all",
+        "url": "https://higgsfield.ai/",
+        "reason": {
+          "ko": "효과 프리셋을 살펴보고 원하는 연출에 가까운 영상 클립을 만들 때 후보로 볼 수 있어요.",
+          "en": "Explore effect presets when you want a particular visual treatment for your clips."
+        },
+        "actions": [
+          {
+            "ko": "만들려는 장면에 맞는 영상 모델이나 효과를 선택하세요.",
+            "en": "Choose a video model or effect that fits your shot."
+          },
+          {
+            "ko": "결과를 확인하고 편집할 클립을 내려받으세요.",
+            "en": "Review the result and download the clips you want to edit."
+          }
+        ],
+        "sourceIds": ["higgsfield-effects"],
+        "toolId": "higgsfield"
+      },
+      {
+        "id": "capcut",
+        "name": "CapCut",
+        "kind": "tool",
+        "platform": "all",
+        "url": "https://www.capcut.com/",
+        "reason": {
+          "ko": "클립을 이어 붙이고 음성·자동 자막을 같은 편집 화면에서 다루려는 경우에 맞아요.",
+          "en": "A candidate for assembling clips and working with voiceovers and auto captions in one editor."
+        },
+        "actions": [
+          {
+            "ko": "클립을 타임라인에 넣고 순서와 길이를 조정하세요.",
+            "en": "Import clips to the timeline and adjust their order and length."
+          },
+          {
+            "ko": "내레이션이 필요하면 준비한 대본을 음성으로 바꾸세요.",
+            "en": "If narration is needed, turn your prepared script into speech."
+          },
+          {
+            "ko": "자동 자막을 만든 뒤 오탈자와 타이밍을 직접 확인하세요.",
+            "en": "Generate captions, then review their wording and timing."
+          },
+          {
+            "ko": "세로 화면에서 자막과 음성을 확인하고 영상 파일을 내보내세요.",
+            "en": "Check captions and audio in the vertical layout, then export the video."
+          }
+        ],
+        "sourceIds": ["capcut-voice", "capcut-captions"]
+      },
+      {
+        "id": "youtube-channel",
+        "name": "YouTube",
+        "kind": "guide",
+        "platform": "youtube",
+        "url": "https://support.google.com/youtube/answer/1646861",
+        "reason": {
+          "ko": "영상 게시에 필요한 YouTube 채널을 준비하는 공식 안내예요.",
+          "en": "The official guide to preparing a YouTube channel for publishing."
+        },
+        "actions": [
+          {
+            "ko": "Google 계정으로 YouTube에 로그인하세요.",
+            "en": "Sign in to YouTube with your Google account."
+          },
+          {
+            "ko": "채널 만들기에서 이름·핸들·프로필 사진을 설정하세요.",
+            "en": "Create a channel and set its name, handle, and profile picture."
+          },
+          {
+            "ko": "게시할 채널이 맞는지 확인하세요.",
+            "en": "Confirm that you are using the channel you want to publish to."
+          }
+        ],
+        "sourceIds": ["youtube-channel"]
+      },
+      {
+        "id": "instagram-channel",
+        "name": "Instagram",
+        "kind": "guide",
+        "platform": "instagram",
+        "url": "https://www.instagram.com/",
+        "reason": {
+          "ko": "계정과 프로필을 준비하고, 분석이 필요할 때 크리에이터 계정 안내를 살펴보세요.",
+          "en": "Prepare an account and profile; consult the creator account guide when you need professional insights."
+        },
+        "actions": [
+          {
+            "ko": "Instagram 앱이나 웹에서 사용할 계정을 만들거나 로그인하세요.",
+            "en": "Create or sign in to the Instagram account you want to use."
+          },
+          {
+            "ko": "사용자 이름·프로필 사진·소개를 설정하세요.",
+            "en": "Set your username, profile picture, and bio."
+          },
+          {
+            "ko": "전문가용 분석 기능이 필요하면 공식 안내에서 크리에이터 계정 전환 조건을 확인하세요.",
+            "en": "If you need professional analytics, check the official guide for creator account requirements."
+          }
+        ],
+        "sourceIds": ["instagram-account", "instagram-practices"]
+      },
+      {
+        "id": "youtube-publish",
+        "name": "YouTube Studio",
+        "kind": "guide",
+        "platform": "youtube",
+        "url": "https://studio.youtube.com/",
+        "reason": {
+          "ko": "완성한 영상을 업로드하고 제목·설명·공개 여부를 설정할 수 있어요.",
+          "en": "Upload your finished video and choose its title, description, and visibility."
+        },
+        "actions": [
+          {
+            "ko": "YouTube Studio에서 만들기 → 동영상 업로드를 선택하세요.",
+            "en": "In YouTube Studio, choose Create → Upload videos."
+          },
+          {
+            "ko": "영상 파일을 올리고 제목·설명·시청자 대상과 공개 설정을 확인하세요.",
+            "en": "Upload the file and review the title, description, audience, and visibility settings."
+          },
+          {
+            "ko": "게시된 영상을 열어 자막·소리·공개 상태를 확인하고 링크를 복사하세요.",
+            "en": "Open the published video, check captions, audio, and visibility, then copy its link."
+          }
+        ],
+        "sourceIds": ["youtube-upload", "youtube-shorts"]
+      },
+      {
+        "id": "instagram-publish",
+        "name": "Instagram Reels",
+        "kind": "guide",
+        "platform": "instagram",
+        "url": "https://www.instagram.com/",
+        "reason": {
+          "ko": "완성한 영상을 릴스로 올리고 커버와 설명을 정하는 흐름이에요.",
+          "en": "Publish your finished video as a Reel with a cover and caption."
+        },
+        "actions": [
+          {
+            "ko": "Instagram의 릴스 만들기에서 완성한 영상 파일을 선택하세요.",
+            "en": "Start creating a Reel in Instagram and choose your finished video."
+          },
+          {
+            "ko": "미리보기에서 커버·설명·공유 대상을 확인한 뒤 게시하세요.",
+            "en": "Preview the Reel, review its cover, caption, and audience, then publish."
+          },
+          {
+            "ko": "프로필에서 릴스를 열어 영상과 소리를 확인하고 링크를 복사하세요.",
+            "en": "Open the Reel on your profile, check the video and audio, and copy its link."
+          }
+        ],
+        "sourceIds": ["instagram-reels"]
+      },
+      {
+        "id": "youtube-review",
+        "name": "YouTube Analytics",
+        "kind": "guide",
+        "platform": "youtube",
+        "url": "https://studio.youtube.com/",
+        "reason": {
+          "ko": "쇼츠의 조회수·시청 선택·댓글을 살펴보고 다음 영상에서 바꿀 점을 정할 때 사용해요.",
+          "en": "Review views, viewers who chose to watch, and comments to decide what to try next."
+        },
+        "actions": [
+          {
+            "ko": "YouTube Studio의 분석 → 콘텐츠에서 Shorts를 살펴보세요.",
+            "en": "In YouTube Studio, open Analytics → Content → Shorts."
+          },
+          {
+            "ko": "조회수만 보지 말고 시청 선택과 댓글을 함께 확인하세요.",
+            "en": "Review views alongside how many chose to watch and the comments."
+          },
+          {
+            "ko": "시청 지속 시간 그래프에서 이탈 구간을 찾고 다음 영상에서 바꿀 점 하나를 기록하세요.",
+            "en": "Look for drop-offs in audience retention and note one change to try in your next video."
+          }
+        ],
+        "sourceIds": ["youtube-analytics", "youtube-retention"]
+      },
+      {
+        "id": "instagram-review",
+        "name": "Instagram",
+        "kind": "guide",
+        "platform": "instagram",
+        "url": "https://www.instagram.com/",
+        "reason": {
+          "ko": "프로페셔널 대시보드의 성과와 안내를 보고 다음 릴스의 변경점을 정해보세요.",
+          "en": "Use the professional dashboard and its guidance to choose a change for your next Reel."
+        },
+        "actions": [
+          {
+            "ko": "프로페셔널 대시보드에서 게시물의 성과와 제공되는 안내를 확인하세요.",
+            "en": "Review content performance and guidance in the professional dashboard."
+          },
+          {
+            "ko": "반응이 다른 릴스의 길이·전개·댓글을 비교하세요.",
+            "en": "Compare the length, pacing, and comments on Reels with different responses."
+          },
+          {
+            "ko": "다음 릴스에서 바꿔볼 점 하나를 적어두세요.",
+            "en": "Write down one change to try in the next Reel."
+          }
+        ],
+        "sourceIds": ["instagram-practices"]
+      }
+    ],
+    "sources": [
+      {
+        "id": "runway-motion",
+        "url": "https://help.runwayml.com/hc/en-us/articles/48324313115155-Image-to-Video-Prompting-Guide",
+        "title": {
+          "ko": "Runway 이미지 → 영상 가이드",
+          "en": "Runway image-to-video guide"
+        },
+        "checkedAt": "2026-09-21",
+        "access": "read"
+      },
+      {
+        "id": "higgsfield-effects",
+        "url": "https://higgsfield.ai/",
+        "title": {
+          "ko": "Higgsfield 영상·효과 소개",
+          "en": "Higgsfield video and effects"
+        },
+        "checkedAt": "2026-09-21",
+        "access": "read"
+      },
+      {
+        "id": "capcut-captions",
+        "url": "https://www.capcut.com/tools/ai-caption-generator",
+        "title": {
+          "ko": "CapCut 자동 자막 가이드",
+          "en": "CapCut auto-caption guide"
+        },
+        "checkedAt": "2026-09-21",
+        "access": "read"
+      },
+      {
+        "id": "capcut-voice",
+        "url": "https://www.capcut.com/tools/text-to-speech",
+        "title": {
+          "ko": "CapCut 음성 생성 가이드",
+          "en": "CapCut text-to-speech guide"
+        },
+        "checkedAt": "2026-09-21",
+        "access": "read"
+      },
+      {
+        "id": "youtube-channel",
+        "url": "https://support.google.com/youtube/answer/1646861",
+        "title": {
+          "ko": "YouTube 채널 만들기",
+          "en": "Create a YouTube channel"
+        },
+        "checkedAt": "2026-09-21",
+        "access": "read"
+      },
+      {
+        "id": "instagram-account",
+        "url": "https://www.facebook.com/help/instagram/2358103564437429",
+        "title": {
+          "ko": "Instagram 크리에이터 계정 안내",
+          "en": "Instagram creator account guide"
+        },
+        "checkedAt": "2026-09-21",
+        "access": "login-required"
+      },
+      {
+        "id": "youtube-upload",
+        "url": "https://support.google.com/youtube/answer/57407",
+        "title": {
+          "ko": "YouTube 영상 업로드 안내",
+          "en": "Upload videos with YouTube Studio"
+        },
+        "checkedAt": "2026-09-21",
+        "access": "read"
+      },
+      {
+        "id": "youtube-shorts",
+        "url": "https://support.google.com/youtube/answer/10059070",
+        "title": {
+          "ko": "YouTube Shorts 시작하기",
+          "en": "Get started with YouTube Shorts"
+        },
+        "checkedAt": "2026-09-21",
+        "access": "read"
+      },
+      {
+        "id": "instagram-reels",
+        "url": "https://about.fb.com/news/2020/08/introducing-instagram-reels/",
+        "title": {
+          "ko": "Meta 릴스 제작·공유 소개",
+          "en": "Meta guide to creating and sharing Reels"
+        },
+        "checkedAt": "2026-09-21",
+        "access": "read"
+      },
+      {
+        "id": "youtube-analytics",
+        "url": "https://support.google.com/youtube/answer/12942217?co=YOUTUBE._YTVideoType%3Dshorts",
+        "title": {
+          "ko": "YouTube Shorts 분석 읽는 법",
+          "en": "Read YouTube Shorts analytics"
+        },
+        "checkedAt": "2026-09-21",
+        "access": "read"
+      },
+      {
+        "id": "youtube-retention",
+        "url": "https://support.google.com/youtube/answer/9314415",
+        "title": {
+          "ko": "YouTube 시청 지속 시간 읽는 법",
+          "en": "Understand YouTube audience retention"
+        },
+        "checkedAt": "2026-09-21",
+        "access": "read"
+      },
+      {
+        "id": "instagram-practices",
+        "url": "https://about.fb.com/news/2024/10/best-practices-education-hub-creators-instagram/",
+        "title": {
+          "ko": "Instagram 프로페셔널 대시보드 안내",
+          "en": "Instagram professional dashboard guidance"
+        },
+        "checkedAt": "2026-09-21",
+        "access": "read"
+      }
+    ],
+    "recommendationBasis": "editorial"
+  }
+]

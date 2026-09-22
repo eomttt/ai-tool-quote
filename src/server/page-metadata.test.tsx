@@ -18,7 +18,7 @@ describe('Next.js page data and metadata', () => {
     expect(koreanHtml).toContain('28개 도구');
     expect(englishHtml).toContain('25 tools');
     expect(englishHtml).toContain('Photoroom');
-    expect(createPageMetadata(korean, config, true).title).toContain('영상에 맞는 AI 도구');
+    expect(createPageMetadata(korean, config, true).title).toContain('쇼츠 제작부터 게시까지');
     expect(createPageMetadata(english, config, true).alternates).toEqual({
       canonical: 'https://tools.example.com/en/images',
       languages: {

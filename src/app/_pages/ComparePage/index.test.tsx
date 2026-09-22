@@ -26,7 +26,9 @@ it('renders navigation, filters, price guide, and accessibility text in each lan
   expect(korean).toContain('나 이런 걸로 쇼츠 만들어서 유튜브에 올려보고 싶어');
   expect(korean).not.toContain('장면·이미지 생성');
   expect(english).toContain('I want to make Shorts and upload them to YouTube');
-  expect(english).toContain('Find tools');
+  expect(english).toContain('Find workflow &amp; tools');
+  expect(english).toContain('Explore the 5 steps');
+  expect(korean).toContain('5단계 흐름 살펴보기');
   expect(korean).toContain('28개 도구');
   expect(korean).not.toContain('BETA');
 });

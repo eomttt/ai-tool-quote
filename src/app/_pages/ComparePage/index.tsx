@@ -15,6 +15,11 @@ import { ToolPeek } from '../../../domains/catalog/components/ToolPeek';
 import { ComparisonTable } from '../../../domains/catalog/components/ComparisonTable';
 import { localizeTool } from '../../../domains/catalog/utils/localize-catalog';
 import { SiteFooter } from '../../../common/components/SiteFooter';
+import {
+  WorkflowJourney,
+  WorkflowPreview,
+} from '../../../domains/catalog/components/WorkflowJourney';
+import { searchWorkflows } from '../../../domains/catalog/utils/search-workflows';
 
 export function ComparePage({
   initialMedium = 'video',
@@ -36,6 +41,7 @@ export function ComparePage({
   const [query, setQuery] = useState('');
   const mediumScenarios = scenarios.filter((item) => item.medium === medium);
   const recommendations = searchTools(query);
+  const workflow = searchWorkflows(query)[0];
   const recommendationsById = new Map(recommendations.map((item) => [item.id, item]));
   const [onlyPriced, setOnlyPriced] = useState(false);
   const [onlyFree, setOnlyFree] = useState(false);
@@ -121,6 +127,13 @@ export function ComparePage({
     setSearch('');
     setQuery('');
     handleResetResultFilters();
+  }
+  function handleWorkflowStart(prompt: string) {
+    setSearch(prompt);
+    setQuery(prompt);
+    setResultMedium('all');
+    setSort('featured');
+    setDetailToolId(undefined);
   }
   return (
     <>
@@ -248,7 +261,22 @@ export function ComparePage({
                     </Button>
                   ))}
                 </div>
-                {query ? (
+                {!query ? <WorkflowPreview onStart={handleWorkflowStart} /> : null}
+                {workflow ? (
+                  <>
+                    <WorkflowJourney
+                      key={query}
+                      workflow={workflow}
+                      query={query}
+                      billing={billing}
+                      onSelectTool={handleDetail}
+                    />
+                    <div className="workflow-catalog-heading">
+                      <h3>{t('workflow.catalog')}</h3>
+                      <p>{t('workflow.catalogHint')}</p>
+                    </div>
+                  </>
+                ) : query ? (
                   <div className="recommendation-heading">
                     <h3>{t('recommendation.title')}</h3>
                     <p>{t('recommendation.description', { count: tools.length })}</p>
