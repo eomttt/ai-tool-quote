@@ -1451,6 +1451,128 @@
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
   gap: calc(var(--spacing) * 4);
 }
+.workflow-tool-search-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.workflow-tool-search-field > svg {
+  position: absolute;
+  left: calc(var(--spacing) * 3);
+  color: var(--muted-foreground);
+  pointer-events: none;
+}
+.workflow-tool-search-field input {
+  height: calc(var(--spacing) * 11);
+  padding-inline: calc(var(--spacing) * 10);
+}
+.workflow-tool-search-field input::-webkit-search-cancel-button {
+  display: none;
+}
+.workflow-tool-search-field button {
+  position: absolute;
+  right: var(--spacing);
+}
+.workflow-tool-search-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: calc(var(--spacing) * 2);
+  margin-block: calc(var(--spacing) * 3) calc(var(--spacing) * 4);
+  font-size: var(--text-xs);
+  color: var(--muted-foreground);
+  line-height: 1.7;
+}
+.workflow-tool-search-meta [role='status'] {
+  color: var(--foreground);
+  font-variant-numeric: tabular-nums;
+}
+.workflow-tool-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  align-items: start;
+  gap: calc(var(--spacing) * 3);
+  max-height: calc(var(--spacing) * 144);
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+  padding: var(--spacing);
+}
+.workflow-tool-result {
+  min-width: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: clip;
+}
+.workflow-tool-option {
+  display: block;
+  width: 100%;
+  padding: calc(var(--spacing) * 4);
+  text-align: left;
+  text-decoration: none;
+  outline-offset: calc(var(--spacing) * -1);
+}
+.workflow-tool-option:hover {
+  background: var(--muted);
+}
+.workflow-tool-title {
+  display: flex;
+  gap: calc(var(--spacing) * 2);
+  align-items: center;
+  flex-wrap: wrap;
+}
+.workflow-tool-title strong {
+  font-size: var(--text-sm);
+}
+.workflow-tool-title > svg {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.workflow-tool-title [data-slot='badge'] {
+  font-size: var(--text-xs);
+}
+.workflow-tool-description {
+  display: block;
+  margin-block: calc(var(--spacing) * 3);
+  font-size: var(--text-sm);
+  line-height: 1.8;
+}
+.workflow-tool-option .price-summary {
+  margin-top: calc(var(--spacing) * 3);
+}
+.workflow-tool-sources {
+  border-top: 1px solid var(--border);
+  padding: calc(var(--spacing) * 3) calc(var(--spacing) * 4);
+  font-size: var(--text-xs);
+  color: var(--muted-foreground);
+  line-height: 1.7;
+}
+.workflow-tool-sources summary {
+  color: var(--foreground);
+  cursor: pointer;
+}
+.workflow-tool-sources a {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing);
+  margin-top: calc(var(--spacing) * 3);
+  text-decoration: underline;
+  text-underline-offset: calc(var(--spacing) * 0.5);
+}
+.workflow-tool-sources small {
+  display: block;
+  margin-top: var(--spacing);
+}
+.workflow-tool-empty {
+  display: grid;
+  justify-items: start;
+  gap: calc(var(--spacing) * 3);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-lg);
+  padding: calc(var(--spacing) * 5);
+  font-size: var(--text-sm);
+  color: var(--muted-foreground);
+  line-height: 1.8;
+}
 .workflow-resource {
   min-width: 0;
   border: 1px solid var(--border);

@@ -28,6 +28,13 @@ export const workflowSchema = z
             handoff: text,
             dependsOn: z.array(stepId),
             resourceIds: z.array(z.string()).min(1),
+            toolSearch: z
+              .object({
+                medium: z.enum(['video', 'image']),
+                toolIds: z.array(z.string().min(1)).min(1),
+              })
+              .strict()
+              .optional(),
           })
           .strict(),
       )
@@ -38,6 +45,7 @@ export const workflowSchema = z
           .object({
             id: z.string().min(1),
             name: z.string().min(1),
+            aliases: z.array(z.string().min(1)).optional(),
             kind: z.enum(['tool', 'guide']),
             platform: z.enum(['all', 'youtube', 'instagram']),
             url,
@@ -92,6 +100,7 @@ export const workflowSchema = z
 
 export type Workflow = z.infer<typeof workflowSchema>;
 export type WorkflowStep = Workflow['steps'][number];
+export type WorkflowResource = Workflow['resources'][number];
 export type WorkflowPlatform = z.infer<typeof workflowPlatformSchema>;
 export type WorkflowMaterial = z.infer<typeof workflowMaterialSchema>;
 export interface WorkflowPreferences {

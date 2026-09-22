@@ -24,6 +24,9 @@ it('renders a localized, navigable workflow with tool recommendations and source
   expect(english).not.toMatch(/[가-힣]/);
   expect(english).toContain('Runway');
   expect(english).toContain('Higgsfield');
+  expect(english).toContain('Search tools for this step');
+  expect(english).toContain('20 of 20 tools');
+  expect(english).toContain('Kling AI');
   expect(english).toContain('Carry it forward');
   expect(english).toContain('https://help.runwayml.com/');
   expect(english).toContain('role="tablist"');

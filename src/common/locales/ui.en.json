@@ -219,5 +219,14 @@
   "workflow.basis": "This workflow is curated from official product guides. Choose tools and publish in each service.",
   "workflow.catalog": "Compare individual tools",
   "workflow.catalogHint": "Use the catalog below to filter tools and compare their plans.",
-  "workflow.reviewNote": "Use viewing patterns and comments to choose one change to try next. Low views alone do not tell you which tool to use."
+  "workflow.reviewNote": "Use viewing patterns and comments to choose one change to try next. Low views alone do not tell you which tool to use.",
+  "workflow.searchTools": "Search tools for this step",
+  "workflow.searchToolsPlaceholder": "Search by tool name or the feature you need",
+  "workflow.searchToolsHint": "Browse all tools selected for this step, or narrow them down by name or feature.",
+  "workflow.toolResults": "{{count}} of {{total}} tools",
+  "workflow.toolSearchEmpty": "No tools match in this step. Try another name or feature.",
+  "workflow.clearToolSearch": "Clear tool search",
+  "workflow.recommended": "Suggested",
+  "workflow.toolResultsLabel": "Tools available for this step",
+  "workflow.toolGuide": "How to use it & official sources"
 }

@@ -43,7 +43,32 @@
           "en": "Download the clips and import them into the editor in the next step."
         },
         "dependsOn": [],
-        "resourceIds": ["runway", "higgsfield"]
+        "resourceIds": ["runway", "higgsfield"],
+        "toolSearch": {
+          "medium": "video",
+          "toolIds": [
+            "runway",
+            "higgsfield",
+            "flow",
+            "pika",
+            "luma",
+            "kling",
+            "hailuo",
+            "pixverse",
+            "vidu",
+            "ltx",
+            "dreamina",
+            "firefly",
+            "krea",
+            "leonardo",
+            "openart",
+            "magnific",
+            "getimg",
+            "imagineart",
+            "seaart",
+            "midjourney"
+          ]
+        }
       },
       {
         "id": "edit",
@@ -68,7 +93,11 @@
           "en": "Keep the exported file ready and prepare the accounts you will publish from."
         },
         "dependsOn": ["generate"],
-        "resourceIds": ["capcut"]
+        "resourceIds": ["capcut"],
+        "toolSearch": {
+          "medium": "video",
+          "toolIds": ["veed", "pictory", "invideo", "firefly"]
+        }
       },
       {
         "id": "channels",
@@ -221,7 +250,8 @@
             "en": "Check captions and audio in the vertical layout, then export the video."
           }
         ],
-        "sourceIds": ["capcut-voice", "capcut-captions"]
+        "sourceIds": ["capcut-voice", "capcut-captions"],
+        "aliases": ["캡컷"]
       },
       {
         "id": "youtube-channel",

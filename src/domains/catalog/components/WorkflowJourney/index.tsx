@@ -23,6 +23,7 @@ import type {
 import type { Billing, Tool } from '../../models/model-tool';
 import { ToolLogo } from '../ToolLogo';
 import { PriceSummary } from '../PriceSummary';
+import { WorkflowToolSearch } from '../WorkflowToolSearch';
 
 export function WorkflowPreview({ onStart }: { onStart: (prompt: string) => void }) {
   const { t, i18n } = useTranslation();
@@ -223,84 +224,106 @@ export function WorkflowJourney({ workflow, query, billing, onSelectTool }: Work
                       <dd>{step.output[language]}</dd>
                     </div>
                   </dl>
-                  <div className="workflow-resource-heading">
-                    <h5>
-                      {t(
-                        resources.some((resource) => resource.kind === 'tool')
-                          ? 'workflow.tools'
-                          : 'workflow.guides',
-                      )}
-                    </h5>
-                    {resources.filter((resource) => resource.kind === 'tool').length > 1 ? (
-                      <p>{t('workflow.alternatives')}</p>
-                    ) : null}
-                  </div>
-                  <div className="workflow-resources">
-                    {resources.map((resource) => {
-                      const catalogTool = tools.find((tool) => tool.id === resource.toolId);
-                      const tool = catalogTool ? localizeTool(catalogTool, catalogT) : undefined;
-                      return (
-                        <article className="workflow-resource" key={resource.id}>
-                          {tool ? (
-                            <button
-                              className="workflow-resource-link"
-                              onClick={() => onSelectTool(tool)}
-                              aria-label={t('detail.open', { name: tool.name })}
-                            >
-                              <ToolLogo tool={tool} size="mini" />
-                              <strong>{resource.name}</strong>
-                              <ArrowRight size={17} aria-hidden="true" />
-                            </button>
-                          ) : (
-                            <a
-                              className="workflow-resource-link"
-                              href={resource.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              <span className="workflow-resource-monogram" aria-hidden="true">
-                                {resource.name.slice(0, 2)}
-                              </span>
-                              <strong>{resource.name}</strong>
-                              <ArrowUpRight size={17} aria-hidden="true" />
-                            </a>
+                  {step.toolSearch ? (
+                    <WorkflowToolSearch
+                      workflow={workflow}
+                      step={step}
+                      resources={resources}
+                      billing={billing}
+                      onSelectTool={onSelectTool}
+                    />
+                  ) : (
+                    <>
+                      <div className="workflow-resource-heading">
+                        <h5>
+                          {t(
+                            resources.some((resource) => resource.kind === 'tool')
+                              ? 'workflow.tools'
+                              : 'workflow.guides',
                           )}
-                          <p className="workflow-resource-reason">{resource.reason[language]}</p>
-                          {tool ? (
-                            <PriceSummary pricing={getPricing(tool.id)} billing={billing} />
-                          ) : resource.kind === 'tool' ? (
-                            <p className="workflow-source-note">{t('workflow.externalPricing')}</p>
-                          ) : null}
-                          <ol className="workflow-actions">
-                            {resource.actions.map((action) => (
-                              <li key={action.en}>{action[language]}</li>
-                            ))}
-                          </ol>
-                          <details className="workflow-sources">
-                            <summary>{t('workflow.sources')}</summary>
-                            {resource.sourceIds.map((id) => {
-                              const source = workflow.sources.find((item) => item.id === id);
-                              if (!source) return null;
-                              return (
-                                <div key={source.id}>
-                                  <a href={source.url} target="_blank" rel="noopener noreferrer">
-                                    {source.title[language]}
-                                    <ArrowUpRight size={13} aria-hidden="true" />
-                                  </a>
-                                  <small>
-                                    {t('workflow.checked', { date: source.checkedAt })}
-                                    {source.access === 'login-required'
-                                      ? ` · ${t('workflow.loginRequired')}`
-                                      : ''}
-                                  </small>
-                                </div>
-                              );
-                            })}
-                          </details>
-                        </article>
-                      );
-                    })}
-                  </div>
+                        </h5>
+                        {resources.filter((resource) => resource.kind === 'tool').length > 1 ? (
+                          <p>{t('workflow.alternatives')}</p>
+                        ) : null}
+                      </div>
+                      <div className="workflow-resources">
+                        {resources.map((resource) => {
+                          const catalogTool = tools.find((tool) => tool.id === resource.toolId);
+                          const tool = catalogTool
+                            ? localizeTool(catalogTool, catalogT)
+                            : undefined;
+                          return (
+                            <article className="workflow-resource" key={resource.id}>
+                              {tool ? (
+                                <button
+                                  className="workflow-resource-link"
+                                  onClick={() => onSelectTool(tool)}
+                                  aria-label={t('detail.open', { name: tool.name })}
+                                >
+                                  <ToolLogo tool={tool} size="mini" />
+                                  <strong>{resource.name}</strong>
+                                  <ArrowRight size={17} aria-hidden="true" />
+                                </button>
+                              ) : (
+                                <a
+                                  className="workflow-resource-link"
+                                  href={resource.url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
+                                  <span className="workflow-resource-monogram" aria-hidden="true">
+                                    {resource.name.slice(0, 2)}
+                                  </span>
+                                  <strong>{resource.name}</strong>
+                                  <ArrowUpRight size={17} aria-hidden="true" />
+                                </a>
+                              )}
+                              <p className="workflow-resource-reason">
+                                {resource.reason[language]}
+                              </p>
+                              {tool ? (
+                                <PriceSummary pricing={getPricing(tool.id)} billing={billing} />
+                              ) : resource.kind === 'tool' ? (
+                                <p className="workflow-source-note">
+                                  {t('workflow.externalPricing')}
+                                </p>
+                              ) : null}
+                              <ol className="workflow-actions">
+                                {resource.actions.map((action) => (
+                                  <li key={action.en}>{action[language]}</li>
+                                ))}
+                              </ol>
+                              <details className="workflow-sources">
+                                <summary>{t('workflow.sources')}</summary>
+                                {resource.sourceIds.map((id) => {
+                                  const source = workflow.sources.find((item) => item.id === id);
+                                  if (!source) return null;
+                                  return (
+                                    <div key={source.id}>
+                                      <a
+                                        href={source.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                      >
+                                        {source.title[language]}
+                                        <ArrowUpRight size={13} aria-hidden="true" />
+                                      </a>
+                                      <small>
+                                        {t('workflow.checked', { date: source.checkedAt })}
+                                        {source.access === 'login-required'
+                                          ? ` · ${t('workflow.loginRequired')}`
+                                          : ''}
+                                      </small>
+                                    </div>
+                                  );
+                                })}
+                              </details>
+                            </article>
+                          );
+                        })}
+                      </div>
+                    </>
+                  )}
                   {step.id === 'review' ? (
                     <p className="workflow-review-note">{t('workflow.reviewNote')}</p>
                   ) : null}
